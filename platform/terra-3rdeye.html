@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra3rdEye | Enterprise Product Specification | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261024_perfect_bg">
+    <script src="theme.js"></script>
+</head>
+<body>
+
+    
+    <!-- Top Enterprise Navigation -->
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <div class="corp-logo-glyph">TP</div>
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <div class="corp-nav-links">
+                    <a href="../index.html" class="nav-link">Main Site</a>
+                    <a href="index.html" class="nav-link">All 20 Applications</a>
+
+                    <!-- Quick App Switcher Dropdown -->
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>Terra3rdEye</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            
+            <a href="terra-ai.html" class="dropdown-link">
+                <span>TerraAI</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cognizance.html" class="dropdown-link">
+                <span>TerraCognizance</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-solar.html" class="dropdown-link">
+                <span>TerraSolar</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-ems.html" class="dropdown-link">
+                <span>TerraEMS</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-3rdeye.html" class="dropdown-link active">
+                <span>Terra3rdEye</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-bms.html" class="dropdown-link">
+                <span>TerraBMS</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-hvac.html" class="dropdown-link">
+                <span>TerraHVAC</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-scada.html" class="dropdown-link">
+                <span>TerraSCADA</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-avatar.html" class="dropdown-link">
+                <span>TerraAvatar</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-assets.html" class="dropdown-link">
+                <span>TerraAssets</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-pfd.html" class="dropdown-link">
+                <span>TerraPFD</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-embodiment.html" class="dropdown-link">
+                <span>TerraEmbodiment</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-gridx.html" class="dropdown-link">
+                <span>TerraGridX</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridw.html" class="dropdown-link">
+                <span>TerraGridW</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridg.html" class="dropdown-link">
+                <span>TerraGridG</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-corroguard.html" class="dropdown-link">
+                <span>TerraCorroGuard</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-hive.html" class="dropdown-link">
+                <span>TerraHive</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cc.html" class="dropdown-link">
+                <span>TerraCC</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-alarm.html" class="dropdown-link">
+                <span>TerraAlarm</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="tpim.html" class="dropdown-link">
+                <span>TPIM</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+                        </div>
+                    </div>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">All 20 Applications</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li><a href="index.html">Vision & Clean Energy</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">Terra3rdEye</li>
+            </ul>
+        </div>
+
+        <!-- PRODUCT HERO: FULL-WIDTH ATMOSPHERIC BANNER CARD WITH DOMAIN TECHNICAL BLUEPRINT -->
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <!-- BESPOKE DOMAIN TECHNICAL BLUEPRINT SVG BACKDROP -->
+                <div class="hero-svg-backdrop">
+<svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        
+        <defs>
+            <!-- Technical Blueprint Coordinate Grid -->
+            <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
+                <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
+            </pattern>
+            <!-- Soft Vignette so central text has optimal legibility -->
+            <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="65%">
+                <stop offset="0%" stop-color="#040817" stop-opacity="0.82" />
+                <stop offset="60%" stop-color="#040817" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#030612" stop-opacity="0.30" />
+            </radialGradient>
+            <!-- Glow Filter -->
+            <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- Background Grid Rect -->
+        <rect width="100%" height="100%" fill="url(#techGrid)" />
+    
+        <!-- Left HUD Targeting Optics & Camera Cone -->
+        <g stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.38">
+            <!-- Camera Cone -->
+            <polygon points="60,250 280,140 280,360" fill="rgba(56, 189, 248, 0.04)" stroke="rgba(56, 189, 248, 0.25)"/>
+            <circle cx="60" cy="250" r="12" stroke="#38bdf8" fill="rgba(2, 132, 199, 0.3)"/>
+            <!-- Bounding Box 1 (PPE Check) -->
+            <rect x="160" y="180" width="90" height="120" stroke="#10b981" stroke-width="1.5" stroke-dasharray="8 4" fill="rgba(16, 185, 129, 0.06)"/>
+            <text x="165" y="172" font-family="JetBrains Mono" font-size="8" fill="#10b981">PERSON [99.4%]</text>
+            <text x="165" y="315" font-family="JetBrains Mono" font-size="8" fill="#10b981">PPE: COMPLIANT</text>
+        </g>
+        <!-- Center Scope Reticle Rings -->
+        <g stroke="rgba(56, 189, 248, 0.25)" stroke-width="1" fill="none" transform="translate(600, 250)">
+            <circle cx="0" cy="0" r="160" stroke-dasharray="4 8"/>
+            <circle cx="0" cy="0" r="100"/>
+            <circle cx="0" cy="0" r="40"/>
+            <line x1="-190" y1="0" x2="-110" y2="0" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="110" y1="0" x2="190" y2="0" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="0" y1="-190" x2="0" y2="-110" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="0" y1="110" x2="0" y2="190" stroke="#38bdf8" stroke-width="1.5"/>
+        </g>
+        <!-- Right HUD Bounding Box 2 (Hazard Zone Alert) -->
+        <g stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.38">
+            <rect x="940" y="170" width="140" height="150" stroke="#f43f5e" stroke-width="1.5" fill="rgba(244, 63, 94, 0.06)"/>
+            <text x="945" y="162" font-family="JetBrains Mono" font-size="8" fill="#f43f5e">FORKLIFT TRAJECTORY</text>
+            <text x="945" y="335" font-family="JetBrains Mono" font-size="8" fill="#f43f5e">RESTRICTED ZONE // 0.8m</text>
+            <!-- Laser Scan Line -->
+            <line x1="940" y1="240" x2="1080" y2="240" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2 4"/>
+        </g>
+        <!-- Computer Vision Telemetry Labels -->
+        <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.45)">
+            <text x="80" y="100">CAM STREAM: 64x RTSP H.265</text>
+            <text x="80" y="440">INFERENCE SPEED: 38ms (EDGE-YOLO)</text>
+            <text x="920" y="100">AREA CLASSIFICATION: CLASS 1 / DIV 2</text>
+            <text x="920" y="440">SAFETY INTERLOCK: ACTIVE SIL-2</text>
+        </g>
+        <rect width="100%" height="100%" fill="url(#vignetteGrad)" />
+        
+        <!-- Blueprint HUD Corner Brackets & Scale Marks -->
+        <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
+            <path d="M 20 40 L 20 20 L 40 20" />
+            <path d="M 1180 40 L 1180 20 L 1160 20" />
+            <path d="M 20 460 L 20 480 L 40 480" />
+            <path d="M 1180 460 L 1180 480 L 1160 480" />
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
+            <text x="50" y="32">TERRESTRIAL-SYS // REF-R00</text>
+            <text x="1020" y="32">GRID RESOLUTION: 40px²</text>
+            <text x="50" y="475">CALIBRATION: DETERMINISTIC</text>
+            <text x="1050" y="475">SYNC: REAL-TIME</text>
+        </g>
+    
+    </svg>
+                </div>
+
+                <div class="hero-card-content">
+                    <!-- TOP BADGE PILL -->
+                    <div class="hero-top-badge">
+                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                    </div>
+
+                    <!-- MAIN FULL TITLE -->
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">Terra3rdEye</span>: <span class="hero-title-tagline">AI-Powered Visual Intelligence System for All Industrial Applications</span>
+                    </h1>
+
+                    <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
+                    <div class="hero-pills-row">
+                    <div class="hero-metric-pill"><span class="pill-key">INFERENCE LATENCY:</span> <span class="pill-val">< 45 ms Edge</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">PPE COMPLIANCE:</span> <span class="pill-val">99.4% Verified</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">CAMERA PIPELINE:</span> <span class="pill-val">64x RTSP Streams</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">SAFETY RATING:</span> <span class="pill-val">Class 1 / Div 2</span></div>
+                    </div>
+
+                    <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">
+                            “Your AI-powered industrial watchdog that never blinks, ensuring unmatched safety, quality, and operational efficiency across every sector, every shift, every second.”
+                        </div>
+                        <div class="outcome-quote-author">
+                            — THE OUTCOME-BASED REVOLUTION
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY DESCRIPTION -->
+                    <p class="hero-card-description">In fast-paced manufacturing and process environments, continuous monitoring is essential. Terra 3rd Eye acts as a 24/7 digital watchdog, leveraging computer vision and neural networks to observe, analyze, and respond to shop-floor events—from workplace PPE compliance and worker fall detection to inline product quality control and intruder security.</p>
+
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">
+                            Explore Operational Interface ▾
+                        </a>
+                        <a href="#details" class="hero-secondary-btn">
+                            What Terra3rdEye Will Do ↓
+                        </a>
+                        <a href="#usecases" class="hero-secondary-btn">
+                            Field Use Cases ↓
+                        </a>
+                        <a href="#architecture" class="hero-secondary-btn">
+                            BirdEye Architecture ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMATIC OPERATIONAL INTERFACE & SYSTEM REPRESENTATION (RESTORED BELOW HERO) -->
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title">
+                        <span class="live-dot">●</span> Terra3rdEye ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                    </div>
+                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terra_3rdeye_isa101_showcase.jpg?v=20261024_isa101" alt="Terra3rdEye Operational Interface" class="showcase-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <section class="corp-section" id="details">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Application Operational Details</div>
+                <h2 class="corp-section-heading">What Terra3rdEye Will Do</h2>
+                <p class="corp-section-subheading">Specific operational functions and engineering capabilities directly sourced from technical documentation.</p>
+            </div>
+            <div class="capabilities-grid">
+                
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>Workplace Safety & Compliance Monitoring</h4>
+            <p>Detects missing PPE kits (helmets, gloves, vests, goggles), unsafe behaviors, social distancing, and person down emergencies.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>Production Quality Control AI</h4>
+            <p>Identifies deformed products, broken packaging, label orientation errors, and color deviations directly on the conveyor.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>AI-Driven Security & Surveillance</h4>
+            <p>Detects unauthorized access, intruders, after-hours activity, facial recognition access control, and vehicle license plate tracking.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>24/7 Fire & Leakage Surveillance</h4>
+            <p>Monitors visual and thermal feeds for smoke, open flames, and fluid leakages in raw material and chemical storage warehouses.</p>
+        </div>
+            </div>
+        </section>
+
+        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES (QA, REDUCED MANPOWER, EFFICIENCY, PRODUCTIVITY) -->
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
+                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
+                <p class="corp-section-subheading">Actual documented use cases across Quality Assurance (QA), Reduced Manpower, Efficiency, and Asset Productivity.</p>
+            </div>
+            <div class="usecase-deck">
+                
+        <div class="usecase-box">
+            <span class="usecase-badge">QA & Inline Production Quality Control</span>
+            <h4>QA & Inline Production Quality Control</h4>
+            <p>Detects damaged, deformed, or defective products on assembly lines; verifies labeling accuracy, packaging integrity, color mismatch, and alignment errors.</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Safety & Workplace PPE Compliance</span>
+            <h4>Safety & Workplace PPE Compliance</h4>
+            <p>Detects workers without PPE kits (helmets, gloves, safety vests, goggles) and triggers instant alerts when personnel enter hazardous restricted zones.</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Reduced Manpower</span>
+            <h4>Reduced Manpower (Facial Recognition & Access Tracking)</h4>
+            <p>Automated facial recognition for employee access control, attendance tracking, and vehicle tracking for plant material shipments, replacing manual security registers.</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Productivity & Life-Safety</span>
+            <h4>Productivity & Life-Safety (Fall & Emergency Detection)</h4>
+            <p>Real-time worker fall detection, person down alerts, and thermal smoke/fire detection trigger instant evacuation alarms and management notifications.</p>
+        </div>
+            </div>
+        </section>
+
+        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SCADA / LEGACY SYSTEMS -->
+        <section class="corp-section" id="comparison">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Architectural Contrast</div>
+                <h2 class="corp-section-heading">Comparison with Traditional SCADA / Legacy Systems</h2>
+                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological shift from legacy industrial automation to the Terrestrial Platform.</p>
+            </div>
+            <div class="matrix-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="th-legacy">Traditional Legacy Systems / Traditional SCADA</th>
+                            <th class="th-platform">Terra3rdEye Terrestrial Platform Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td class="td-legacy">Security and safety personnel passively monitor dozens of CCTV screens, missing critical PPE violations and safety breaches.</td>
+            <td class="td-platform">Automated neural networks inspect every camera frame in real time, alerting instantly when safety helmets, gloves, or vests are missing.</td>
+        </tr>
+        <tr>
+            <td class="td-legacy">Product quality inspection relies on manual spot-checks, allowing deformed items and misaligned labels to ship to clients.</td>
+            <td class="td-platform">100% inline visual quality control detecting damaged, deformed, or defective products, color mismatches, and packaging flaws.</td>
+        </tr>
+        <tr>
+            <td class="td-legacy">Streaming heavy high-definition video feeds across plant networks causes severe IT bandwidth congestion.</td>
+            <td class="td-platform">Local edge inference: lightweight event metadata and bounding boxes transmitted via WebSockets without network overload.</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
+                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
+                <p class="corp-section-subheading">Visual architecture diagram representing field telemetry ingestion, deterministic edge fabric, AI reasoning, and closed-loop actuation.</p>
+            </div>
+
+            
+        <div class="birdeye-diagram-card">
+        <div class="birdeye-diagram-grid">
+            <!-- Node 01: Optical & Thermal Ingestion -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 01</span>
+                        <span class="diagram-node-icon">📷</span>
+                    </div>
+                    <div class="diagram-node-title">Optical & Thermal Ingestion</div>
+                    <div class="diagram-node-desc">Multi-camera visual acquisition aggregating high-speed GigE Vision, RTSP video streams, line-scan sensors, and thermal infrared cameras.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">GigE Vision</span><span class="diagram-proto-chip">RTSP Video Stream</span><span class="diagram-proto-chip">ONVIF Profile S/T</span>
+                </div>
+            </div>
+            <!-- Node 02: Hardware Edge Preprocessing -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 02</span>
+                        <span class="diagram-node-icon">⚡</span>
+                    </div>
+                    <div class="diagram-node-title">Hardware Edge Preprocessing</div>
+                    <div class="diagram-node-desc">Zero-copy frame ingestion, hardware-accelerated image normalization, spatial distortion correction, and sub-10ms frame dispatch.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">Hardware Video Pipeline</span><span class="diagram-proto-chip">Frame Normalization</span><span class="diagram-proto-chip">Sub-10ms Vision Bus</span>
+                </div>
+            </div>
+            <!-- Node 03: Defect Segmentation Core -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 03</span>
+                        <span class="diagram-node-icon">🔍</span>
+                    </div>
+                    <div class="diagram-node-title">Defect Segmentation Core</div>
+                    <div class="diagram-node-desc">Ultra-fast neural defect detection, micron-level dimensional tolerance verification, surface anomaly classification, and OCR label parsing.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">Real-Time Defect AI</span><span class="diagram-proto-chip">Sub-Micron Gauging</span><span class="diagram-proto-chip">Surface Anomaly Model</span>
+                </div>
+            </div>
+            <!-- Node 04: Automated Reject Cockpit -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 04</span>
+                        <span class="diagram-node-icon">🎯</span>
+                    </div>
+                    <div class="diagram-node-title">Automated Reject Cockpit</div>
+                    <div class="diagram-node-desc">High-speed pneumatic reject gate actuation, robotic sorter guidance, QA traceability archiving, and ANSI/ISA-101 defect inspection consoles.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">Pneumatic Reject Gate</span><span class="diagram-proto-chip">Robotic Sorter Link</span><span class="diagram-proto-chip">ISA-101 Vision HMI</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connecting Flow Indicator -->
+        <div class="diagram-flow-bar">
+            <span class="flow-dot"></span>
+            <span>DATA PIPELINE FLOW: Optical & Thermal Video Streams ➔ Hardware Frame Preprocessing ➔ Real-Time Defect Segmentation ➔ High-Speed Reject Gate Actuation (< 10ms Latency)</span>
+        </div>
+    </div>
+    
+        </section>
+
+        <!-- PRODUCT PAGER -->
+        <div class="product-pager">
+            <a href="terra-ems.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TerraEMS</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">All 20 Applications</span>
+            </a>
+            <a href="terra-bms.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraBMS</span>
+            </a>
+        </div>
+
+    </div>
+
+    
+    <!-- Corporate Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary">
+                    <h3>TERRESTRIAL PLATFORM</h3>
+                    <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
+                    <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
+                        Adani Enterprise Specification | Revision R00.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>AI & Autonomous Swarms</h5>
+                    <ul><li><a href="terra-ai.html">TerraAI</a></li><li><a href="terra-cognizance.html">TerraCognizance</a></li><li><a href="terra-embodiment.html">TerraEmbodiment</a></li><li><a href="terra-hive.html">TerraHive</a></li><li><a href="terra-cc.html">TerraCC</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Plant Engineering & Twins</h5>
+                    <ul><li><a href="terra-scada.html">TerraSCADA</a></li><li><a href="terra-avatar.html">TerraAvatar</a></li><li><a href="terra-assets.html">TerraAssets</a></li><li><a href="terra-pfd.html">TerraPFD</a></li><li><a href="terra-alarm.html">TerraAlarm</a></li><li><a href="tpim.html">TPIM</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Grids & Utilities</h5>
+                    <ul><li><a href="terra-gridx.html">TerraGridX</a></li><li><a href="terra-gridw.html">TerraGridW</a></li><li><a href="terra-gridg.html">TerraGridG</a></li><li><a href="terra-corroguard.html">TerraCorroGuard</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Energy & Facilities</h5>
+                    <ul><li><a href="terra-solar.html">TerraSolar</a></li><li><a href="terra-ems.html">TerraEMS</a></li><li><a href="terra-3rdeye.html">Terra3rdEye</a></li><li><a href="terra-bms.html">TerraBMS</a></li><li><a href="terra-hvac.html">TerraHVAC</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-legal-bar">
+                <div>© 2026 Terrestrial Platform Suite. Built for Enterprise Industrial Operations.</div>
+                <div>IEC 61850 | IEC 62443 | ISA 18.2 | 21 CFR Part 11 Certified Architecture</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.remove('open');
+        });
+    </script>
+    
+
+</body>
+</html>

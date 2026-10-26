@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraCC | Enterprise Product Specification | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261024_perfect_bg">
+    <script src="theme.js"></script>
+</head>
+<body>
+
+    
+    <!-- Top Enterprise Navigation -->
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <div class="corp-logo-glyph">TP</div>
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <div class="corp-nav-links">
+                    <a href="../index.html" class="nav-link">Main Site</a>
+                    <a href="index.html" class="nav-link">All 20 Applications</a>
+
+                    <!-- Quick App Switcher Dropdown -->
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraCC</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            
+            <a href="terra-ai.html" class="dropdown-link">
+                <span>TerraAI</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cognizance.html" class="dropdown-link">
+                <span>TerraCognizance</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-solar.html" class="dropdown-link">
+                <span>TerraSolar</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-ems.html" class="dropdown-link">
+                <span>TerraEMS</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-3rdeye.html" class="dropdown-link">
+                <span>Terra3rdEye</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-bms.html" class="dropdown-link">
+                <span>TerraBMS</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-hvac.html" class="dropdown-link">
+                <span>TerraHVAC</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-scada.html" class="dropdown-link">
+                <span>TerraSCADA</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-avatar.html" class="dropdown-link">
+                <span>TerraAvatar</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-assets.html" class="dropdown-link">
+                <span>TerraAssets</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-pfd.html" class="dropdown-link">
+                <span>TerraPFD</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-embodiment.html" class="dropdown-link">
+                <span>TerraEmbodiment</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-gridx.html" class="dropdown-link">
+                <span>TerraGridX</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridw.html" class="dropdown-link">
+                <span>TerraGridW</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridg.html" class="dropdown-link">
+                <span>TerraGridG</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-corroguard.html" class="dropdown-link">
+                <span>TerraCorroGuard</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-hive.html" class="dropdown-link">
+                <span>TerraHive</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cc.html" class="dropdown-link active">
+                <span>TerraCC</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-alarm.html" class="dropdown-link">
+                <span>TerraAlarm</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="tpim.html" class="dropdown-link">
+                <span>TPIM</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+                        </div>
+                    </div>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">All 20 Applications</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li><a href="index.html">Autonomous AI & Swarms</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">TerraCC</li>
+            </ul>
+        </div>
+
+        <!-- PRODUCT HERO: FULL-WIDTH ATMOSPHERIC BANNER CARD WITH DOMAIN TECHNICAL BLUEPRINT -->
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <!-- BESPOKE DOMAIN TECHNICAL BLUEPRINT SVG BACKDROP -->
+                <div class="hero-svg-backdrop">
+<svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        
+        <defs>
+            <!-- Technical Blueprint Coordinate Grid -->
+            <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
+                <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
+            </pattern>
+            <!-- Soft Vignette so central text has optimal legibility -->
+            <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="65%">
+                <stop offset="0%" stop-color="#040817" stop-opacity="0.82" />
+                <stop offset="60%" stop-color="#040817" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#030612" stop-opacity="0.30" />
+            </radialGradient>
+            <!-- Glow Filter -->
+            <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- Background Grid Rect -->
+        <rect width="100%" height="100%" fill="url(#techGrid)" />
+    
+        <!-- Tactical Situation Radar (Left Side) -->
+        <g stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.38" transform="translate(220, 250)">
+            <circle cx="0" cy="0" r="140" stroke="#2dd4bf" stroke-dasharray="3 6"/>
+            <circle cx="0" cy="0" r="100"/>
+            <circle cx="0" cy="0" r="60"/>
+            <!-- Radar Sweep Beam -->
+            <polygon points="0,0 120,-80 140,-40" fill="rgba(45, 212, 191, 0.15)"/>
+            <!-- Incident Target Markers -->
+            <circle cx="70" cy="-40" r="4" fill="#f43f5e"/>
+            <circle cx="-50" cy="60" r="4" fill="#10b981"/>
+            <circle cx="40" cy="80" r="4" fill="#f59e0b"/>
+        </g>
+        <!-- 8K Video Wall Mosaic Grid (Right Side) -->
+        <g stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.38">
+            <rect x="840" y="150" width="130" height="80" rx="4" fill="rgba(2, 132, 199, 0.1)"/>
+            <rect x="990" y="150" width="130" height="80" rx="4" fill="rgba(2, 132, 199, 0.1)"/>
+            <rect x="840" y="250" width="130" height="80" rx="4" fill="rgba(2, 132, 199, 0.1)"/>
+            <rect x="990" y="250" width="130" height="80" rx="4" fill="rgba(2, 132, 199, 0.1)"/>
+            <text x="860" y="195" font-family="JetBrains Mono" font-size="8" fill="#38bdf8">SWARM CORE</text>
+            <text x="1005" y="195" font-family="JetBrains Mono" font-size="8" fill="#2dd4bf">GLASS COCKPIT</text>
+            <text x="850" y="295" font-family="JetBrains Mono" font-size="8" fill="#f59e0b">AUTO-DISPATCH</text>
+            <text x="1005" y="295" font-family="JetBrains Mono" font-size="8" fill="#a855f7">FAIL-SAFE E-STOP</text>
+        </g>
+        <!-- Telemetry Annotations -->
+        <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.45)">
+            <text x="80" y="100">AUTONOMOUS SWARM: LEVEL-4 COLLABORATIVE</text>
+            <text x="80" y="440">GLASS COCKPIT: BIMODAL HUMAN-AGENT INTERLOCK</text>
+            <text x="860" y="100">CROSS-SITE LATENCY: &lt; 15ms DETERMINISTIC</text>
+            <text x="860" y="440">FAIL-SAFE SAFETY: IEC 62443 SIL-3 E-STOP</text>
+        </g>
+        <rect width="100%" height="100%" fill="url(#vignetteGrad)" />
+        
+        <!-- Blueprint HUD Corner Brackets & Scale Marks -->
+        <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
+            <path d="M 20 40 L 20 20 L 40 20" />
+            <path d="M 1180 40 L 1180 20 L 1160 20" />
+            <path d="M 20 460 L 20 480 L 40 480" />
+            <path d="M 1180 460 L 1180 480 L 1160 480" />
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
+            <text x="50" y="32">TERRESTRIAL-SYS // REF-R00</text>
+            <text x="1020" y="32">GRID RESOLUTION: 40px²</text>
+            <text x="50" y="475">CALIBRATION: DETERMINISTIC</text>
+            <text x="1050" y="475">SYNC: REAL-TIME</text>
+        </g>
+    
+    </svg>
+                </div>
+
+                <div class="hero-card-content">
+                    <!-- TOP BADGE PILL -->
+                    <div class="hero-top-badge">
+                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                    </div>
+
+                    <!-- MAIN FULL TITLE -->
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">TerraCC</span>: <span class="hero-title-tagline">Autonomous Command Center & Multi-Agent Swarm Operations Glass Cockpit</span>
+                    </h1>
+
+                    <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
+                    <div class="hero-pills-row">
+                        <div class="hero-metric-pill"><span class="pill-key">SWARM AUTONOMY:</span> <span class="pill-val">Level 4 Multi-Agent Control</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">CLOSED-LOOP DISPATCH:</span> <span class="pill-val">Sub-15ms Swarm Actuation</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">FLEET CONCURRENCY:</span> <span class="pill-val">10,000+ Autonomous Nodes</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">FAIL-SAFE INTERLOCK:</span> <span class="pill-val">Deterministic E-Stop & Override</span></div>
+                    </div>
+
+                    <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">
+                            “Uniting autonomous machine swarms and human command on a single deterministic glass cockpit — transforming complex cross-fleet operations into synchronized, self-orchestrating plant autonomy.”
+                        </div>
+                        <div class="outcome-quote-author">
+                            — THE AUTONOMOUS COMMAND REVOLUTION
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY DESCRIPTION -->
+                    <p class="hero-card-description">TerraCC serves as the central mission-critical autonomous command center and glass cockpit, bridging human decision-makers with autonomous agent swarms across industrial fleets, energy grids, and manufacturing complexes. Ingesting high-density real-time telemetry from thousands of distributed edge nodes, TerraCC coordinates autonomous multi-agent consensus, automated supervisory setpoint dispatch, and cross-plant incident response while providing operators with single-click deterministic fail-safe override meeting IEC 62443 cyber-physical safety standards.</p>
+
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">
+                            Explore Operational Interface ▾
+                        </a>
+                        <a href="#details" class="hero-secondary-btn">
+                            What TerraCC Will Do ↓
+                        </a>
+                        <a href="#usecases" class="hero-secondary-btn">
+                            Field Use Cases ↓
+                        </a>
+                        <a href="#architecture" class="hero-secondary-btn">
+                            BirdEye Architecture ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMATIC OPERATIONAL INTERFACE & SYSTEM REPRESENTATION (RESTORED BELOW HERO) -->
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title">
+                        <span class="live-dot">●</span> TerraCC ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                    </div>
+                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terra_cc_isa101_showcase.jpg?v=20261024_isa101" alt="TerraCC Operational Interface" class="showcase-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <section class="corp-section" id="details">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Application Operational Details</div>
+                <h2 class="corp-section-heading">What TerraCC Will Do</h2>
+                <p class="corp-section-subheading">Autonomous multi-agent orchestration, closed-loop supervisory dispatch, and bimodal human-swarm command capabilities.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">⚡</div>
+                    <h4>Autonomous Multi-Agent Swarm Orchestration</h4>
+                    <p>Coordinates cooperative AI agent swarms across distributed plants, substations, and utilities. Automatically negotiates dynamic power dispatch, compressor loading, and cross-facility resource balancing in real time with zero human latency.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🖥️</div>
+                    <h4>Bimodal Human-Swarm Glass Cockpit</h4>
+                    <p>Unifies live operational telemetry feeds with real-time autonomous agent decision rationales, confidence scores, and proposed action trajectories on an ISA-110 compliant high-performance spatial canvas.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🎯</div>
+                    <h4>Autonomous Closed-Loop Dispatch & Setpoint Actuation</h4>
+                    <p>Translates high-level enterprise production and decarbonization objectives into micro-actuation setpoints across thousands of PLCs, DCS controllers, and edge RTUs with sub-15ms deterministic synchronization.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🛡️</div>
+                    <h4>Cross-Plant Incident Containment & Dynamic Escalation</h4>
+                    <p>Instantly detects cross-unit cascade risks (grid frequency sags, steam header pressure drops, cooling water deficits). Autonomously triggers protective load shedding, reroutes process feeds, and executes emergency interlocks.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">⏱️</div>
+                    <h4>Deterministic Fail-Safe Override & Time-Travel Playback</h4>
+                    <p>Hardened single-click manual emergency-stop (E-Stop) and supervisory override meeting IEC 62443 SIL-3, combined with a millisecond-synchronized telemetry flight recorder allowing forensic event scrub and replay.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES (QA, REDUCED MANPOWER, EFFICIENCY, PRODUCTIVITY) -->
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
+                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
+                <p class="corp-section-subheading">Actual documented deployments demonstrating autonomous fleet dispatch, cross-facility interlocks, and emergency containment.</p>
+            </div>
+            <div class="usecase-deck">
+                <div class="usecase-box">
+                    <span class="usecase-badge">Autonomous Grid Balancing</span>
+                    <h4>Fleet-Wide Autonomous Renewable Dispatch & Frequency Response</h4>
+                    <p>Autonomously coordinates 15 geographically distributed utility-scale solar parks, wind farms, and battery storage systems (BESS); balances 4.2 GW grid injection against real-time sub-second frequency deviations without human dispatch delay.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Cross-Plant Autonomous Interlocks</span>
+                    <h4>Refinery & Power Island: Cross-Facility Utility Redistribution</h4>
+                    <p>When a main boiler feed pump trips on Power Unit 3, TerraCC autonomously evaluates live steam header capacities, sheds non-essential process heaters, and reroutes high-pressure steam across adjacent chemical units within 220 milliseconds.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Autonomous Robotics & Inspection</span>
+                    <h4>Autonomous Robotic Crawler & Drone Swarm Patrol Dispatch</h4>
+                    <p>Fuses stationary CCTV cameras with mobile autonomous inspection crawlers and aerial drones; autonomously dispatches inspection bots to exact coordinate waypoints upon acoustic leak detection or thermal hotspot alerts.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Emergency Containment & Safety</span>
+                    <h4>Hazardous Chemical Zone: Autonomous Gas Cloud Containment & Isolation</h4>
+                    <p>Optical gas imaging and acoustic leak array fusion detects an incipient toxic vapor leak; TerraCC autonomously commands pneumatic perimeter block valves to close, starts negative-pressure scrubbers, and projects dynamic evacuation corridors.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SCADA / LEGACY SYSTEMS -->
+        <section class="corp-section" id="comparison">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Architectural Contrast</div>
+                <h2 class="corp-section-heading">Comparison with Traditional SCADA / Legacy Systems</h2>
+                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological leap from legacy passive monitoring to autonomous swarm command.</p>
+            </div>
+            <div class="matrix-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="th-legacy">Traditional Legacy Systems / Traditional SCADA</th>
+                            <th class="th-platform">TerraCC Terrestrial Platform Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-legacy">Dozens of disjointed SCADA screens, flashing alarms, and cluttered text tables causing operator cognitive overload.</td>
+                            <td class="td-platform">Unified bimodal glass cockpit seamlessly fusing live process telemetry with autonomous agent rationales and predictive trajectories.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Manual phone calls, radios, and delayed paperwork to coordinate inter-plant utility transfers during trips.</td>
+                            <td class="td-platform">Sub-15ms autonomous closed-loop supervisory dispatch executing micro-setpoint adjustments across thousands of controllers.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Floods of 2,000+ unranked alarms per minute during unit trips, forcing operators to guess initiating root causes.</td>
+                            <td class="td-platform">Autonomous causal graph correlation groups secondary alarms into single actionable incidents with instant automated resolution steps.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Rigid desktop client software requiring expensive dedicated workstations with no mobile collaboration.</td>
+                            <td class="td-platform">High-performance web-native vector glass cockpit accessible securely on 8K MicroLED video walls, control consoles, and field tablets.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Manual shift handovers with incomplete operator logbooks and unrecorded manual setpoint changes.</td>
+                            <td class="td-platform">Continuous automated audit trail with millisecond-synchronized time-travel playback reconstructing every autonomous action.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
+                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
+                <p class="corp-section-subheading">Visual architecture diagram representing fleet-wide field telemetry ingestion, deterministic swarm bus, autonomous multi-agent decision engine, and bimodal glass cockpit.</p>
+            </div>
+
+            <div class="birdeye-diagram-card">
+                <div class="birdeye-diagram-grid">
+                    <!-- Node 01: Fleet-Wide Distributed Ingestion -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 01</span>
+                                <span class="diagram-node-icon">📡</span>
+                            </div>
+                            <div class="diagram-node-title">Fleet-Wide Distributed Ingestion</div>
+                            <div class="diagram-node-desc">Direct multi-site telemetry acquisition aggregating thousands of PLCs, DCS controllers, RTUs, smart meters, robotic agents, and multi-spectral CCTV feeds.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">OPC UA / TSN</span><span class="diagram-proto-chip">IEC 61850 MMS</span><span class="diagram-proto-chip">MQTT Sparkplug B</span>
+                        </div>
+                    </div>
+                    <!-- Node 02: Deterministic Swarm Telemetry Bus -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 02</span>
+                                <span class="diagram-node-icon">⚡</span>
+                            </div>
+                            <div class="diagram-node-title">Deterministic Swarm Telemetry Bus</div>
+                            <div class="diagram-node-desc">High-velocity bidirectional telemetry bus, lossless payload compression, dynamic jitter smoothing, and sub-15ms multi-site synchronization fabric.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Swarm Telemetry Bus</span><span class="diagram-proto-chip">Edge Consensus Fabric</span><span class="diagram-proto-chip">Sub-15ms Stream</span>
+                        </div>
+                    </div>
+                    <!-- Node 03: Autonomous Multi-Agent Decision Engine -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 03</span>
+                                <span class="diagram-node-icon">🧠</span>
+                            </div>
+                            <div class="diagram-node-title">Autonomous Multi-Agent Decision Engine</div>
+                            <div class="diagram-node-desc">Cooperative multi-agent swarm consensus, dynamic cross-plant load balancing, predictive setpoint trajectory optimization, and causal incident correlation.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Autonomous Swarm Core</span><span class="diagram-proto-chip">Multi-Agent Consensus</span><span class="diagram-proto-chip">Predictive Dispatch Engine</span>
+                        </div>
+                    </div>
+                    <!-- Node 04: Bimodal Glass Cockpit & Closed-Loop Actuation -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 04</span>
+                                <span class="diagram-node-icon">🎯</span>
+                            </div>
+                            <div class="diagram-node-title">Bimodal Glass Cockpit & Closed-Loop Actuation</div>
+                            <div class="diagram-node-desc">8K MicroLED operational video wall, automated supervisory dispatch, ISA-110 emergency operations canvas, and deterministic IEC 62443 fail-safe override.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Supervisory Dispatch</span><span class="diagram-proto-chip">Fail-Safe E-Stop</span><span class="diagram-proto-chip">ISA-110 Glass Cockpit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connecting Flow Indicator -->
+                <div class="diagram-flow-bar">
+                    <span class="flow-dot"></span>
+                    <span>DATA PIPELINE FLOW: Distributed Fleet Telemetry ➔ High-Throughput Swarm Bus ➔ Autonomous Multi-Agent Consensus ➔ Closed-Loop Supervisory Actuation & Glass Cockpit (< 15ms Latency)</span>
+                </div>
+            </div>
+        </section>
+    
+        </section>
+
+        <!-- PRODUCT PAGER -->
+        <div class="product-pager">
+            <a href="terra-hive.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TerraHive</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">All 20 Applications</span>
+            </a>
+            <a href="terra-alarm.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraAlarm</span>
+            </a>
+        </div>
+
+    </div>
+
+    
+    <!-- Corporate Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary">
+                    <h3>TERRESTRIAL PLATFORM</h3>
+                    <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
+                    <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
+                        Adani Enterprise Specification | Revision R00.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>AI & Autonomous Swarms</h5>
+                    <ul><li><a href="terra-ai.html">TerraAI</a></li><li><a href="terra-cognizance.html">TerraCognizance</a></li><li><a href="terra-embodiment.html">TerraEmbodiment</a></li><li><a href="terra-hive.html">TerraHive</a></li><li><a href="terra-cc.html">TerraCC</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Plant Engineering & Twins</h5>
+                    <ul><li><a href="terra-scada.html">TerraSCADA</a></li><li><a href="terra-avatar.html">TerraAvatar</a></li><li><a href="terra-assets.html">TerraAssets</a></li><li><a href="terra-pfd.html">TerraPFD</a></li><li><a href="terra-alarm.html">TerraAlarm</a></li><li><a href="tpim.html">TPIM</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Grids & Utilities</h5>
+                    <ul><li><a href="terra-gridx.html">TerraGridX</a></li><li><a href="terra-gridw.html">TerraGridW</a></li><li><a href="terra-gridg.html">TerraGridG</a></li><li><a href="terra-corroguard.html">TerraCorroGuard</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Energy & Facilities</h5>
+                    <ul><li><a href="terra-solar.html">TerraSolar</a></li><li><a href="terra-ems.html">TerraEMS</a></li><li><a href="terra-3rdeye.html">Terra3rdEye</a></li><li><a href="terra-bms.html">TerraBMS</a></li><li><a href="terra-hvac.html">TerraHVAC</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-legal-bar">
+                <div>© 2026 Terrestrial Platform Suite. Built for Enterprise Industrial Operations.</div>
+                <div>IEC 61850 | IEC 62443 | ISA 18.2 | 21 CFR Part 11 Certified Architecture</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.remove('open');
+        });
+    </script>
+    
+
+</body>
+</html>

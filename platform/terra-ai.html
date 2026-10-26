@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraAI | Enterprise Product Specification | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261024_perfect_bg">
+    <script src="theme.js"></script>
+</head>
+<body>
+
+    
+    <!-- Top Enterprise Navigation -->
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <div class="corp-logo-glyph">TP</div>
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <div class="corp-nav-links">
+                    <a href="../index.html" class="nav-link">Main Site</a>
+                    <a href="index.html" class="nav-link">All 20 Applications</a>
+
+                    <!-- Quick App Switcher Dropdown -->
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraAI</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            
+            <a href="terra-ai.html" class="dropdown-link active">
+                <span>TerraAI</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cognizance.html" class="dropdown-link">
+                <span>TerraCognizance</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-solar.html" class="dropdown-link">
+                <span>TerraSolar</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-ems.html" class="dropdown-link">
+                <span>TerraEMS</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-3rdeye.html" class="dropdown-link">
+                <span>Terra3rdEye</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-bms.html" class="dropdown-link">
+                <span>TerraBMS</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-hvac.html" class="dropdown-link">
+                <span>TerraHVAC</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-scada.html" class="dropdown-link">
+                <span>TerraSCADA</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-avatar.html" class="dropdown-link">
+                <span>TerraAvatar</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-assets.html" class="dropdown-link">
+                <span>TerraAssets</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-pfd.html" class="dropdown-link">
+                <span>TerraPFD</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-embodiment.html" class="dropdown-link">
+                <span>TerraEmbodiment</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-gridx.html" class="dropdown-link">
+                <span>TerraGridX</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridw.html" class="dropdown-link">
+                <span>TerraGridW</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridg.html" class="dropdown-link">
+                <span>TerraGridG</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-corroguard.html" class="dropdown-link">
+                <span>TerraCorroGuard</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-hive.html" class="dropdown-link">
+                <span>TerraHive</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cc.html" class="dropdown-link">
+                <span>TerraCC</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-alarm.html" class="dropdown-link">
+                <span>TerraAlarm</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="tpim.html" class="dropdown-link">
+                <span>TPIM</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+                        </div>
+                    </div>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">All 20 Applications</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li><a href="index.html">Autonomous AI & Swarms</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">TerraAI</li>
+            </ul>
+        </div>
+
+        <!-- PRODUCT HERO: FULL-WIDTH ATMOSPHERIC BANNER CARD WITH DOMAIN TECHNICAL BLUEPRINT -->
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <!-- BESPOKE DOMAIN TECHNICAL BLUEPRINT SVG BACKDROP -->
+                <div class="hero-svg-backdrop">
+<svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        
+        <defs>
+            <!-- Technical Blueprint Coordinate Grid -->
+            <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
+                <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
+            </pattern>
+            <!-- Soft Vignette so central text has optimal legibility -->
+            <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="65%">
+                <stop offset="0%" stop-color="#040817" stop-opacity="0.82" />
+                <stop offset="60%" stop-color="#040817" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#030612" stop-opacity="0.30" />
+            </radialGradient>
+            <!-- Glow Filter -->
+            <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- Background Grid Rect -->
+        <rect width="100%" height="100%" fill="url(#techGrid)" />
+    
+        <!-- Neural Synapses & Data Tensors (Left Cluster) -->
+        <g stroke="#38bdf8" stroke-width="1.2" opacity="0.38" fill="none">
+            <line x1="80" y1="120" x2="180" y2="180" />
+            <line x1="80" y1="240" x2="180" y2="180" />
+            <line x1="80" y1="240" x2="180" y2="300" />
+            <line x1="80" y1="360" x2="180" y2="300" />
+            <line x1="180" y1="180" x2="280" y2="240" />
+            <line x1="180" y1="300" x2="280" y2="240" />
+            <line x1="280" y1="240" x2="380" y2="160" />
+            <line x1="280" y1="240" x2="380" y2="320" />
+            <!-- Neural Node Circles -->
+            <circle cx="80" cy="120" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="80" cy="240" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="80" cy="360" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="180" cy="180" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="180" cy="300" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="280" cy="240" r="8" fill="#a855f7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="380" cy="160" r="6" fill="#2dd4bf" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="380" cy="320" r="6" fill="#2dd4bf" stroke="#fff" stroke-width="1.5"/>
+        </g>
+        <!-- Central Brain Geometry Rings (Subtle Backdrop) -->
+        <g stroke="rgba(56, 189, 248, 0.22)" stroke-width="1" fill="none" transform="translate(600, 250)">
+            <circle cx="0" cy="0" r="140" stroke-dasharray="4 6"/>
+            <circle cx="0" cy="0" r="200" stroke-dasharray="2 8"/>
+            <circle cx="0" cy="0" r="260" stroke-dasharray="8 12"/>
+            <path d="M -180 0 L 180 0 M 0 -180 L 0 180" stroke="rgba(56, 189, 248, 0.15)"/>
+        </g>
+        <!-- Right Cluster: Edge Ingestion & Actuation Loop -->
+        <g stroke="#38bdf8" stroke-width="1.2" opacity="0.38" fill="none">
+            <line x1="820" y1="160" x2="920" y2="240" />
+            <line x1="820" y1="320" x2="920" y2="240" />
+            <line x1="920" y1="240" x2="1020" y2="180" />
+            <line x1="920" y1="240" x2="1020" y2="300" />
+            <line x1="1020" y1="180" x2="1120" y2="120" />
+            <line x1="1020" y1="180" x2="1120" y2="240" />
+            <line x1="1020" y1="300" x2="1120" y2="360" />
+            <circle cx="820" cy="160" r="6" fill="#2dd4bf" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="820" cy="320" r="6" fill="#2dd4bf" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="920" cy="240" r="8" fill="#a855f7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="1020" cy="180" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="1020" cy="300" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="1120" cy="120" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="1120" cy="240" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="1120" cy="360" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+        </g>
+        <!-- Telemetry Floating HUD Annotations -->
+        <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.45)">
+            <text x="140" y="100">[ANALYTICS: PINO-SURROGATE 72H]</text>
+            <text x="140" y="420">[AUTONOMY: LEVEL-4 SUPERVISORY]</text>
+            <text x="940" y="100">[CLOSED_LOOP: MIMO SETPOINT ACTUATION]</text>
+            <text x="940" y="420">[CAUSAL_GRAPH: ZERO-HEURISTIC RCFA]</text>
+        </g>
+        <rect width="100%" height="100%" fill="url(#vignetteGrad)" />
+        
+        <!-- Blueprint HUD Corner Brackets & Scale Marks -->
+        <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
+            <path d="M 20 40 L 20 20 L 40 20" />
+            <path d="M 1180 40 L 1180 20 L 1160 20" />
+            <path d="M 20 460 L 20 480 L 40 480" />
+            <path d="M 1180 460 L 1180 480 L 1160 480" />
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
+            <text x="50" y="32">TERRESTRIAL-SYS // REF-R00</text>
+            <text x="1020" y="32">GRID RESOLUTION: 40px²</text>
+            <text x="50" y="475">CALIBRATION: DETERMINISTIC</text>
+            <text x="1050" y="475">SYNC: REAL-TIME</text>
+        </g>
+    
+    </svg>
+                </div>
+
+                <div class="hero-card-content">
+                    <!-- TOP BADGE PILL -->
+                    <div class="hero-top-badge">
+                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                    </div>
+
+                    <!-- MAIN FULL TITLE -->
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">TerraAI</span>: <span class="hero-title-tagline">Autonomous Industrial Intelligence & Physics-Informed Predictive Operations Engine</span>
+                    </h1>
+
+                    <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
+                    <div class="hero-pills-row">
+                        <div class="hero-metric-pill"><span class="pill-key">AUTONOMOUS CONTROL:</span> <span class="pill-val">Level 4 Supervisory Autonomy</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">PREDICTIVE HORIZON:</span> <span class="pill-val">72h Multi-Variable Lookahead</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">ANALYTICS ENGINE:</span> <span class="pill-val">PINO Neural Operators</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">CLOSED-LOOP LATENCY:</span> <span class="pill-val">Sub-25ms Deterministic Actuation</span></div>
+                    </div>
+
+                    <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">
+                            “Industrial autonomy is not mere alerting or passive dashboards — it is continuous predictive synthesis where physics-informed intelligence anticipates faults hours before inception, dynamically recalculates optimal setpoints, and executes closed-loop plant control with zero human latency.”
+                        </div>
+                        <div class="outcome-quote-author">
+                            — THE AUTONOMOUS INDUSTRIAL REVOLUTION
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY DESCRIPTION -->
+                    <p class="hero-card-description">TerraAI serves as the central autonomous nervous system and deep analytics engine for mission-critical industrial infrastructure. Bridging physical asset dynamics with advanced computational intelligence, it continuously ingests high-frequency telemetry across distributed control systems (DCS, PLC, SCADA, BMS, EMS) and enterprise systems (ERP, CMMS). Leveraging Physics-Informed Neural Operators (PINO), multivariate time-series forecasting, and causal fault propagation graphs, TerraAI transitions industrial plants from reactive intervention to fully autonomous, self-optimizing closed-loop operations.</p>
+
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">
+                            Explore Operational Interface ▾
+                        </a>
+                        <a href="#details" class="hero-secondary-btn">
+                            What TerraAI Will Do ↓
+                        </a>
+                        <a href="#usecases" class="hero-secondary-btn">
+                            Field Use Cases ↓
+                        </a>
+                        <a href="#architecture" class="hero-secondary-btn">
+                            BirdEye Architecture ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMATIC OPERATIONAL INTERFACE & SYSTEM REPRESENTATION (RESTORED BELOW HERO) -->
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title">
+                        <span class="live-dot">●</span> TerraAI ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                    </div>
+                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terra_ai_showcase.jpg?v=20261019_fullbleed" alt="TerraAI Operational Interface" class="showcase-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <section class="corp-section" id="details">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Application Operational Details</div>
+                <h2 class="corp-section-heading">What TerraAI Will Do</h2>
+                <p class="corp-section-subheading">Core operational pillars engineered to drive autonomous closed-loop execution, workforce multiplier impact, raw material savings, and plant efficiency.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">⚡</div>
+                    <h4>Autonomous Closed-Loop Control & Production Optimization</h4>
+                    <p>Transitions plant operations from passive monitoring to autonomous action. 24x7 AI engine continuously analyzes machine telemetry, dynamically adjusts PLC/DCS setpoints, mitigates vibration anomalies on critical production lines, and maintains peak throughput without manual delays.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">👥</div>
+                    <h4>Reduced Manpower & Workforce Multiplier</h4>
+                    <p>Drastically reduces the need for routine floor monitoring, desk watchstanders, and manual paperwork. Automatically generates maintenance work orders in ERP, correlates shift attendance shortages, and recommends optimal worker reallocation when staffing is low.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">📦</div>
+                    <h4>Raw Material & Inventory Optimization</h4>
+                    <p>Continuously forecasts material consumption and monitors warehouse levels. Automatically generates purchase requisitions in SAP ERP when stock drops below reorder points, calculates optimal order quantities, and cuts raw material scrap during line changeovers.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🌱</div>
+                    <h4>Energy & Operational Cost Efficiency</h4>
+                    <p>Correlates real-time power, fuel, compressed air, and water telemetry to eliminate utility waste. Instantly pinpoints pipeline leaks, balances peak electrical demand to avoid billing penalties, and optimizes thermodynamic chiller/boiler staging to lower operating costs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES (QA, REDUCED MANPOWER, EFFICIENCY, PRODUCTIVITY) -->
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
+                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
+                <p class="corp-section-subheading">Documented industrial deployments demonstrating autonomous closed-loop control, predictive analytics, and enterprise efficiency.</p>
+            </div>
+            <div class="usecase-deck">
+                <div class="usecase-box">
+                    <span class="usecase-badge">Predictive Analytics & Machine Reliability</span>
+                    <h4>Supercritical Turbine Train: Autonomous Torsional Vibration & Bearing Oil Whirl Mitigation</h4>
+                    <p>Analyzes high-frequency (10 kHz) proximity probe spectra; detects incipient sub-synchronous oil whirl resonance 48 hours prior to alarm thresholds; autonomously trims governor steam admission valves via PLC and dispatches vibration engineering work orders in SAP, averting catastrophic rotor rub and $2.4M in downtime.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Autonomous Process Optimization</span>
+                    <h4>Chemical Refining & Utilities: Closed-Loop Multi-Variable Combustion & Emission Optimization</h4>
+                    <p>Ingests 32 continuous process variables (stack O2, NOx, fuel gas BTU, furnace draft); runs dynamic neural MPC to modulate primary air dampers and fuel staging in real time, driving a 2.1% thermal efficiency improvement and reducing NOx emissions by 14.8% without manual operator trim.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Mission-Critical Grid Autonomy</span>
+                    <h4>Extra-High Voltage (EHV) Transmission: Autonomous Substation Islanding & Synchrophasor PMU Analytics</h4>
+                    <p>Continuously computes Rate of Change of Frequency (ROCOF) and voltage vector phase angles from IEEE C37.118 PMUs; autonomously isolates faulty 400kV bus sections and re-balances localized microgrid generation within 18 milliseconds during sudden line tripping, preventing regional cascading blackouts.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Thermodynamic Energy Analytics</span>
+                    <h4>District Energy & Industrial Chillers: Autonomous Low Delta-T Elimination & Thermodynamic Staging</h4>
+                    <p>Evaluates real-time chiller COP curves, condenser approach temperatures, and variable secondary pumping hydraulics; autonomously shifts chiller staging sequences and resets chilled water supply temperature, eliminating low delta-T syndrome and cutting campus cooling power by 23.6%.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Autonomous Vision & Life-Safety</span>
+                    <h4>Hazardous Hydrocarbon Processing: Vision-Interlocked Autonomous Vapor Containment & Emergency Isolation</h4>
+                    <p>Multi-spectral optical gas imaging combined with acoustic leak sensor arrays detects volatile organic compound (VOC) micro-fugitive leaks; autonomously isolates pneumatic pipeline block valves, activates targeted nitrogen purges, and dispatches safety alarms with geotagged thermal snapshots within 1.2 seconds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SCADA / LEGACY SYSTEMS -->
+        <section class="corp-section" id="comparison">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Architectural Contrast</div>
+                <h2 class="corp-section-heading">Comparison with Traditional SCADA / Legacy Systems</h2>
+                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological leap from legacy passive telemetry to physics-informed autonomous intelligence.</p>
+            </div>
+            <div class="matrix-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="th-legacy">Traditional Legacy Systems / Traditional SCADA</th>
+                            <th class="th-platform">TerraAI Terrestrial Platform Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-legacy">Reactive high/low threshold limit alarms trigger only after physical process degradation has already breached safety margins.</td>
+                            <td class="td-platform">Physics-Informed Neural Operators (PINO) forecast multi-variable thermal, electrical, and mechanical asset trajectories up to 72 hours ahead.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Operators must manually adjust setpoints, radio field technicians, and type manual maintenance tickets across separate software silos.</td>
+                            <td class="td-platform">Automated Alert-to-Action pipeline executes sub-25ms supervisory setpoint optimization and auto-generates ERP work orders without human latency.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Operators must memorize hundreds of cryptic tag IDs and navigate rigid, siloed hierarchical software menus across dozens of monitors.</td>
+                            <td class="td-platform">Unified cross-system semantic knowledge fabric allows natural language queries (e.g. 'Correlate heat exchanger fouling against fuel blend changes over 30 days').</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Single-input single-output (SISO) PID controllers struggle with non-linear cross-coupling, dead times, and seasonal ambient fluctuations.</td>
+                            <td class="td-platform">Dynamic multi-input multi-output (MIMO) Model Predictive Control constantly re-evaluates multi-variable trade-offs to maximize efficiency within safety envelopes.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Alarm floods of 2,000+ alarms per minute during plant trips overwhelm operators, requiring days of manual post-mortem trip log forensics.</td>
+                            <td class="td-platform">Real-time directed causal graphs (DAGs) automatically de-duplicate alarm avalanches, pinpointing the single initiating root cause within 50 milliseconds.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
+                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
+                <p class="corp-section-subheading">Visual architecture diagram representing sub-millisecond field telemetry ingestion, deterministic edge fabric, physics-informed AI reasoning, and autonomous closed-loop actuation.</p>
+            </div>
+
+            <div class="birdeye-diagram-card">
+                <div class="birdeye-diagram-grid">
+                    <!-- Node 01: Multi-Protocol Field Ingestion -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 01</span>
+                                <span class="diagram-node-icon">📡</span>
+                            </div>
+                            <div class="diagram-node-title">Multi-Protocol Field Ingestion</div>
+                            <div class="diagram-node-desc">Sub-millisecond multi-protocol telemetry acquisition aggregating DCS, PLCs, RTUs, smart transmitters, and plant-wide sensor networks.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">OPC UA / TSN</span><span class="diagram-proto-chip">IEC 61850 MMS</span><span class="diagram-proto-chip">MQTT Sparkplug B</span>
+                        </div>
+                    </div>
+                    <!-- Node 02: Deterministic Edge Stream Bus -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 02</span>
+                                <span class="diagram-node-icon">⚡</span>
+                            </div>
+                            <div class="diagram-node-title">Deterministic Edge Stream Bus</div>
+                            <div class="diagram-node-desc">Ultra-high-throughput event streaming fabric, lossless telemetry compression, dynamic jitter smoothing, and unified schema normalization.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Event Stream Bus</span><span class="diagram-proto-chip">Lossless Compression</span><span class="diagram-proto-chip">Sub-25ms Stream</span>
+                        </div>
+                    </div>
+                    <!-- Node 03: Physics-Informed Predictive Core -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 03</span>
+                                <span class="diagram-node-icon">🧠</span>
+                            </div>
+                            <div class="diagram-node-title">Physics-Informed Predictive Core</div>
+                            <div class="diagram-node-desc">Physics-Informed Neural Operators (PINO), 72h multivariate lookahead forecasting, dynamic MIMO MPC, and causal graph root-cause attribution.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">PINO Neural Ops</span><span class="diagram-proto-chip">MIMO MPC Engine</span><span class="diagram-proto-chip">Causal Graph RCFA</span>
+                        </div>
+                    </div>
+                    <!-- Node 04: Autonomous Closed-Loop Cockpit -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 04</span>
+                                <span class="diagram-node-icon">🎯</span>
+                            </div>
+                            <div class="diagram-node-title">Autonomous Closed-Loop Cockpit</div>
+                            <div class="diagram-node-desc">Deterministic supervisory setpoint modulation, automated ERP/CMMS work order orchestration, and ANSI/ISA-101 high-performance operational cockpits.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Supervisory Setpoints</span><span class="diagram-proto-chip">ERP Auto-Orchestration</span><span class="diagram-proto-chip">ISA-101 Cockpit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connecting Flow Indicator -->
+                <div class="diagram-flow-bar">
+                    <span class="flow-dot"></span>
+                    <span>DATA PIPELINE FLOW: Sub-Millisecond Multi-Protocol Telemetry ➔ High-Throughput Normalized Stream ➔ Physics-Informed Predictive & Anomaly Engine ➔ Autonomous Closed-Loop Setpoint & Enterprise Actuation (< 25ms Determinism)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT PAGER -->
+        <div class="product-pager">
+            <a href="terra-cognizance.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TerraCognizance</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">All 20 Applications</span>
+            </a>
+            <a href="terra-solar.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraSolar</span>
+            </a>
+        </div>
+
+    </div>
+
+    
+    <!-- Corporate Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary">
+                    <h3>TERRESTRIAL PLATFORM</h3>
+                    <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
+                    <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
+                        Adani Enterprise Specification | Revision R00.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>AI & Autonomous Swarms</h5>
+                    <ul><li><a href="terra-ai.html">TerraAI</a></li><li><a href="terra-cognizance.html">TerraCognizance</a></li><li><a href="terra-embodiment.html">TerraEmbodiment</a></li><li><a href="terra-hive.html">TerraHive</a></li><li><a href="terra-cc.html">TerraCC</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Plant Engineering & Twins</h5>
+                    <ul><li><a href="terra-scada.html">TerraSCADA</a></li><li><a href="terra-avatar.html">TerraAvatar</a></li><li><a href="terra-assets.html">TerraAssets</a></li><li><a href="terra-pfd.html">TerraPFD</a></li><li><a href="terra-alarm.html">TerraAlarm</a></li><li><a href="tpim.html">TPIM</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Grids & Utilities</h5>
+                    <ul><li><a href="terra-gridx.html">TerraGridX</a></li><li><a href="terra-gridw.html">TerraGridW</a></li><li><a href="terra-gridg.html">TerraGridG</a></li><li><a href="terra-corroguard.html">TerraCorroGuard</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Energy & Facilities</h5>
+                    <ul><li><a href="terra-solar.html">TerraSolar</a></li><li><a href="terra-ems.html">TerraEMS</a></li><li><a href="terra-3rdeye.html">Terra3rdEye</a></li><li><a href="terra-bms.html">TerraBMS</a></li><li><a href="terra-hvac.html">TerraHVAC</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-legal-bar">
+                <div>© 2026 Terrestrial Platform Suite. Built for Enterprise Industrial Operations.</div>
+                <div>IEC 61850 | IEC 62443 | ISA 18.2 | 21 CFR Part 11 Certified Architecture</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.remove('open');
+        });
+    </script>
+    
+
+</body>
+</html>

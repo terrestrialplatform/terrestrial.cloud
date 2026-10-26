@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraCognizance | Enterprise Product Specification | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261024_perfect_bg">
+    <script src="theme.js"></script>
+</head>
+<body>
+
+    <!-- Top Enterprise Navigation -->
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <div class="corp-logo-glyph">TP</div>
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <div class="corp-nav-links">
+                    <a href="../index.html" class="nav-link">Main Site</a>
+                    <a href="index.html" class="nav-link">All 20 Applications</a>
+
+                    <!-- Quick App Switcher Dropdown -->
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraCognizance</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            <a href="terra-ai.html" class="dropdown-link">
+                                <span>TerraAI</span>
+                                <span class="cat-tag">Autonomous</span>
+                            </a>
+                            <a href="terra-cognizance.html" class="dropdown-link active">
+                                <span>TerraCognizance</span>
+                                <span class="cat-tag">Autonomous</span>
+                            </a>
+                            <a href="terra-solar.html" class="dropdown-link">
+                                <span>TerraSolar</span>
+                                <span class="cat-tag">Vision</span>
+                            </a>
+                            <a href="terra-ems.html" class="dropdown-link">
+                                <span>TerraEMS</span>
+                                <span class="cat-tag">Vision</span>
+                            </a>
+                            <a href="terra-3rdeye.html" class="dropdown-link">
+                                <span>Terra3rdEye</span>
+                                <span class="cat-tag">Vision</span>
+                            </a>
+                            <a href="terra-bms.html" class="dropdown-link">
+                                <span>TerraBMS</span>
+                                <span class="cat-tag">Smart</span>
+                            </a>
+                            <a href="terra-hvac.html" class="dropdown-link">
+                                <span>TerraHVAC</span>
+                                <span class="cat-tag">Smart</span>
+                            </a>
+                            <a href="terra-scada.html" class="dropdown-link">
+                                <span>TerraSCADA</span>
+                                <span class="cat-tag">Plant</span>
+                            </a>
+                            <a href="terra-avatar.html" class="dropdown-link">
+                                <span>TerraAvatar</span>
+                                <span class="cat-tag">Plant</span>
+                            </a>
+                            <a href="terra-assets.html" class="dropdown-link">
+                                <span>TerraAssets</span>
+                                <span class="cat-tag">Plant</span>
+                            </a>
+                            <a href="terra-pfd.html" class="dropdown-link">
+                                <span>TerraPFD</span>
+                                <span class="cat-tag">Plant</span>
+                            </a>
+                            <a href="terra-embodiment.html" class="dropdown-link">
+                                <span>TerraEmbodiment</span>
+                                <span class="cat-tag">Autonomous</span>
+                            </a>
+                            <a href="terra-gridx.html" class="dropdown-link">
+                                <span>TerraGridX</span>
+                                <span class="cat-tag">Grids</span>
+                            </a>
+                            <a href="terra-gridw.html" class="dropdown-link">
+                                <span>TerraGridW</span>
+                                <span class="cat-tag">Grids</span>
+                            </a>
+                            <a href="terra-gridg.html" class="dropdown-link">
+                                <span>TerraGridG</span>
+                                <span class="cat-tag">Grids</span>
+                            </a>
+                            <a href="terra-corroguard.html" class="dropdown-link">
+                                <span>TerraCorroGuard</span>
+                                <span class="cat-tag">Grids</span>
+                            </a>
+                            <a href="terra-hive.html" class="dropdown-link">
+                                <span>TerraHive</span>
+                                <span class="cat-tag">Autonomous</span>
+                            </a>
+                            <a href="terra-cc.html" class="dropdown-link">
+                                <span>TerraCC</span>
+                                <span class="cat-tag">Autonomous</span>
+                            </a>
+                            <a href="terra-alarm.html" class="dropdown-link">
+                                <span>TerraAlarm</span>
+                                <span class="cat-tag">Plant</span>
+                            </a>
+                            <a href="tpim.html" class="dropdown-link">
+                                <span>TPIM</span>
+                                <span class="cat-tag">Plant</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">All 20 Applications</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li><a href="index.html">Autonomous AI & Swarms</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">TerraCognizance</li>
+            </ul>
+        </div>
+
+        <!-- PRODUCT HERO: FULL-WIDTH ATMOSPHERIC BANNER CARD WITH DOMAIN TECHNICAL BLUEPRINT -->
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <!-- BESPOKE DOMAIN TECHNICAL BLUEPRINT SVG BACKDROP -->
+                <div class="hero-svg-backdrop">
+                    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Technical Blueprint Coordinate Grid -->
+                            <pattern id="techGridCognizance" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
+                                <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+                                <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
+                            </pattern>
+                            <!-- Soft Vignette -->
+                            <radialGradient id="vignetteCognizance" cx="50%" cy="50%" r="65%">
+                                <stop offset="0%" stop-color="#040817" stop-opacity="0.82" />
+                                <stop offset="60%" stop-color="#040817" stop-opacity="0.55" />
+                                <stop offset="100%" stop-color="#030612" stop-opacity="0.30" />
+                            </radialGradient>
+                            <!-- Glow Filter -->
+                            <filter id="goldCyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <!-- Background Grid Rect -->
+                        <rect width="100%" height="100%" fill="url(#techGridCognizance)" />
+
+                        <!-- Graph-of-Thought Relational Topology (Left Cluster: Document Vault & Claims) -->
+                        <g stroke="#38bdf8" stroke-width="1.2" opacity="0.42" fill="none">
+                            <line x1="90" y1="130" x2="200" y2="190" />
+                            <line x1="90" y1="260" x2="200" y2="190" />
+                            <line x1="90" y1="260" x2="200" y2="320" />
+                            <line x1="90" y1="380" x2="200" y2="320" />
+                            <line x1="200" y1="190" x2="310" y2="250" />
+                            <line x1="200" y1="320" x2="310" y2="250" />
+                            <line x1="310" y1="250" x2="410" y2="170" />
+                            <line x1="310" y1="250" x2="410" y2="340" />
+                            <!-- Node Entities -->
+                            <circle cx="90" cy="130" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="90" cy="260" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="90" cy="380" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="200" cy="190" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="200" cy="320" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="310" cy="250" r="9" fill="#f59e0b" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="410" cy="170" r="6" fill="#10b981" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="410" cy="340" r="6" fill="#10b981" stroke="#fff" stroke-width="1.5"/>
+                        </g>
+
+                        <!-- Central Autonomous Knowledge Graph Rings -->
+                        <g stroke="rgba(56, 189, 248, 0.25)" stroke-width="1" fill="none" transform="translate(600, 250)">
+                            <circle cx="0" cy="0" r="130" stroke-dasharray="4 6"/>
+                            <circle cx="0" cy="0" r="190" stroke-dasharray="2 8"/>
+                            <circle cx="0" cy="0" r="250" stroke-dasharray="8 12"/>
+                            <path d="M -170 0 L 170 0 M 0 -170 L 0 170" stroke="rgba(245, 158, 11, 0.20)"/>
+                            <polygon points="0,-110 95,-55 95,55 0,110 -95,55 -95,-55" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
+                        </g>
+
+                        <!-- Right Cluster: Evidentiary Audit & Rebuttal Stream -->
+                        <g stroke="#38bdf8" stroke-width="1.2" opacity="0.42" fill="none">
+                            <line x1="790" y1="170" x2="890" y2="250" />
+                            <line x1="790" y1="340" x2="890" y2="250" />
+                            <line x1="890" y1="250" x2="1000" y2="190" />
+                            <line x1="890" y1="250" x2="1000" y2="310" />
+                            <line x1="1000" y1="190" x2="1110" y2="130" />
+                            <line x1="1000" y1="190" x2="1110" y2="250" />
+                            <line x1="1000" y1="310" x2="1110" y2="370" />
+                            <circle cx="790" cy="170" r="6" fill="#10b981" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="790" cy="340" r="6" fill="#10b981" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="890" cy="250" r="9" fill="#f59e0b" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="1000" cy="190" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="1000" cy="310" r="6" fill="#38bdf8" stroke="#fff" stroke-width="1.5"/>
+                            <circle cx="1110" cy="130" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="1110" cy="250" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                            <circle cx="1110" cy="370" r="5" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+                        </g>
+
+                        <!-- Telemetry Floating HUD Annotations -->
+                        <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.48)">
+                            <text x="130" y="95">[TOPOLOGY: GRAPH-OF-THOUGHT]</text>
+                            <text x="130" y="425">[PROVENANCE: 100% BELONGS_TO]</text>
+                            <text x="940" y="95">[HEARING_MODE: REBUTTAL CONSOLE]</text>
+                            <text x="940" y="425">[ZERO_HALLUCINATION: DETERMINISTIC]</text>
+                        </g>
+                        <rect width="100%" height="100%" fill="url(#vignetteCognizance)" />
+
+                        <!-- Blueprint HUD Corner Brackets & Scale Marks -->
+                        <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
+                            <path d="M 20 40 L 20 20 L 40 20" />
+                            <path d="M 1180 40 L 1180 20 L 1160 20" />
+                            <path d="M 20 460 L 20 480 L 40 480" />
+                            <path d="M 1180 460 L 1180 480 L 1160 480" />
+                        </g>
+                        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
+                            <text x="50" y="32">TERRESTRIAL-SYS // COGNIZANCE-R00</text>
+                            <text x="1000" y="32">EVIDENTIARY VAULT: ACTIVE</text>
+                            <text x="50" y="475">CALIBRATION: DETERMINISTIC GoT</text>
+                            <text x="1020" y="475">SYNC: SUB-SECOND AUDIT</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="hero-card-content">
+                    <!-- TOP BADGE PILL -->
+                    <div class="hero-top-badge">
+                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                    </div>
+
+                    <!-- MAIN FULL TITLE -->
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">TerraCognizance</span>: <span class="hero-title-tagline">Enterprise Legal Cognizance & Litigation Intelligence Platform (Graph-of-Thought RAG)</span>
+                    </h1>
+
+                    <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
+                    <div class="hero-pills-row">
+                        <div class="hero-metric-pill"><span class="pill-key">KNOWLEDGE VAULT:</span> <span class="pill-val">Graph-of-Thought RAG</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">EVIDENTIARY AUDIT:</span> <span class="pill-val">100% Provenance Citations</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">REASONING SPEED:</span> <span class="pill-val">Sub-Second GoT Synthesis</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">HALLUCINATION RATE:</span> <span class="pill-val">Zero Heuristic Bias</span></div>
+                    </div>
+
+                    <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">
+                            “Litigation is not won on generic search, but on interconnecting fragmented truth — transforming sprawling case records into an unshakeable knowledge vault where every assertion commands instant, clause-level proof.”
+                        </div>
+                        <div class="outcome-quote-author">
+                            — THE REVOLUTION IN ENTERPRISE LITIGATION
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY DESCRIPTION -->
+                    <p class="hero-card-description">TerraCognizance transforms high-stakes legal corpora, pleadings, contracts, and court exhibits into a structured, interconnected, verifiable Knowledge Vault governed by autonomous Graph-of-Thought architecture. Delivering deterministic retrieval with sub-second synthesis, it powers courtroom hearing simulations, cross-examination rebuttals, and clause-level provenance verification with zero hallucinations.</p>
+
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">
+                            Explore Operational Interface ▾
+                        </a>
+                        <a href="#details" class="hero-secondary-btn">
+                            What TerraCognizance Will Do ↓
+                        </a>
+                        <a href="#usecases" class="hero-secondary-btn">
+                            Field Use Cases ↓
+                        </a>
+                        <a href="#architecture" class="hero-secondary-btn">
+                            BirdEye Architecture ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMATIC OPERATIONAL INTERFACE & SYSTEM REPRESENTATION -->
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title">
+                        <span class="live-dot">●</span> TerraCognizance ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                    </div>
+                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terra_cognizance_isa101_showcase.jpg" alt="TerraCognizance Operational Interface" class="showcase-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <section class="corp-section" id="details">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Application Operational Details</div>
+                <h2 class="corp-section-heading">What TerraCognizance Will Do</h2>
+                <p class="corp-section-subheading">Specific litigation intelligence functions and knowledge graph reasoning capabilities directly sourced from technical documentation.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">⚡</div>
+                    <h4>Strategy Q&A & Legal Theory Simulation</h4>
+                    <p>Conducts deep conversational analysis across complex legal corpora and multi-jurisdictional precedents; stress-tests statutory defenses, evaluates judicial admissibility patterns, and calculates damages quantum with instant clause-level references.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">⚡</div>
+                    <h4>Court Hearing Mode & Live Rebuttal Cockpit</h4>
+                    <p>Ultra-fast, high-density courtroom cockpit providing instant counter-arguments, identifying adverse witness contradictions, and generating exact exhibit, page, and paragraph citations during live cross-examinations and hearings.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">⚡</div>
+                    <h4>Graph-of-Thought Relational Knowledge Graph</h4>
+                    <p>Interconnects sprawling claims, evidence nodes, statutory doctrines, and prayers across 40,000+ matter filings into a unified relational topology, exposing hidden dependencies and corporate entity mappings with sub-50ms node traversal.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">⚡</div>
+                    <h4>Verifiable Evidentiary Provenance & Audit Trail</h4>
+                    <p>Strict clause-level provenance verification ensures every assertion, summary, and rebuttal citation is directly anchored to verified court exhibits and statutory records, eliminating hallucinated references and ensuring 100% evidentiary defensibility.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES -->
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
+                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
+                <p class="corp-section-subheading">Actual documented legal use cases across Commercial Suits, IP Defense, EPC Arbitration, and Regulatory Compliance.</p>
+            </div>
+            <div class="usecase-deck">
+                <div class="usecase-box">
+                    <span class="usecase-badge">Commercial Litigation</span>
+                    <h4>High-Stakes Commercial & Shareholder Suits</h4>
+                    <p>Rapidly cross-references 40,000 pages of commercial agreements, emails, and board resolutions to expose shareholder agreement breaches, reconcile indemnity claims, and calculate damages quantum with zero evidentiary gaps.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Intellectual Property</span>
+                    <h4>IP Infringement & Trade Secret Misappropriation</h4>
+                    <p>Constructs precise forensic timelines of source code commits, non-disclosure agreements, and employee movements; maps patent claim charts directly to competitor product teardowns and deposition transcripts.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Arbitration & Infrastructure</span>
+                    <h4>Arbitration & Multi-Tier EPC Construction Disputes</h4>
+                    <p>Ingests complex FIDIC engineering contracts, variation orders, and site inspection diaries; automatically quantifies critical path delay claims and contractor liquidated damages reconciliations.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Regulatory Defense</span>
+                    <h4>Regulatory Enforcement Defense & White-Collar Audits</h4>
+                    <p>Audits statutory compliance notices and multi-year banking transaction trails; reconstructs anti-corruption defense filings and establishes unbroken chains of custody across cross-border regulatory inquiries.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SYSTEMS -->
+        <section class="corp-section" id="comparison">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Architectural Contrast</div>
+                <h2 class="corp-section-heading">Comparison with Traditional Legal Search / Naive RAG</h2>
+                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological shift from legacy document search engines to Graph-of-Thought RAG.</p>
+            </div>
+            <div class="matrix-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="th-legacy">Traditional Legal Search & Naive RAG Systems</th>
+                            <th class="th-platform">TerraCognizance Terrestrial Platform Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-legacy">Vector chunking fractures sentences and multi-page contract clauses, resulting in lost contextual relationships and misleading snippet retrieval.</td>
+                            <td class="td-platform">Graph-of-Thought holistic node traversal preserves document hierarchies, cross-references, and structural relations across all matter filings.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Unverified generative systems produce plausible-sounding hallucinated legal citations and phantom contract provisions.</td>
+                            <td class="td-platform">Strict 100% BELONGS_TO provenance audit: every synthesis bullet is bound to exact document, page number, and paragraph coordinates.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Keyword and semantic vector searches fail when parties, corporate subsidiaries, or witnesses are referenced by acronyms or aliases.</td>
+                            <td class="td-platform">Deterministic 4-level entity resolution cascade collapses aliases, misspellings, and subsidiary names into unified canonical identities.</td>
+                        </tr>
+                        <tr>
+                            <td class="td-legacy">Static PDF viewing requires hours of manual cross-referencing and highlighter tagging during time-critical court hearings.</td>
+                            <td class="td-platform">Court Hearing Mode provides sub-second rebuttal synthesis and instant cross-examination cards triggered by live opposing arguments.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
+                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
+                <p class="corp-section-subheading">Visual architecture diagram representing legal corpus ingestion, deterministic knowledge vault stream, Graph-of-Thought RAG reasoning, and courtroom cockpit execution.</p>
+            </div>
+
+            <div class="birdeye-diagram-card">
+                <div class="birdeye-diagram-grid">
+                    <!-- Node 01: Multi-Modal Legal Ingestion -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 01</span>
+                                <span class="diagram-node-icon">📡</span>
+                            </div>
+                            <div class="diagram-node-title">Multi-Modal Legal Ingestion</div>
+                            <div class="diagram-node-desc">Direct multi-format legal ingestion aggregating pleadings, contracts, court exhibits, depositions, and transcripts with automated OCR normalization.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Secure Ingestion API</span><span class="diagram-proto-chip">Encrypted Vault Storage</span><span class="diagram-proto-chip">PDF/OCR Stream</span>
+                        </div>
+                    </div>
+                    <!-- Node 02: Deterministic Vault Stream -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 02</span>
+                                <span class="diagram-node-icon">⚡</span>
+                            </div>
+                            <div class="diagram-node-title">Deterministic Vault Stream</div>
+                            <div class="diagram-node-desc">High-throughput canonical Markdown nodes, bidirectional link indexing, deterministic alias collapsing, and sub-50ms graph synchronization.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Knowledge Vault Bus</span><span class="diagram-proto-chip">Entity Resolution Bus</span><span class="diagram-proto-chip">Sub-50ms Graph Stream</span>
+                        </div>
+                    </div>
+                    <!-- Node 03: Graph-of-Thought Reasoning Core -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 03</span>
+                                <span class="diagram-node-icon">🧠</span>
+                            </div>
+                            <div class="diagram-node-title">Graph-of-Thought Reasoning Core</div>
+                            <div class="diagram-node-desc">Hybrid Personalized PageRank (PPR), dense vector retrieval, reciprocal rank fusion, and multi-turn autonomous tool synthesis.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Graph-of-Thought AI</span><span class="diagram-proto-chip">Personalized PageRank</span><span class="diagram-proto-chip">Tri-Model RRF</span>
+                        </div>
+                    </div>
+                    <!-- Node 04: Courtroom Cockpit & Strategy Console -->
+                    <div class="diagram-node">
+                        <div>
+                            <div class="diagram-node-header">
+                                <span class="diagram-layer-tag">Layer 04</span>
+                                <span class="diagram-node-icon">🎯</span>
+                            </div>
+                            <div class="diagram-node-title">Courtroom Cockpit & Strategy Console</div>
+                            <div class="diagram-node-desc">Live hearing rebuttal cards, clause-level citation drawer, human-in-the-loop Adjudicator review, and ANSI/ISA-101 litigation intelligence displays.</div>
+                        </div>
+                        <div class="diagram-node-protocols">
+                            <span class="diagram-proto-chip">Court Hearing Mode</span><span class="diagram-proto-chip">Provenance Drawer</span><span class="diagram-proto-chip">ISA-101 Legal HMI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connecting Flow Indicator -->
+                <div class="diagram-flow-bar">
+                    <span class="flow-dot"></span>
+                    <span>DATA PIPELINE FLOW: Legal Corpus & Exhibit Ingestion ➔ Deterministic Knowledge Vault Stream ➔ Graph-of-Thought RAG Reasoning ➔ Closed-Loop Court Hearing & Strategy Actuation (< 50ms Latency)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT PAGER -->
+        <div class="product-pager">
+            <a href="tpim.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TPIM</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">All 20 Applications</span>
+            </a>
+            <a href="terra-ai.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraAI</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Corporate Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary">
+                    <h3>TERRESTRIAL PLATFORM</h3>
+                    <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
+                    <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
+                        Adani Enterprise Specification | Revision R00.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>AI & Autonomous Swarms</h5>
+                    <ul>
+                        <li><a href="terra-ai.html">TerraAI</a></li>
+                        <li><a href="terra-cognizance.html">TerraCognizance</a></li>
+                        <li><a href="terra-embodiment.html">TerraEmbodiment</a></li>
+                        <li><a href="terra-hive.html">TerraHive</a></li>
+                        <li><a href="terra-cc.html">TerraCC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Plant Engineering & Twins</h5>
+                    <ul>
+                        <li><a href="terra-scada.html">TerraSCADA</a></li>
+                        <li><a href="terra-avatar.html">TerraAvatar</a></li>
+                        <li><a href="terra-assets.html">TerraAssets</a></li>
+                        <li><a href="terra-pfd.html">TerraPFD</a></li>
+                        <li><a href="terra-alarm.html">TerraAlarm</a></li>
+                        <li><a href="tpim.html">TPIM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Grids & Utilities</h5>
+                    <ul>
+                        <li><a href="terra-gridx.html">TerraGridX</a></li>
+                        <li><a href="terra-gridw.html">TerraGridW</a></li>
+                        <li><a href="terra-gridg.html">TerraGridG</a></li>
+                        <li><a href="terra-corroguard.html">TerraCorroGuard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Energy & Facilities</h5>
+                    <ul>
+                        <li><a href="terra-solar.html">TerraSolar</a></li>
+                        <li><a href="terra-ems.html">TerraEMS</a></li>
+                        <li><a href="terra-3rdeye.html">Terra3rdEye</a></li>
+                        <li><a href="terra-bms.html">TerraBMS</a></li>
+                        <li><a href="terra-hvac.html">TerraHVAC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-legal-bar">
+                <div>© 2026 Terrestrial Platform Suite. Built for Enterprise Industrial Operations.</div>
+                <div>IEC 61850 | IEC 62443 | ISA 18.2 | 21 CFR Part 11 Certified Architecture</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.remove('open');
+        });
+    </script>
+
+</body>
+</html>

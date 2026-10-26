@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraGridX | Enterprise Product Specification | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261024_perfect_bg">
+    <script src="theme.js"></script>
+</head>
+<body>
+
+    
+    <!-- Top Enterprise Navigation -->
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <div class="corp-logo-glyph">TP</div>
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <div class="corp-nav-links">
+                    <a href="../index.html" class="nav-link">Main Site</a>
+                    <a href="index.html" class="nav-link">All 20 Applications</a>
+
+                    <!-- Quick App Switcher Dropdown -->
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraGridX</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            
+            <a href="terra-ai.html" class="dropdown-link">
+                <span>TerraAI</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cognizance.html" class="dropdown-link">
+                <span>TerraCognizance</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-solar.html" class="dropdown-link">
+                <span>TerraSolar</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-ems.html" class="dropdown-link">
+                <span>TerraEMS</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-3rdeye.html" class="dropdown-link">
+                <span>Terra3rdEye</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-bms.html" class="dropdown-link">
+                <span>TerraBMS</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-hvac.html" class="dropdown-link">
+                <span>TerraHVAC</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-scada.html" class="dropdown-link">
+                <span>TerraSCADA</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-avatar.html" class="dropdown-link">
+                <span>TerraAvatar</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-assets.html" class="dropdown-link">
+                <span>TerraAssets</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-pfd.html" class="dropdown-link">
+                <span>TerraPFD</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-embodiment.html" class="dropdown-link">
+                <span>TerraEmbodiment</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-gridx.html" class="dropdown-link active">
+                <span>TerraGridX</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridw.html" class="dropdown-link">
+                <span>TerraGridW</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridg.html" class="dropdown-link">
+                <span>TerraGridG</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-corroguard.html" class="dropdown-link">
+                <span>TerraCorroGuard</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-hive.html" class="dropdown-link">
+                <span>TerraHive</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cc.html" class="dropdown-link">
+                <span>TerraCC</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-alarm.html" class="dropdown-link">
+                <span>TerraAlarm</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="tpim.html" class="dropdown-link">
+                <span>TPIM</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+                        </div>
+                    </div>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">All 20 Applications</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li><a href="index.html">Grids & Utilities</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">TerraGridX</li>
+            </ul>
+        </div>
+
+        <!-- PRODUCT HERO: FULL-WIDTH ATMOSPHERIC BANNER CARD WITH DOMAIN TECHNICAL BLUEPRINT -->
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <!-- BESPOKE DOMAIN TECHNICAL BLUEPRINT SVG BACKDROP -->
+                <div class="hero-svg-backdrop">
+<svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        
+        <defs>
+            <!-- Technical Blueprint Coordinate Grid -->
+            <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
+                <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
+            </pattern>
+            <!-- Soft Vignette so central text has optimal legibility -->
+            <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="65%">
+                <stop offset="0%" stop-color="#040817" stop-opacity="0.82" />
+                <stop offset="60%" stop-color="#040817" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#030612" stop-opacity="0.30" />
+            </radialGradient>
+            <!-- Glow Filter -->
+            <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- Background Grid Rect -->
+        <rect width="100%" height="100%" fill="url(#techGrid)" />
+    
+        <!-- 400kV Substation Busbar & Circuit Breakers (Left) -->
+        <g stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.38">
+            <line x1="60" y1="140" x2="380" y2="140" stroke-width="4" stroke="#38bdf8"/>
+            <line x1="60" y1="180" x2="380" y2="180" stroke-width="4" stroke="#0284c7"/>
+            <text x="70" y="130" font-family="JetBrains Mono" font-size="8" fill="#38bdf8">MAIN BUS A (400kV)</text>
+            <text x="70" y="200" font-family="JetBrains Mono" font-size="8" fill="#0284c7">MAIN BUS B (400kV)</text>
+            <!-- Bus Coupler Bay -->
+            <line x1="180" y1="140" x2="180" y2="180" stroke="#f59e0b" stroke-width="2"/>
+            <!-- Breaker & Disconnector -->
+            <line x1="280" y1="180" x2="280" y2="280" />
+            <rect x="265" y="280" width="30" height="30" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8"/>
+            <line x1="280" y1="310" x2="280" y2="400" />
+        </g>
+        <!-- PRP / HSR Dual Fiber Ring & GOOSE Tripping Stream (Right) -->
+        <g stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.38">
+            <!-- Dual Ring A & B -->
+            <ellipse cx="980" cy="240" rx="120" ry="70" stroke="#2dd4bf" stroke-width="2"/>
+            <ellipse cx="980" cy="240" rx="90" ry="50" stroke="#38bdf8" stroke-dasharray="4 4"/>
+            <text x="940" y="235" font-family="JetBrains Mono" font-size="8" fill="#2dd4bf">PRP RING A</text>
+            <text x="940" y="255" font-family="JetBrains Mono" font-size="8" fill="#38bdf8">HSR RING B</text>
+            <!-- Fault Vector Arrow -->
+            <path d="M 840 380 L 1120 380" stroke="#f43f5e" stroke-width="2"/>
+            <polygon points="1120,375 1135,380 1120,385" fill="#f43f5e"/>
+            <text x="910" y="405" font-family="JetBrains Mono" font-size="8" fill="#f43f5e">GOOSE TRIP &lt; 4ms WIRE-SPEED</text>
+        </g>
+        <!-- Telemetry Annotations -->
+        <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.45)">
+            <text x="80" y="90">SUBSTATION STANDARD: IEC 61850 MMS / SV</text>
+            <text x="80" y="440">FAULT LOCATOR: ±100m PRECISION TRAVELING WAVE</text>
+            <text x="860" y="90">PROTECTION LATENCY: ZERO-LOSS PRP/HSR</text>
+            <text x="860" y="440">AIR-GAPPED GRID SCADA: TIER-1 CONFORMANCE</text>
+        </g>
+        <rect width="100%" height="100%" fill="url(#vignetteGrad)" />
+        
+        <!-- Blueprint HUD Corner Brackets & Scale Marks -->
+        <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
+            <path d="M 20 40 L 20 20 L 40 20" />
+            <path d="M 1180 40 L 1180 20 L 1160 20" />
+            <path d="M 20 460 L 20 480 L 40 480" />
+            <path d="M 1180 460 L 1180 480 L 1160 480" />
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
+            <text x="50" y="32">TERRESTRIAL-SYS // REF-R00</text>
+            <text x="1020" y="32">GRID RESOLUTION: 40px²</text>
+            <text x="50" y="475">CALIBRATION: DETERMINISTIC</text>
+            <text x="1050" y="475">SYNC: REAL-TIME</text>
+        </g>
+    
+    </svg>
+                </div>
+
+                <div class="hero-card-content">
+                    <!-- TOP BADGE PILL -->
+                    <div class="hero-top-badge">
+                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                    </div>
+
+                    <!-- MAIN FULL TITLE -->
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">TerraGridX</span>: <span class="hero-title-tagline">Automated Substation Disturbance Analytics & Transmission Intelligence</span>
+                    </h1>
+
+                    <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
+                    <div class="hero-pills-row">
+                    <div class="hero-metric-pill"><span class="pill-key">SUBSTATION BUS:</span> <span class="pill-val">IEC 61850 MMS</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">GOOSE TRIPPING:</span> <span class="pill-val">< 4 ms Wire-Speed</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">FAULT LOCATION:</span> <span class="pill-val">±100m Precision</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">DUAL BUS PROTOCOL:</span> <span class="pill-val">PRP / HSR Zero-Loss</span></div>
+                    </div>
+
+                    <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">
+                            “Transforming transmission grid operations through automated COMTRADE harvest, waveform AI diagnostics, and nanosecond SOE timeline stitching.”
+                        </div>
+                        <div class="outcome-quote-author">
+                            — THE OUTCOME-BASED REVOLUTION
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY DESCRIPTION -->
+                    <p class="hero-card-description">TerraGridX is the disturbance intelligence platform for transmission utilities and substations. It automatically harvests COMTRADE oscillography files from distributed protection relays, uses AI waveform diagnostics (DFT, Fortescue sequence components, impedance loops) to locate fault distance down to tower numbers, and stitches nanosecond Sequence of Events (SOE).</p>
+
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">
+                            Explore Operational Interface ▾
+                        </a>
+                        <a href="#details" class="hero-secondary-btn">
+                            What TerraGridX Will Do ↓
+                        </a>
+                        <a href="#usecases" class="hero-secondary-btn">
+                            Field Use Cases ↓
+                        </a>
+                        <a href="#architecture" class="hero-secondary-btn">
+                            BirdEye Architecture ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMATIC OPERATIONAL INTERFACE & SYSTEM REPRESENTATION (RESTORED BELOW HERO) -->
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title">
+                        <span class="live-dot">●</span> TerraGridX ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                    </div>
+                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terra_gridx_showcase.jpg?v=20261019_fullbleed" alt="TerraGridX Operational Interface" class="showcase-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <section class="corp-section" id="details">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Application Operational Details</div>
+                <h2 class="corp-section-heading">What TerraGridX Will Do</h2>
+                <p class="corp-section-subheading">Specific operational functions and engineering capabilities directly sourced from technical documentation.</p>
+            </div>
+            <div class="capabilities-grid">
+                
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>Automated COMTRADE Harvest</h4>
+            <p>Continuous retrieval of IEEE C37.111-1991/1999/2013 CFG, DAT, and CFF files across distributed IEDs.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>Full-Cycle Sliding-Window DFT Phasor Engine</h4>
+            <p>Extracts instantaneous fundamental phasors and symmetrical sequence components (positive, negative, zero).</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>K₀-Compensated R-X Impedance Loops</h4>
+            <p>Computes fault impedance trajectory on complex R-X plane to pinpoint distance to line fault.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>IEC 60255 IDMT Protection Curve Verification</h4>
+            <p>Validates Standard Inverse, Very Inverse, and Extremely Inverse overcurrent trip curves against actual relay times.</p>
+        </div>
+            </div>
+        </section>
+
+        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES (QA, REDUCED MANPOWER, EFFICIENCY, PRODUCTIVITY) -->
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
+                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
+                <p class="corp-section-subheading">Actual documented use cases across Quality Assurance (QA), Reduced Manpower, Efficiency, and Asset Productivity.</p>
+            </div>
+            <div class="usecase-deck">
+                
+        <div class="usecase-box">
+            <span class="usecase-badge">Productivity & SAIDI/SAIFI Reduction</span>
+            <h4>Productivity & SAIDI/SAIFI Reduction (Fault Localization)</h4>
+            <p>Calculates exact fault distance down to tower numbers within 30 seconds of line trip, guiding repair crews directly to the spot. (TerraGridX openwiki).</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Reduced Manpower</span>
+            <h4>Reduced Manpower (Automated Remote COMTRADE Ingestion)</h4>
+            <p>Replaces manual substation visits with automated background harvesting of IEEE C37.111 COMTRADE files across all connected relays. (TerraGridX openwiki).</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">QA & Protection Coordination</span>
+            <h4>QA & Protection Coordination (IEC 60255 IDMT Verification)</h4>
+            <p>Compares recorded trip times against Standard Inverse, Very Inverse, and Extremely Inverse curves to flag miscoordinated relay settings. (TerraGridX openwiki).</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Efficiency</span>
+            <h4>Efficiency (Circuit Breaker Arcing & Timing Audit)</h4>
+            <p>Measures trip coil currents and breaker arcing times during each fault to schedule breaker overhauls before failures occur.</p>
+        </div>
+            </div>
+        </section>
+
+        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SCADA / LEGACY SYSTEMS -->
+        <section class="corp-section" id="comparison">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Architectural Contrast</div>
+                <h2 class="corp-section-heading">Comparison with Traditional SCADA / Legacy Systems</h2>
+                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological shift from legacy industrial automation to the Terrestrial Platform.</p>
+            </div>
+            <div class="matrix-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="th-legacy">Traditional Legacy Systems / Traditional SCADA</th>
+                            <th class="th-platform">TerraGridX Terrestrial Platform Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td class="td-legacy">Engineers must manually travel to remote substations with laptops to download oscillography files after grid blackouts.</td>
+            <td class="td-platform">Instant automated harvesting of CFG, DAT, and HDR files across hundreds of distributed IEDs over WAN.</td>
+        </tr>
+        <tr>
+            <td class="td-legacy">Manual inspection of raw sine wave traces taking days to determine breaker opening times and fault types.</td>
+            <td class="td-platform">Instantaneous AI waveform diagnostics calculating fault impedance, arc resistance, and clearing times in seconds.</td>
+        </tr>
+        <tr>
+            <td class="td-legacy">Unsynchronized relay clocks leading to conflicting theories of what caused the blackout.</td>
+            <td class="td-platform">GPS and PTP nanosecond-synchronized timeline stitching proving the precise root cause without dispute.</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
+                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
+                <p class="corp-section-subheading">Visual architecture diagram representing field telemetry ingestion, deterministic edge fabric, AI reasoning, and closed-loop actuation.</p>
+            </div>
+
+            
+        <div class="birdeye-diagram-card">
+        <div class="birdeye-diagram-grid">
+            <!-- Node 01: Substation Process Bus Ingestion -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 01</span>
+                        <span class="diagram-node-icon">⚡</span>
+                    </div>
+                    <div class="diagram-node-title">Substation Process Bus Ingestion</div>
+                    <div class="diagram-node-desc">Ultra-fast signal acquisition from optical CT/PT instrument transformers, merging units (MU), protection relays, and circuit breaker controllers.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">IEC 61850-9-2 (Sampled Values)</span><span class="diagram-proto-chip">IEC 61850-8-1 (GOOSE)</span><span class="diagram-proto-chip">IEEE COMTRADE</span>
+                </div>
+            </div>
+            <!-- Node 02: Microsecond Process Bus -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 02</span>
+                        <span class="diagram-node-icon">🔄</span>
+                    </div>
+                    <div class="diagram-node-title">Microsecond Process Bus</div>
+                    <div class="diagram-node-desc">Hardware-accelerated PRP/HSR redundant Ethernet streaming, IEEE 1588 PTP nanosecond synchronization, and sub-cycle waveform capture.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">IEEE 1588 PTP Time-Sync</span><span class="diagram-proto-chip">PRP/HSR Redundant Bus</span><span class="diagram-proto-chip">Sub-Cycle Waveform Stream</span>
+                </div>
+            </div>
+            <!-- Node 03: Synchrophasor Stability Core -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 03</span>
+                        <span class="diagram-node-icon">🛡️</span>
+                    </div>
+                    <div class="diagram-node-title">Synchrophasor Stability Core</div>
+                    <div class="diagram-node-desc">Real-time phasor measurement unit (PMU) angle divergence analysis, transmission grid oscillation damping, and fault location estimation.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">PMU Angle Analysis</span><span class="diagram-proto-chip">Grid Oscillation AI</span><span class="diagram-proto-chip">Fault Location Engine</span>
+                </div>
+            </div>
+            <!-- Node 04: Breaker Trip & Grid Cockpit -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 04</span>
+                        <span class="diagram-node-icon">🎯</span>
+                    </div>
+                    <div class="diagram-node-title">Breaker Trip & Grid Cockpit</div>
+                    <div class="diagram-node-desc">Sub-4ms GOOSE protective trip command verification, automated synchrocheck breaker closing, and ANSI/ISA-101 single-line substation cockpits.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">Sub-4ms GOOSE Trips</span><span class="diagram-proto-chip">Synchrocheck Closing</span><span class="diagram-proto-chip">ISA-101 Grid HMI</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connecting Flow Indicator -->
+        <div class="diagram-flow-bar">
+            <span class="flow-dot"></span>
+            <span>DATA PIPELINE FLOW: IEC 61850 Sampled Values ➔ Redundant Microsecond Process Bus ➔ Synchrophasor Dynamic Stability AI ➔ Sub-4ms GOOSE Breaker Trip Execution</span>
+        </div>
+    </div>
+    
+        </section>
+
+        <!-- PRODUCT PAGER -->
+        <div class="product-pager">
+            <a href="terra-embodiment.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TerraEmbodiment</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">All 20 Applications</span>
+            </a>
+            <a href="terra-gridw.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraGridW</span>
+            </a>
+        </div>
+
+    </div>
+
+    
+    <!-- Corporate Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary">
+                    <h3>TERRESTRIAL PLATFORM</h3>
+                    <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
+                    <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
+                        Adani Enterprise Specification | Revision R00.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>AI & Autonomous Swarms</h5>
+                    <ul><li><a href="terra-ai.html">TerraAI</a></li><li><a href="terra-cognizance.html">TerraCognizance</a></li><li><a href="terra-embodiment.html">TerraEmbodiment</a></li><li><a href="terra-hive.html">TerraHive</a></li><li><a href="terra-cc.html">TerraCC</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Plant Engineering & Twins</h5>
+                    <ul><li><a href="terra-scada.html">TerraSCADA</a></li><li><a href="terra-avatar.html">TerraAvatar</a></li><li><a href="terra-assets.html">TerraAssets</a></li><li><a href="terra-pfd.html">TerraPFD</a></li><li><a href="terra-alarm.html">TerraAlarm</a></li><li><a href="tpim.html">TPIM</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Grids & Utilities</h5>
+                    <ul><li><a href="terra-gridx.html">TerraGridX</a></li><li><a href="terra-gridw.html">TerraGridW</a></li><li><a href="terra-gridg.html">TerraGridG</a></li><li><a href="terra-corroguard.html">TerraCorroGuard</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Energy & Facilities</h5>
+                    <ul><li><a href="terra-solar.html">TerraSolar</a></li><li><a href="terra-ems.html">TerraEMS</a></li><li><a href="terra-3rdeye.html">Terra3rdEye</a></li><li><a href="terra-bms.html">TerraBMS</a></li><li><a href="terra-hvac.html">TerraHVAC</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-legal-bar">
+                <div>© 2026 Terrestrial Platform Suite. Built for Enterprise Industrial Operations.</div>
+                <div>IEC 61850 | IEC 62443 | ISA 18.2 | 21 CFR Part 11 Certified Architecture</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.remove('open');
+        });
+    </script>
+    
+
+</body>
+</html>

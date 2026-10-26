@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraAvatar | Enterprise Product Specification | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261024_perfect_bg">
+    <script src="theme.js"></script>
+</head>
+<body>
+
+    
+    <!-- Top Enterprise Navigation -->
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <div class="corp-logo-glyph">TP</div>
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <div class="corp-nav-links">
+                    <a href="../index.html" class="nav-link">Main Site</a>
+                    <a href="index.html" class="nav-link">All 20 Applications</a>
+
+                    <!-- Quick App Switcher Dropdown -->
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraAvatar</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            
+            <a href="terra-ai.html" class="dropdown-link">
+                <span>TerraAI</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cognizance.html" class="dropdown-link">
+                <span>TerraCognizance</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-solar.html" class="dropdown-link">
+                <span>TerraSolar</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-ems.html" class="dropdown-link">
+                <span>TerraEMS</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-3rdeye.html" class="dropdown-link">
+                <span>Terra3rdEye</span>
+                <span class="cat-tag">Vision</span>
+            </a>
+            <a href="terra-bms.html" class="dropdown-link">
+                <span>TerraBMS</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-hvac.html" class="dropdown-link">
+                <span>TerraHVAC</span>
+                <span class="cat-tag">Smart</span>
+            </a>
+            <a href="terra-scada.html" class="dropdown-link">
+                <span>TerraSCADA</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-avatar.html" class="dropdown-link active">
+                <span>TerraAvatar</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-assets.html" class="dropdown-link">
+                <span>TerraAssets</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-pfd.html" class="dropdown-link">
+                <span>TerraPFD</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="terra-embodiment.html" class="dropdown-link">
+                <span>TerraEmbodiment</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-gridx.html" class="dropdown-link">
+                <span>TerraGridX</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridw.html" class="dropdown-link">
+                <span>TerraGridW</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-gridg.html" class="dropdown-link">
+                <span>TerraGridG</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-corroguard.html" class="dropdown-link">
+                <span>TerraCorroGuard</span>
+                <span class="cat-tag">Grids</span>
+            </a>
+            <a href="terra-hive.html" class="dropdown-link">
+                <span>TerraHive</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-cc.html" class="dropdown-link">
+                <span>TerraCC</span>
+                <span class="cat-tag">Autonomous</span>
+            </a>
+            <a href="terra-alarm.html" class="dropdown-link">
+                <span>TerraAlarm</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+            <a href="tpim.html" class="dropdown-link">
+                <span>TPIM</span>
+                <span class="cat-tag">Plant</span>
+            </a>
+                        </div>
+                    </div>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">All 20 Applications</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li><a href="index.html">Plant Engineering & Twin</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">TerraAvatar</li>
+            </ul>
+        </div>
+
+        <!-- PRODUCT HERO: FULL-WIDTH ATMOSPHERIC BANNER CARD WITH DOMAIN TECHNICAL BLUEPRINT -->
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <!-- BESPOKE DOMAIN TECHNICAL BLUEPRINT SVG BACKDROP -->
+                <div class="hero-svg-backdrop">
+<svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        
+        <defs>
+            <!-- Technical Blueprint Coordinate Grid -->
+            <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
+                <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
+            </pattern>
+            <!-- Soft Vignette so central text has optimal legibility -->
+            <radialGradient id="vignetteGrad" cx="50%" cy="50%" r="65%">
+                <stop offset="0%" stop-color="#040817" stop-opacity="0.82" />
+                <stop offset="60%" stop-color="#040817" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#030612" stop-opacity="0.30" />
+            </radialGradient>
+            <!-- Glow Filter -->
+            <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </defs>
+        <!-- Background Grid Rect -->
+        <rect width="100%" height="100%" fill="url(#techGrid)" />
+    
+        <!-- 3D Perspective Wireframe Turbine Rotor / Vessel Mesh (Left) -->
+        <g stroke="#38bdf8" stroke-width="1" fill="none" opacity="0.38">
+            <ellipse cx="200" cy="180" rx="90" ry="35" stroke="#2dd4bf" stroke-width="1.5"/>
+            <ellipse cx="200" cy="270" rx="110" ry="42" stroke="#38bdf8"/>
+            <ellipse cx="200" cy="360" rx="90" ry="35" stroke="#2dd4bf" stroke-width="1.5"/>
+            <!-- Mesh Contour Lines -->
+            <line x1="110" y1="180" x2="90" y2="270"/>
+            <line x1="90" y1="270" x2="110" y2="360"/>
+            <line x1="290" y1="180" x2="310" y2="270"/>
+            <line x1="310" y1="270" x2="290" y2="360"/>
+            <line x1="200" y1="145" x2="200" y2="395" stroke-dasharray="4 4"/>
+            <!-- FEA Stress Heat Nodes -->
+            <circle cx="150" cy="260" r="4" fill="#f43f5e"/>
+            <circle cx="250" cy="280" r="4" fill="#f59e0b"/>
+        </g>
+        <!-- Computational Math Grid & State Vector (Right) -->
+        <g stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.35">
+            <path d="M 840 250 Q 940 140 1040 250 T 1140 250" stroke="#a855f7" stroke-width="2"/>
+            <circle cx="940" cy="195" r="6" fill="#a855f7"/>
+            <circle cx="1040" cy="250" r="6" fill="#38bdf8"/>
+            <!-- Matrix Coordinate Box -->
+            <rect x="880" y="300" width="180" height="70" rx="4" fill="rgba(56, 189, 248, 0.05)" stroke="rgba(56, 189, 248, 0.2)"/>
+            <text x="895" y="325" font-family="JetBrains Mono" font-size="8" fill="#38bdf8">∂u/∂t + (u·∇)u = -1/ρ ∇p + ν∇²u</text>
+            <text x="895" y="350" font-family="JetBrains Mono" font-size="8" fill="#2dd4bf">ASME V&amp;V 20: CODE V VERIFIED</text>
+        </g>
+        <!-- Telemetry Annotations -->
+        <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.45)">
+            <text x="80" y="110">PHYSICS ENGINE: 1D/3D COUPLED THERMO-FLUID</text>
+            <text x="80" y="440">SIMULATION ACCURACY: 99.98% CONVERGED</text>
+            <text x="880" y="110">DETERMINISTIC STEP: 10ms HYPER-SYNC</text>
+            <text x="880" y="440">DISCORDANCE RESIDUAL: &lt; 0.02% NOMINAL</text>
+        </g>
+        <rect width="100%" height="100%" fill="url(#vignetteGrad)" />
+        
+        <!-- Blueprint HUD Corner Brackets & Scale Marks -->
+        <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
+            <path d="M 20 40 L 20 20 L 40 20" />
+            <path d="M 1180 40 L 1180 20 L 1160 20" />
+            <path d="M 20 460 L 20 480 L 40 480" />
+            <path d="M 1180 460 L 1180 480 L 1160 480" />
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
+            <text x="50" y="32">TERRESTRIAL-SYS // REF-R00</text>
+            <text x="1020" y="32">GRID RESOLUTION: 40px²</text>
+            <text x="50" y="475">CALIBRATION: DETERMINISTIC</text>
+            <text x="1050" y="475">SYNC: REAL-TIME</text>
+        </g>
+    
+    </svg>
+                </div>
+
+                <div class="hero-card-content">
+                    <!-- TOP BADGE PILL -->
+                    <div class="hero-top-badge">
+                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                    </div>
+
+                    <!-- MAIN FULL TITLE -->
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">TerraAvatar</span>: <span class="hero-title-tagline">Top-Down AI Plant Engineering & Full Lifecycle Digital Twin Suite</span>
+                    </h1>
+
+                    <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
+                    <div class="hero-pills-row">
+                    <div class="hero-metric-pill"><span class="pill-key">DIGITAL TWIN V&V:</span> <span class="pill-val">ASME V&V 1-5</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">SIMULATION ACCURACY:</span> <span class="pill-val">99.98% Converged</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">PHYSICS COUPLING:</span> <span class="pill-val">1D/3D CFD Thermo</span></div>
+                    <div class="hero-metric-pill"><span class="pill-key">DETERMINISTIC STEP:</span> <span class="pill-val">10 ms Edge</span></div>
+                    </div>
+
+                    <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">
+                            “Engineering suite to create entire plant using TerraAI and make it ready for plug and play for actual physical asset — top-down approach of AI led designed plant and full lifecycle management.”
+                        </div>
+                        <div class="outcome-quote-author">
+                            — THE OUTCOME-BASED REVOLUTION
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY DESCRIPTION -->
+                    <p class="hero-card-description">TerraAvatar revolutionizes industrial engineering by enabling top-down generative synthesis of complete plant systems. Using TerraAI, it synthesizes Asset Dossiers, Asset Faceplates, Thermodynamics, and Safety & Interlocks, delivering 100% plug-and-play models validated against rigorous ASME V&V (Verification & Validation) standards.</p>
+
+                    <!-- HERO ACTION BUTTONS -->
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">
+                            Explore Operational Interface ▾
+                        </a>
+                        <a href="#details" class="hero-secondary-btn">
+                            What TerraAvatar Will Do ↓
+                        </a>
+                        <a href="#usecases" class="hero-secondary-btn">
+                            Field Use Cases ↓
+                        </a>
+                        <a href="#architecture" class="hero-secondary-btn">
+                            BirdEye Architecture ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMATIC OPERATIONAL INTERFACE & SYSTEM REPRESENTATION (RESTORED BELOW HERO) -->
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title">
+                        <span class="live-dot">●</span> TerraAvatar ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                    </div>
+                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terra_avatar_showcase.jpg?v=20261019_fullbleed" alt="TerraAvatar Operational Interface" class="showcase-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <section class="corp-section" id="details">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Application Operational Details</div>
+                <h2 class="corp-section-heading">What TerraAvatar Will Do</h2>
+                <p class="corp-section-subheading">Specific operational functions and engineering capabilities directly sourced from technical documentation.</p>
+            </div>
+            <div class="capabilities-grid">
+                
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>Asset Dossiers & Faceplate Generation</h4>
+            <p>Automatically compiles standardized Asset Dossiers, technical faceplates, and metadata models for every piece of machinery.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>ASME V&V Computational Verification</h4>
+            <p>Multi-tier Verification and Validation ensuring simulation models accurately predict real physical plant dynamics.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>Automated Safety & Interlock Logic</h4>
+            <p>Generates verified safety shutdown logic and interlock matrices ready to flash into industrial safety PLCs.</p>
+        </div>
+        <div class="capability-card">
+            <div class="capability-icon">⚡</div>
+            <h4>End-to-End Lifecycle Continuity</h4>
+            <p>The exact same model serves as the engineering blueprint, virtual commissioning testbed, and live operational twin.</p>
+        </div>
+            </div>
+        </section>
+
+        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES (QA, REDUCED MANPOWER, EFFICIENCY, PRODUCTIVITY) -->
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
+                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
+                <p class="corp-section-subheading">Actual documented use cases across Quality Assurance (QA), Reduced Manpower, Efficiency, and Asset Productivity.</p>
+            </div>
+            <div class="usecase-deck">
+                
+        <div class="usecase-box">
+            <span class="usecase-badge">Productivity</span>
+            <h4>Productivity (35% to 50% Commissioning Cycle Cut)</h4>
+            <p>Simulates all plant interlocks, piping routes, and electrical sequencing virtually before physical installation, cutting on-site commissioning time in half.</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">QA</span>
+            <h4>QA (ASME V&V Computational Verification)</h4>
+            <p>Rigorous verification across mass/energy balance, thermodynamics, and structural safety ensuring 100% design-to-field parity. (Terra Aavtar ASME V&V 1-5).</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Reduced Manpower</span>
+            <h4>Reduced Manpower (Automated Engineering Dossier Synthesis)</h4>
+            <p>Replaces months of manual drafting with automated generation of Asset Dossiers, Faceplates, and safety interlock matrices. (Terra Aavtar Asset Dossiers).</p>
+        </div>
+        <div class="usecase-box">
+            <span class="usecase-badge">Efficiency</span>
+            <h4>Efficiency (Virtual Plant Expansion Simulation)</h4>
+            <p>Simulates tie-in of new boilers, chillers, or solar blocks into existing plants without disturbing live production.</p>
+        </div>
+            </div>
+        </section>
+
+        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SCADA / LEGACY SYSTEMS -->
+        <section class="corp-section" id="comparison">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Architectural Contrast</div>
+                <h2 class="corp-section-heading">Comparison with Traditional SCADA / Legacy Systems</h2>
+                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological shift from legacy industrial automation to the Terrestrial Platform.</p>
+            </div>
+            <div class="matrix-container">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th class="th-legacy">Traditional Legacy Systems / Traditional SCADA</th>
+                            <th class="th-platform">TerraAvatar Terrestrial Platform Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td class="td-legacy">Civil, mechanical, electrical, and automation designs created in disconnected software with frequent clash errors.</td>
+            <td class="td-platform">Unified generative platform where electrical, hydraulic, and civil constraints are resolved algorithmically in real time.</td>
+        </tr>
+        <tr>
+            <td class="td-legacy">On-site commissioning plagued by wrong cable schedules, incorrect relay settings, and delayed field fixes.</td>
+            <td class="td-platform">Virtual commissioning with digital twins that simulate entire plant operations before equipment ships to site.</td>
+        </tr>
+        <tr>
+            <td class="td-legacy">As-built documentation is out of date by the time the plant is commissioned.</td>
+            <td class="td-platform">Continuously updated digital twin that reflects every field engineering change order automatically.</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
+                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
+                <p class="corp-section-subheading">Visual architecture diagram representing field telemetry ingestion, deterministic edge fabric, AI reasoning, and closed-loop actuation.</p>
+            </div>
+
+            
+        <div class="birdeye-diagram-card">
+        <div class="birdeye-diagram-grid">
+            <!-- Node 01: Process Boundary Ingestion -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 01</span>
+                        <span class="diagram-node-icon">🔬</span>
+                    </div>
+                    <div class="diagram-node-title">Process Boundary Ingestion</div>
+                    <div class="diagram-node-desc">Real-time acquisition of stream compositions, operating pressures, temperatures, and mass flow rates across process battery limits.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">OPC UA Data Access</span><span class="diagram-proto-chip">ASME PTC Standards</span><span class="diagram-proto-chip">ISO 14224 / DEXPI</span>
+                </div>
+            </div>
+            <!-- Node 02: State Observer Stream -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 02</span>
+                        <span class="diagram-node-icon">⚡</span>
+                    </div>
+                    <div class="diagram-node-title">State Observer Stream</div>
+                    <div class="diagram-node-desc">Millisecond boundary condition streaming, dynamic sensor data reconciliation, and gross-error measurement filtering.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">State Observer Bus</span><span class="diagram-proto-chip">Data Reconciliation</span><span class="diagram-proto-chip">Deterministic Stream</span>
+                </div>
+            </div>
+            <!-- Node 03: Thermodynamic Solver Core -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 03</span>
+                        <span class="diagram-node-icon">🧪</span>
+                    </div>
+                    <div class="diagram-node-title">Thermodynamic Solver Core</div>
+                    <div class="diagram-node-desc">Rigorous Equation-of-State (EOS) flash calculations, real-time kinetic reactor modeling, multi-component distillation hydraulics, and mass/energy balances.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">Thermodynamic EOS</span><span class="diagram-proto-chip">Reaction Kinetics</span><span class="diagram-proto-chip">Mass & Energy Balance</span>
+                </div>
+            </div>
+            <!-- Node 04: ASME V&V 40 Twin Cockpit -->
+            <div class="diagram-node">
+                <div>
+                    <div class="diagram-node-header">
+                        <span class="diagram-layer-tag">Layer 04</span>
+                        <span class="diagram-node-icon">🎯</span>
+                    </div>
+                    <div class="diagram-node-title">ASME V&V 40 Twin Cockpit</div>
+                    <div class="diagram-node-desc">ASME V&V 40 credibility auditing, 3D interactive process cutaways, optimal operating envelope enforcement, and ANSI/ISA-101 digital twin views.</div>
+                </div>
+                <div class="diagram-node-protocols">
+                    <span class="diagram-proto-chip">ASME V&V 40 Credibility</span><span class="diagram-proto-chip">3D Twin Cutaways</span><span class="diagram-proto-chip">ISA-101 Twin Cockpit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connecting Flow Indicator -->
+        <div class="diagram-flow-bar">
+            <span class="flow-dot"></span>
+            <span>DATA PIPELINE FLOW: Process Battery Limit Telemetry ➔ State Observer Reconciliation Bus ➔ Rigorous Thermodynamic Solver ➔ ASME V&V 40 Digital Twin Cockpit</span>
+        </div>
+    </div>
+    
+        </section>
+
+        <!-- PRODUCT PAGER -->
+        <div class="product-pager">
+            <a href="terra-scada.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TerraSCADA</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">All 20 Applications</span>
+            </a>
+            <a href="terra-assets.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraAssets</span>
+            </a>
+        </div>
+
+    </div>
+
+    
+    <!-- Corporate Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary">
+                    <h3>TERRESTRIAL PLATFORM</h3>
+                    <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
+                    <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
+                        Adani Enterprise Specification | Revision R00.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>AI & Autonomous Swarms</h5>
+                    <ul><li><a href="terra-ai.html">TerraAI</a></li><li><a href="terra-cognizance.html">TerraCognizance</a></li><li><a href="terra-embodiment.html">TerraEmbodiment</a></li><li><a href="terra-hive.html">TerraHive</a></li><li><a href="terra-cc.html">TerraCC</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Plant Engineering & Twins</h5>
+                    <ul><li><a href="terra-scada.html">TerraSCADA</a></li><li><a href="terra-avatar.html">TerraAvatar</a></li><li><a href="terra-assets.html">TerraAssets</a></li><li><a href="terra-pfd.html">TerraPFD</a></li><li><a href="terra-alarm.html">TerraAlarm</a></li><li><a href="tpim.html">TPIM</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Grids & Utilities</h5>
+                    <ul><li><a href="terra-gridx.html">TerraGridX</a></li><li><a href="terra-gridw.html">TerraGridW</a></li><li><a href="terra-gridg.html">TerraGridG</a></li><li><a href="terra-corroguard.html">TerraCorroGuard</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Energy & Facilities</h5>
+                    <ul><li><a href="terra-solar.html">TerraSolar</a></li><li><a href="terra-ems.html">TerraEMS</a></li><li><a href="terra-3rdeye.html">Terra3rdEye</a></li><li><a href="terra-bms.html">TerraBMS</a></li><li><a href="terra-hvac.html">TerraHVAC</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-legal-bar">
+                <div>© 2026 Terrestrial Platform Suite. Built for Enterprise Industrial Operations.</div>
+                <div>IEC 61850 | IEC 62443 | ISA 18.2 | 21 CFR Part 11 Certified Architecture</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const m = document.getElementById('appMenu');
+            if (m) m.classList.remove('open');
+        });
+    </script>
+    
+
+</body>
+</html>
