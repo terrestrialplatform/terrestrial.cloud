@@ -2,6 +2,19 @@
 <html lang="eng">
 
 <head>
+    <script>
+        (function() {
+            var isFromSIPortal = document.referrer && document.referrer.indexOf('si-portal') !== -1;
+            var hasMainParam = window.location.search.indexOf('main') !== -1 || window.location.hash.indexOf('main') !== -1;
+            var hasMainFlag = sessionStorage.getItem('view_main_site') === '1';
+
+            if (isFromSIPortal || hasMainParam || hasMainFlag) {
+                sessionStorage.setItem('view_main_site', '1');
+            } else {
+                window.location.replace("si-portal/index.html");
+            }
+        })();
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Terrestrial Platform</title>
@@ -45,6 +58,7 @@
                     <div id="collapseExample" class="col-md-9  nav">
                         <ul>
                             <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="si-portal/index.html" onclick="sessionStorage.removeItem('view_main_site')">SI Portal</a></li>
                             <li><a href="platform/index.html">Terrestrial Platform</a></li>
                             <li><a href="Solution Ready.html">Solution Ready</a></li>
                             <li><a href="company.html">Company</a></li>
@@ -177,6 +191,7 @@
                 <div class="col-md-3 glink">
                     <ul>
                         <li><a href="index.html"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="si-portal/index.html" onclick="sessionStorage.removeItem('view_main_site')"><i class="fas fa-angle-double-right"></i>SI Portal</a></li>
                         <li><a href="platform/index.html"><i class="fas fa-angle-double-right"></i>Terrestrial
                                 Platform</a></li>
                         <li><a href="Solution Ready.html"><i class="fas fa-angle-double-right"></i>Solution Ready</a>
