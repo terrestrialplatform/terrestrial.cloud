@@ -580,31 +580,31 @@ def format_logo(name):
     if u.startswith('TERRA'):
         suffix = u[5:]
         colors = {
-            'AI': '#f5c842',
-            'COGNIZANCE': '#a855f7',
-            'EMBODIMENT': '#00e68e',
-            'HIVE': '#f5c842',
-            'CC': '#a855f7',
-            'SCADA': '#00d4ff',
-            'AVATAR': '#00e68e',
-            'ASSETS': '#f5c842',
-            'PFD': '#a855f7',
-            'ALARM': '#ff5555',
-            'GRIDX': '#00e68e',
-            'GRIDW': '#00d4ff',
-            'GRIDG': '#f5c842',
-            'CORROGUARD': '#ff5555',
-            'SOLAR': '#f5c842',
-            'EMS': '#00e68e',
-            '3RDEYE': '#00d4ff',
-            'BMS': '#a855f7',
-            'HVAC': '#00e68e'
+            'AI': '#4900f3',
+            'COGNIZANCE': '#7c3aed',
+            'EMBODIMENT': '#0284c7',
+            'HIVE': '#4900f3',
+            'CC': '#7c3aed',
+            'SCADA': '#0284c7',
+            'AVATAR': '#0ea5e9',
+            'ASSETS': '#4900f3',
+            'PFD': '#7c3aed',
+            'ALARM': '#e11d48',
+            'GRIDX': '#059669',
+            'GRIDW': '#0284c7',
+            'GRIDG': '#d97706',
+            'CORROGUARD': '#e11d48',
+            'SOLAR': '#d97706',
+            'EMS': '#059669',
+            '3RDEYE': '#0284c7',
+            'BMS': '#7c3aed',
+            'HVAC': '#059669'
         }
-        col = colors.get(suffix, '#00d4ff')
-        return f'TERRA<span style="color:{col};font-weight:900;">{suffix}</span>'
+        col = colors.get(suffix, '#4900f3')
+        return f'<span style="color:#111827;font-weight:800;">TERRA</span><span style="color:{col};font-weight:900;">{suffix}</span>'
     elif u == 'TPIM':
-        return '<span style="color:#00d4ff;font-weight:900;">TPIM</span> <span style="color:#6b82a8;font-size:11px;font-weight:600;">SCHEMA</span>'
-    return f'<span style="color:#00d4ff;font-weight:900;">{u}</span>'
+        return '<span style="color:#4900f3;font-weight:900;">TPIM</span> <span style="color:#6b7280;font-size:11px;font-weight:600;">SCHEMA</span>'
+    return f'<span style="color:#111827;font-weight:800;">{u}</span>'
 
 def get_btn_class(slug):
     if slug == 'utilities':
@@ -645,7 +645,7 @@ for fname, cat_name, cat_slug, def_proto in app_meta_list:
     badge_cls = cat_badge_map.get(cat_name, 'tech')
     btn_cls = get_btn_class(cat_slug)
     deck_href = f"catalogues/{pptx_filename}"
-    spec_link = f"../terrestrial.cloud/platform/{app_data['file']}"
+    spec_link = f"../platform/{app_data['file']}"
     
     features_html = '\n'.join([f'          <li>{feat[0]}</li>' for feat in app_data['features'][:4]])
     
@@ -657,7 +657,7 @@ for fname, cat_name, cat_slug, def_proto in app_meta_list:
         </div>
         <div class="app-protocol-badge">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          {app_data['protocol']}
+          <span>{app_data['protocol']}</span>
         </div>
         <a href="{spec_link}" target="_blank" style="text-decoration: none; color: inherit;">
           <h3 class="app-name">{app_data['name']}</h3>
@@ -668,10 +668,10 @@ for fname, cat_name, cat_slug, def_proto in app_meta_list:
         <ul class="app-features">
 {features_html}
         </ul>
-        <div class="card-actions">
-          <a href="{spec_link}" target="_blank" class="btn-download {btn_cls}">
+        <div class="app-card-actions">
+          <a href="{spec_link}" target="_blank" class="btn-explore">
             <span>Explore {app_data['name']} Specification</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
       </div>'''
@@ -679,614 +679,1198 @@ for fname, cat_name, cat_slug, def_proto in app_meta_list:
 
 all_cards_block = '\n\n'.join(app_cards_html)
 
-# Now assemble the full HTML
+# Assemble Full HTML with LandingPage Theme & Header
 full_html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terrestrial Platform — SI Sales &amp; Application Catalogues Hub</title>
+  <title>Terrestrial Platform — System Integrator Partner Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
 
     :root {{
-      --navy:   #0a0e1a;
-      --navy2:  #0d1326;
-      --blue:   #1a2aff;
-      --blue2:  #0050ff;
-      --cyan:   #00d4ff;
-      --cyan2:  #00b8e6;
-      --gold:   #f5c842;
-      --white:  #ffffff;
-      --text:   #c8d8f0;
-      --muted:  #6b82a8;
-      --glass:  rgba(255,255,255,0.04);
-      --glass2: rgba(255,255,255,0.08);
-      --border: rgba(0,212,255,0.15);
-      --border2:rgba(0,212,255,0.3);
-      --glow:   0 0 40px rgba(0,212,255,0.2);
-      --glow2:  0 0 80px rgba(0,80,255,0.25);
-      --radius: 20px;
-      --tr:     all 0.35s cubic-bezier(0.4,0,0.2,1);
+      --primary: #4900f3;
+      --primary-hover: #3a00c7;
+      --primary-light: #faf8ff;
+      --primary-tint: #ede9fe;
+      --primary-border: #e9d5ff;
+
+      --secondary: #0ea5e9;
+      --secondary-hover: #0284c7;
+      --secondary-light: #f0f9ff;
+      --secondary-tint: #e0f2fe;
+      --secondary-border: #bae6fd;
+
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      --tr: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }}
 
     html {{ scroll-behavior: smooth; }}
 
     body {{
-      font-family: 'Inter', sans-serif;
-      background: var(--navy);
-      color: var(--white);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: var(--gray-900);
       overflow-x: hidden;
       min-height: 100vh;
     }}
 
-    #starfield {{
-      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
-    }}
-    #starfield canvas {{ width: 100%; height: 100%; display: block; }}
-
-    body::before {{
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
+    ::selection {{
+      background: #ede9fe;
+      color: #4900f3;
     }}
 
-    .wrap {{ position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 0 32px; }}
+    .wrap {{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }}
 
-    /* NAV */
-    nav {{
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,14,26,0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }}
-    .nav-inner {{
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px; max-width: 1400px; margin: 0 auto; padding: 0 32px;
-    }}
-    .nav-brand {{
-      display: flex; align-items: center; gap: 14px; text-decoration: none;
-    }}
-    .nav-logo {{
-      width: 48px; height: 48px; object-fit: contain;
-      filter: drop-shadow(0 0 10px rgba(0,80,255,0.6));
-    }}
-    .nav-title {{
-      display: flex; flex-direction: column; line-height: 1.1;
-    }}
-    .nav-title span:first-child {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 17px; font-weight: 700; color: var(--white);
-      letter-spacing: 0.5px;
-    }}
-    .nav-title span:last-child {{
-      font-size: 10px; font-weight: 500; color: var(--cyan);
-      letter-spacing: 2px; text-transform: uppercase;
-    }}
-    .nav-right {{
-      display: flex; align-items: center; gap: 24px;
-    }}
-    .nav-links {{
-      display: flex; align-items: center; gap: 20px;
-    }}
-    .nav-link {{
-      color: var(--text); font-size: 13px; font-weight: 500; text-decoration: none;
+    /* HEADER / NAVBAR from LandingPage.tsx */
+    .site-header {{
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
       transition: var(--tr);
     }}
+    .header-inner {{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }}
+    .nav-brand {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }}
+    .nav-logo {{
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }}
+    .nav-logo:hover {{
+      transform: scale(1.05);
+    }}
+    .nav-brand-text-block {{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }}
+    .nav-brand-title {{
+      font-weight: 800;
+      font-size: 13.5px;
+      color: var(--gray-900);
+      letter-spacing: 0.04em;
+    }}
+    .nav-brand-subtitle {{
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #0284c7;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }}
+    .nav-menu {{
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }}
+    .nav-link {{
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }}
     .nav-link:hover {{
-      color: var(--cyan);
+      color: var(--gray-900);
     }}
-    .nav-badge {{
-      display: flex; align-items: center; gap: 8px;
-      background: rgba(0,212,255,0.08);
-      border: 1px solid var(--border2);
-      border-radius: 50px; padding: 6px 16px;
-      font-size: 12px; font-weight: 600; color: var(--cyan);
-      letter-spacing: 1px; text-transform: uppercase;
+    .nav-actions {{
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }}
-    .nav-badge::before {{
-      content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--cyan); animation: pulse 2s infinite;
-    }}
-    @keyframes pulse {{
-      0%, 100% {{ opacity: 1; transform: scale(1); }}
-      50%       {{ opacity: 0.5; transform: scale(1.3); }}
-    }}
-
-    /* HERO */
-    .hero {{
-      position: relative; overflow: hidden;
-      padding: 90px 0 70px;
+    .text-center {{
       text-align: center;
     }}
-    .hero-glow {{
-      position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-      width: 900px; height: 600px;
-      background: radial-gradient(ellipse at center, rgba(0,80,255,0.18) 0%, rgba(0,212,255,0.08) 40%, transparent 70%);
-      pointer-events: none;
+    .btn-signin {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      border: 1px solid var(--gray-200);
+      background: #ffffff;
+      text-decoration: none;
+      transition: var(--tr);
+      cursor: pointer;
     }}
-    .hero-eyebrow {{
-      display: inline-block;
-      background: linear-gradient(90deg, rgba(0,212,255,0.15), rgba(0,80,255,0.15));
-      border: 1px solid var(--border2);
-      border-radius: 50px; padding: 6px 20px;
-      font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--cyan);
-      margin-bottom: 22px;
+    .btn-signin:hover {{
+      border-color: var(--gray-300);
+      background: var(--gray-50);
+      color: var(--gray-900);
     }}
-    .hero-h1 {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(34px, 5vw, 64px);
-      font-weight: 800; line-height: 1.08;
-      letter-spacing: -1.5px;
-      margin-bottom: 22px;
+    .btn-apply-now {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      background: #4900f3;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(73, 0, 243, 0.25);
+      transition: var(--tr);
+      cursor: pointer;
     }}
-    .hero-h1 .grad {{
-      background: linear-gradient(135deg, var(--cyan) 0%, var(--blue2) 50%, var(--gold) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .btn-apply-now:hover {{
+      background: #3a00c7;
+      box-shadow: 0 4px 14px rgba(73, 0, 243, 0.35);
+      transform: translateY(-2px);
+      color: #ffffff;
     }}
-    .hero-sub {{
-      font-size: clamp(15px, 1.8vw, 18px); color: var(--text);
-      font-weight: 400; max-width: 720px; margin: 0 auto 44px;
-      line-height: 1.7;
+    .btn-apply-now .apply-arrow {{
+      transition: transform 0.2s ease;
     }}
-    .hero-stats {{
-      display: flex; justify-content: center; gap: 48px;
+    .btn-apply-now:hover .apply-arrow {{
+      transform: translateX(3px);
+    }}
+
+    .hero-cta-wrap {{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 36px;
       flex-wrap: wrap;
     }}
-    .hero-stat {{
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    .hero-cta-btn {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 15px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #4900f3 0%, #3a00c7 100%);
+      box-shadow: 0 10px 28px rgba(73, 0, 243, 0.28);
+      text-decoration: none;
+      transition: var(--tr);
+      cursor: pointer;
     }}
-    .hero-stat strong {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 34px; font-weight: 700;
-      background: linear-gradient(135deg, var(--cyan), var(--blue2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    .hero-cta-btn:hover {{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(73, 0, 243, 0.4);
+      color: #ffffff;
+    }}
+    .hero-cta-btn .cta-arrow {{
+      transition: transform 0.2s ease;
+    }}
+    .hero-cta-btn:hover .cta-arrow {{
+      transform: translateX(4px);
+    }}
+    .hero-secondary-btn {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--gray-700);
+      background: #ffffff;
+      border: 1.5px solid var(--gray-200);
+      text-decoration: none;
+      transition: var(--tr);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      cursor: pointer;
+    }}
+    .hero-secondary-btn:hover {{
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }}
+    .live-dot-wrap {{
+      position: relative;
+      display: flex;
+      height: 8px;
+      width: 8px;
+    }}
+    .live-dot-ping {{
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background-color: var(--primary);
+      opacity: 0.75;
+      animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }}
+    .live-dot {{
+      position: relative;
+      border-radius: 50%;
+      height: 8px;
+      width: 8px;
+      background-color: var(--primary);
+    }}
+    @keyframes ping {{
+      75%, 100% {{
+        transform: scale(2);
+        opacity: 0;
+      }}
+    }}
+
+    /* HERO SECTION with LandingPage Pattern & Ambient Orbs */
+    .hero-section {{
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 90px;
+      background: #ffffff;
+      text-align: center;
+    }}
+    .bg-grid-pattern {{
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.55;
+      background-image: radial-gradient(circle at 1px 1px, #d1d5db 1px, transparent 0);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    }}
+    .ambient-glow-1 {{
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(73, 0, 243, 0.12) 0%, rgba(124, 58, 237, 0.05) 40%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }}
+    .ambient-glow-2 {{
+      position: absolute;
+      top: 120px;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }}
+
+    .hero-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid var(--primary-border);
+      background: var(--primary-light);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(73, 0, 243, 0.06);
+      margin: 0 auto 28px;
+    }}
+    .hero-title {{
+      font-size: clamp(38px, 5.5vw, 64px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--gray-900);
+      max-width: 900px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }}
+    .hero-gradient-text {{
+      background: linear-gradient(135deg, #4900f3 0%, #6320ee 50%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       background-clip: text;
     }}
-    .hero-stat span {{ font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }}
+    .hero-subtext {{
+      font-size: clamp(16px, 1.9vw, 19px);
+      color: var(--gray-600);
+      max-width: 740px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 400;
+      text-align: center;
+    }}
 
-    /* SECTIONS */
-    .section {{ padding: 70px 0; }}
-    .section-header {{ text-align: center; margin-bottom: 50px; }}
-    .section-tag {{
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--cyan);
-      margin-bottom: 14px;
+    /* STATS CARDS */
+    .hero-stats-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 840px;
+      margin: 0 auto;
     }}
-    .section-tag::before, .section-tag::after {{
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-      width: 40px;
+    .stat-card {{
+      position: relative;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+      transition: var(--tr);
+      text-align: center;
     }}
-    .section-h2 {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(26px, 3.5vw, 42px);
-      font-weight: 700; letter-spacing: -0.5px;
-      margin-bottom: 14px;
+    .stat-card:hover {{
+      transform: translateY(-3px);
+      border-color: var(--primary-border);
+      box-shadow: 0 12px 32px -6px rgba(73, 0, 243, 0.12);
     }}
-    .section-desc {{ color: var(--text); font-size: 16px; max-width: 620px; margin: 0 auto; line-height: 1.7; }}
+    .stat-accent {{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 3px;
+      border-radius: 0 0 9999px 9999px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }}
+    .stat-num {{
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }}
+    .stat-label {{
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-500);
+    }}
 
-    /* FILTERS */
-    .filter-bar {{
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
+    /* SECTION BASE */
+    .section {{
+      padding: 72px 0;
+      position: relative;
+    }}
+    .section-header {{
+      text-align: center;
       margin-bottom: 48px;
     }}
-    .filter-btn {{
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: 50px; padding: 10px 24px;
-      font-size: 13px; font-weight: 600; color: var(--muted);
-      cursor: pointer; transition: var(--tr);
-      letter-spacing: 0.5px;
+    .section-tag {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      background: var(--gray-100);
+      margin-bottom: 14px;
     }}
-    .filter-btn:hover, .filter-btn.active {{
-      background: linear-gradient(135deg, rgba(0,80,255,0.2), rgba(0,212,255,0.15));
-      border-color: var(--cyan);
-      color: var(--cyan);
-      box-shadow: 0 0 20px rgba(0,212,255,0.15);
+    .section-h2 {{
+      font-size: clamp(28px, 3.8vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+    }}
+    .section-desc {{
+      color: var(--gray-500);
+      font-size: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }}
+
+    /* FILTER BAR */
+    .filter-bar {{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 44px;
+    }}
+    .filter-btn {{
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      padding: 9px 22px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: var(--tr);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }}
+    .filter-btn:hover {{
+      border-color: var(--primary-border);
+      color: var(--primary);
+      background: var(--primary-light);
+    }}
+    .filter-btn.active {{
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(73, 0, 243, 0.28);
+      font-weight: 600;
     }}
 
     /* CORE CARDS GRID (Decks) */
     .cards-grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-      gap: 32px;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 28px;
+      max-width: 1050px;
       margin: 0 auto;
     }}
-    .card {{
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: var(--tr);
-      display: flex; flex-direction: column;
+    .deck-card {{
       position: relative;
+      border-radius: var(--radius-xl);
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--tr);
     }}
-    .card::before {{
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,80,255,0.06) 0%, rgba(0,212,255,0.03) 100%);
-      opacity: 0; transition: var(--tr); border-radius: var(--radius);
-      pointer-events: none;
+    .deck-card:hover {{
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.1);
     }}
-    .card:hover {{
-      border-color: var(--cyan);
-      transform: translateY(-6px);
-      box-shadow: var(--glow), 0 24px 60px rgba(0,0,0,0.4);
+    .deck-card-exec {{
+      border: 2px solid #4900f3;
+      background: #faf9ff;
+      box-shadow: 0 4px 25px -4px rgba(73, 0, 243, 0.08);
     }}
-    .card:hover::before {{ opacity: 1; }}
-
-    .card-accent {{
-      height: 4px;
-      background: linear-gradient(90deg, var(--blue2), var(--cyan));
+    .deck-card-tech {{
+      border: 2px solid #0ea5e9;
+      background: #f0f9ff;
+      box-shadow: 0 4px 25px -4px rgba(14, 165, 233, 0.08);
     }}
-    .card-accent.gold {{ background: linear-gradient(90deg, #c97a00, var(--gold), #ffe080); }}
-    .card-accent.green {{ background: linear-gradient(90deg, #00a86b, #00e68e); }}
-
-    .card-body {{ padding: 28px; display: flex; flex-direction: column; flex: 1; }}
-
-    .card-top {{
-      display: flex; align-items: flex-start; justify-content: space-between;
-      margin-bottom: 18px;
+    .deck-card-top {{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
     }}
-    .card-icon {{
-      width: 52px; height: 52px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-      background: linear-gradient(135deg, rgba(0,80,255,0.2), rgba(0,212,255,0.1));
-      border: 1px solid var(--border);
-    }}
-    .card-icon.gold-bg {{
-      background: linear-gradient(135deg, rgba(245,200,66,0.2), rgba(245,200,66,0.08));
-      border-color: rgba(245,200,66,0.3);
-    }}
-    .card-icon.green-bg {{
-      background: linear-gradient(135deg, rgba(0,168,107,0.2), rgba(0,230,142,0.08));
-      border-color: rgba(0,230,142,0.3);
-    }}
-
-    .card-badge {{
-      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      padding: 5px 12px; border-radius: 50px;
-    }}
-    .card-badge.exec  {{ background: rgba(245,200,66,0.12); color: var(--gold); border: 1px solid rgba(245,200,66,0.3); }}
-    .card-badge.tech  {{ background: rgba(0,212,255,0.1);   color: var(--cyan);  border: 1px solid var(--border2); }}
-    .card-badge.partner {{ background: rgba(0,168,107,0.14); color: #00e68e; border: 1px solid rgba(0,230,142,0.3); }}
-
-    .card-badge.ai-ops {{ background: rgba(0,212,255,0.12); color: var(--cyan); border: 1px solid rgba(0,212,255,0.3); }}
-    .card-badge.engineering {{ background: rgba(0,80,255,0.16); color: #70a4ff; border: 1px solid rgba(0,80,255,0.35); }}
-    .card-badge.utilities {{ background: rgba(0,168,107,0.14); color: #00e68e; border: 1px solid rgba(0,230,142,0.35); }}
-    .card-badge.vision-energy {{ background: rgba(245,200,66,0.12); color: var(--gold); border: 1px solid rgba(245,200,66,0.3); }}
-    .card-badge.facilities {{ background: rgba(168,85,247,0.14); color: #c084fc; border: 1px solid rgba(168,85,247,0.35); }}
-
-    .card-title {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 22px; font-weight: 700; line-height: 1.25;
-      margin-bottom: 12px;
-    }}
-    .card-desc {{
-      font-size: 15px; color: var(--text); line-height: 1.65;
-      margin-bottom: 20px; flex: 1;
-    }}
-
-    .card-meta {{
-      display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap;
-    }}
-    .card-meta-item {{
-      display: flex; align-items: center; gap: 6px;
-      font-size: 13px; color: var(--muted); font-weight: 500;
-    }}
-    .card-meta-item svg {{ opacity: 0.6; }}
-
-    .card-tags {{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }}
-    .card-tag {{
-      font-size: 12px; font-weight: 600; padding: 5px 12px;
-      border-radius: 6px; background: var(--glass2);
-      border: 1px solid var(--border); color: var(--muted);
-    }}
-
-    .card-actions {{ display: flex; gap: 10px; }}
-
-    .btn-download {{
-      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: linear-gradient(135deg, var(--blue2), var(--cyan2));
-      border: none; border-radius: 12px; padding: 13px 20px;
-      font-size: 14.5px; font-weight: 700; color: var(--white);
-      cursor: pointer; transition: var(--tr); text-decoration: none;
-      letter-spacing: 0.3px;
-      box-shadow: 0 4px 20px rgba(0,80,255,0.3);
-    }}
-    .btn-download:hover {{
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,80,255,0.5);
-      filter: brightness(1.1);
-    }}
-    .btn-download.gold-btn {{
-      background: linear-gradient(135deg, #c97a00, var(--gold));
-      box-shadow: 0 4px 20px rgba(245,200,66,0.3);
-    }}
-    .btn-download.gold-btn:hover {{ box-shadow: 0 8px 30px rgba(245,200,66,0.5); }}
-    .btn-download.green-btn {{
-      background: linear-gradient(135deg, #007a4e, #00c87a);
-      box-shadow: 0 4px 20px rgba(0,168,107,0.3);
-    }}
-    .btn-download.purple-btn {{
-      background: linear-gradient(135deg, #4a0090, #9333ea);
-      box-shadow: 0 4px 20px rgba(168,85,247,0.3);
-    }}
-
-    .btn-preview {{
-      display: flex; align-items: center; justify-content: center;
-      width: 46px; height: 46px; border-radius: 12px;
-      background: var(--glass2); border: 1px solid var(--border);
-      color: var(--muted); cursor: pointer; transition: var(--tr); text-decoration: none;
+    .deck-icon-wrap {{
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
       flex-shrink: 0;
     }}
-    .btn-preview:hover {{
-      background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan);
-      box-shadow: 0 0 16px rgba(0,212,255,0.25);
+    .exec-icon-wrap {{
+      background: #4900f3;
+      box-shadow: 0 6px 16px rgba(73, 0, 243, 0.3);
     }}
-
-    .btn-download-sec {{
-      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--glass2);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 13px 18px;
-      font-size: 14px; font-weight: 700; color: var(--white);
-      cursor: pointer; transition: var(--tr); text-decoration: none;
-      letter-spacing: 0.3px;
+    .tech-icon-wrap {{
+      background: #0ea5e9;
+      box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
     }}
-    .btn-download-sec:hover {{
+    .deck-sub-badge {{
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }}
+    .exec-sub {{ color: #4900f3; }}
+    .tech-sub {{ color: #0284c7; }}
+    .deck-cat-badge {{
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }}
+    .exec-badge {{
+      background: #ede9fe;
+      color: #4900f3;
+      border: 1px solid #ddd6fe;
+    }}
+    .tech-badge {{
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }}
+    .deck-title {{
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 12px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }}
+    .deck-desc {{
+      font-size: 14.5px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 22px;
+      flex: 1;
+    }}
+    .deck-tags {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }}
+    .deck-tag {{
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 6px;
+    }}
+    .exec-tag {{
+      background: #ede9fe;
+      color: #4900f3;
+      border: 1px solid #ddd6fe;
+    }}
+    .tech-tag {{
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }}
+    .deck-meta {{
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }}
+    .deck-meta-item {{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--gray-500);
+      font-weight: 500;
+    }}
+    .deck-actions {{
+      display: flex;
+      gap: 12px;
+    }}
+    .btn-deck-primary {{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      cursor: pointer;
+      transition: var(--tr);
+      text-decoration: none;
+    }}
+    .exec-btn {{
+      background: linear-gradient(135deg, #4900f3 0%, #3a00c7 100%);
+      box-shadow: 0 6px 20px rgba(73, 0, 243, 0.28);
+    }}
+    .exec-btn:hover {{
+      box-shadow: 0 10px 28px rgba(73, 0, 243, 0.4);
       transform: translateY(-2px);
-      border-color: var(--cyan);
-      background: rgba(0, 212, 255, 0.1);
-      color: var(--cyan);
-      box-shadow: 0 4px 20px rgba(0,212,255,0.25);
     }}
-    .btn-download-sec.gold-outline:hover {{
-      border-color: var(--gold);
-      background: rgba(245, 200, 66, 0.1);
-      color: var(--gold);
-      box-shadow: 0 4px 20px rgba(245,200,66,0.25);
+    .tech-btn {{
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.28);
+    }}
+    .tech-btn:hover {{
+      box-shadow: 0 10px 28px rgba(14, 165, 233, 0.4);
+      transform: translateY(-2px);
+    }}
+    .btn-deck-secondary {{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--tr);
+      text-decoration: none;
+    }}
+    .exec-outline {{
+      border: 1.5px solid #4900f3;
+      color: #4900f3;
+    }}
+    .exec-outline:hover {{
+      background: #ede9fe;
+      transform: translateY(-2px);
+    }}
+    .tech-outline {{
+      border: 1.5px solid #0ea5e9;
+      color: #0ea5e9;
+    }}
+    .tech-outline:hover {{
+      background: #e0f2fe;
+      transform: translateY(-2px);
     }}
 
-    /* FEATURED BANNER */
+    /* FEATURED BANNER from LandingPage Bottom CTA Style */
     .featured-banner {{
-      background: linear-gradient(135deg, rgba(0,12,40,0.9), rgba(0,30,80,0.9));
-      border: 1px solid var(--border2);
-      border-radius: 28px; padding: 48px;
-      display: flex; align-items: center; gap: 48px;
-      margin-bottom: 48px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #4900f3 0%, #3500b8 100%);
+      border-radius: var(--radius-xl);
+      padding: 44px 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 44px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px -8px rgba(73, 0, 243, 0.35);
+      color: #ffffff;
     }}
     .featured-banner::before {{
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(0,212,255,0.08) 0%, transparent 60%);
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      filter: blur(50px);
       pointer-events: none;
+      transform: translate(30%, -30%);
     }}
-    .featured-banner-text {{ flex: 1; }}
+    .featured-banner-text {{
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }}
     .featured-banner-text h3 {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 28px; font-weight: 700; margin-bottom: 12px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: #ffffff;
     }}
-    .featured-banner-text p {{ font-size: 15px; color: var(--text); line-height: 1.7; max-width: 600px; }}
+    .featured-banner-text p {{
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.65;
+      max-width: 620px;
+    }}
     .featured-banner-img {{
-      width: 200px; flex-shrink: 0;
-      filter: drop-shadow(0 0 30px rgba(0,80,255,0.4));
+      width: 170px;
+      height: auto;
+      flex-shrink: 0;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.25));
+      position: relative;
+      z-index: 1;
     }}
 
     /* CATALOGUE CONTROLS */
     .catalogue-controls {{
-      display: flex; flex-direction: column; gap: 20px;
-      margin-bottom: 40px; align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 40px;
+      align-items: center;
     }}
     .catalogue-search-bar {{
-      width: 100%; max-width: 640px; position: relative;
+      width: 100%;
+      max-width: 600px;
+      position: relative;
     }}
     .catalogue-search-input {{
-      width: 100%; padding: 16px 22px 16px 52px;
-      border-radius: 50px; background: rgba(13, 19, 38, 0.9);
-      border: 1px solid var(--border);
-      color: var(--white); font-size: 15px;
-      outline: none; transition: var(--tr);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      font-family: 'Inter', sans-serif;
+      width: 100%;
+      padding: 15px 22px 15px 50px;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      border: 1.5px solid var(--gray-200);
+      color: var(--gray-900);
+      font-size: 14.5px;
+      outline: none;
+      transition: var(--tr);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+      font-family: inherit;
     }}
     .catalogue-search-input:focus {{
-      border-color: var(--cyan);
-      box-shadow: 0 0 25px rgba(0,212,255,0.25);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(73, 0, 243, 0.12);
     }}
     .catalogue-search-icon {{
-      position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
-      color: var(--cyan); pointer-events: none; opacity: 0.8;
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary);
+      pointer-events: none;
+      opacity: 0.85;
     }}
     .sub-filter-bar {{
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }}
     .sub-filter-btn {{
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: 50px; padding: 10px 20px;
-      font-size: 13.5px; font-weight: 600; color: var(--muted);
-      cursor: pointer; transition: var(--tr);
-      letter-spacing: 0.3px;
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: var(--tr);
     }}
-    .sub-filter-btn:hover, .sub-filter-btn.active {{
-      background: linear-gradient(135deg, rgba(0,80,255,0.25), rgba(0,212,255,0.18));
-      border-color: var(--cyan); color: var(--cyan);
-      box-shadow: 0 0 16px rgba(0,212,255,0.18);
+    .sub-filter-btn:hover {{
+      border-color: var(--primary-border);
+      color: var(--primary);
+      background: var(--primary-light);
+    }}
+    .sub-filter-btn.active {{
+      background: var(--primary-tint);
+      color: var(--primary);
+      border-color: var(--primary-border);
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(73, 0, 243, 0.1);
     }}
 
-    /* APP CATALOGUE GRID */
+    /* APP CATALOGUE GRID (20 Apps) */
     .app-grid {{
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 24px;
     }}
     .app-card {{
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: 18px; padding: 26px;
-      transition: var(--tr); position: relative; overflow: hidden;
-      display: flex; flex-direction: column;
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      transition: var(--tr);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.04);
     }}
-    .app-card::after {{
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-      opacity: 0; transition: var(--tr);
+    .app-card::before {{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0;
+      transition: var(--tr);
     }}
     .app-card:hover {{
-      border-color: var(--border2);
+      border-color: #c7d2fe;
       transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35), var(--glow);
+      box-shadow: 0 16px 36px -6px rgba(73, 0, 243, 0.12);
     }}
-    .app-card:hover::after {{ opacity: 1; }}
+    .app-card:hover::before {{
+      opacity: 1;
+    }}
 
     .app-card-top {{
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 12px; gap: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 10px;
     }}
     .app-logo {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 17px; font-weight: 700; letter-spacing: 1px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }}
+    .card-badge {{
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }}
+    .card-badge.ai-ops {{ background: #ede9fe; color: #4900f3; border: 1px solid #ddd6fe; }}
+    .card-badge.engineering {{ background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }}
+    .card-badge.utilities {{ background: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; }}
+    .card-badge.vision-energy {{ background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }}
+    .card-badge.facilities {{ background: #f3e8ff; color: #9333ea; border: 1px solid #e9d5ff; }}
+
     .app-protocol-badge {{
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(0, 212, 255, 0.08);
-      border: 1px solid rgba(0, 212, 255, 0.22);
-      border-radius: 6px; padding: 5px 12px;
-      font-size: 12px; font-weight: 600; color: var(--cyan);
-      font-family: 'Space Grotesk', sans-serif;
-      margin-bottom: 12px; width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--gray-600);
+      font-family: inherit;
+      margin-bottom: 12px;
+      width: fit-content;
     }}
     .app-name {{
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px; font-weight: 700; margin-bottom: 10px;
-      color: var(--white);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
     }}
-    .app-desc {{ font-size: 15px; color: var(--text); line-height: 1.65; margin-bottom: 18px; flex: 1; }}
-    .app-features {{ list-style: none; margin-bottom: 22px; display: flex; flex-direction: column; gap: 8px; }}
+    .app-name:hover {{
+      color: var(--primary);
+    }}
+    .app-desc {{
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }}
+    .app-features {{
+      list-style: none;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }}
     .app-features li {{
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 13.5px; color: var(--text); line-height: 1.45;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.45;
     }}
     .app-features li::before {{
-      content: ''; width: 5px; height: 5px; border-radius: 50%;
-      background: var(--cyan); flex-shrink: 0; margin-top: 6px;
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 6px;
     }}
 
-    /* HOW TO USE */
+    .app-card-actions {{
+      margin-top: auto;
+    }}
+    .btn-explore {{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary-light);
+      border: 1.5px solid #e0e7ff;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--tr);
+      text-decoration: none;
+    }}
+    .btn-explore:hover {{
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(73, 0, 243, 0.25);
+      transform: translateY(-2px);
+    }}
+
+    /* HOW IT WORKS from LandingPage.tsx */
+    .how-it-works-section {{
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-100);
+    }}
     .steps-grid {{
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }}
     .step-card {{
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: 18px; padding: 32px 24px;
-      text-align: center; transition: var(--tr);
-    }}
-    .step-card:hover {{ border-color: var(--border2); transform: translateY(-3px); }}
-    .step-num {{
-      width: 52px; height: 52px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue2), var(--cyan2));
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 800;
-      margin: 0 auto 20px; box-shadow: 0 0 30px rgba(0,80,255,0.3);
-    }}
-    .step-title {{ font-size: 16px; font-weight: 700; margin-bottom: 10px; }}
-    .step-desc {{ font-size: 13px; color: var(--text); line-height: 1.6; }}
-
-    /* FOOTER */
-    footer {{
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
+      background: #ffffff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
       text-align: center;
-      color: var(--muted); font-size: 13px;
+      transition: var(--tr);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }}
-    footer strong {{ color: var(--cyan); }}
+    .step-card:hover {{
+      border-color: var(--primary-border);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -4px rgba(73, 0, 243, 0.12);
+    }}
+    .step-badge {{
+      font-size: 11px;
+      font-weight: 800;
+      color: #818cf8;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      transition: color 0.2s ease;
+    }}
+    .step-card:hover .step-badge {{
+      color: var(--primary);
+    }}
+    .step-icon-circle {{
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--primary-tint);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease;
+    }}
+    .step-card:hover .step-icon-circle {{
+      transform: scale(1.1);
+    }}
+    .step-title {{
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }}
+    .step-desc {{
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }}
+
+    /* FOOTER from LandingPage.tsx */
+    .site-footer {{
+      background: #ffffff;
+      border-top: 1px solid var(--gray-200);
+      padding: 32px 0;
+    }}
+    .footer-inner {{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }}
+    @media (min-width: 768px) {{
+      .footer-inner {{
+        flex-direction: row;
+      }}
+    }}
+    .footer-brand {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }}
+    .footer-logo {{
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }}
+    .footer-brand-text {{
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+    }}
+    .footer-copyright {{
+      font-size: 12px;
+      color: var(--gray-400);
+    }}
 
     /* TOAST */
     #toast {{
-      position: fixed; bottom: 32px; right: 32px; z-index: 9999;
-      background: linear-gradient(135deg, #0d2040, #0a1a30);
-      border: 1px solid var(--cyan); border-radius: 14px;
-      padding: 16px 24px; display: flex; align-items: center; gap: 14px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 30px rgba(0,212,255,0.2);
-      transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: #ffffff;
+      border: 1.5px solid var(--primary-border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(73, 0, 243, 0.16);
+      transform: translateX(120%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       max-width: 380px;
     }}
-    #toast.show {{ transform: translateX(0); }}
-    #toast-icon {{ font-size: 22px; }}
-    #toast-text {{ font-size: 14px; font-weight: 600; color: var(--white); }}
-    #toast-sub  {{ font-size: 12px; color: var(--muted); margin-top: 2px; }}
+    #toast.show {{
+      transform: translateX(0);
+    }}
+    #toast-icon {{
+      font-size: 20px;
+    }}
+    #toast-text {{
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-900);
+    }}
+    #toast-sub {{
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }}
 
     @media (max-width: 900px) {{
-      .nav-links {{ display: none; }}
+      .nav-menu {{ display: none; }}
     }}
     @media (max-width: 768px) {{
-      .wrap, .nav-inner {{ padding: 0 20px; }}
       .cards-grid {{ grid-template-columns: 1fr; }}
-      .hero-stats {{ gap: 28px; }}
+      .hero-stats-grid {{ grid-template-columns: 1fr; }}
       .featured-banner {{ flex-direction: column; text-align: center; padding: 32px 24px; }}
-      .featured-banner-img {{ width: 160px; }}
+      .featured-banner-img {{ width: 140px; }}
       .app-grid {{ grid-template-columns: 1fr; }}
     }}
   </style>
 </head>
 <body>
 
-<div id="starfield"><canvas id="c"></canvas></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="#">
-      <img class="nav-logo" src="../TP8-F.png" alt="TP Logo" />
-      <div class="nav-title">
-        <span>Terrestrial Platform</span>
-        <span>From Edge to Cloud</span>
+<!-- STICKY HEADER matching LandingPage.tsx -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="nav-brand" href="index.html">
+      <img class="nav-logo" src="../TP8-F.png" alt="TP Platform Logo" />
+      <div class="nav-brand-text-block">
+        <span class="nav-brand-title">TERRESTRIAL PLATFORM</span>
+        <span class="nav-brand-subtitle">ENTERPRISE INDUSTRIAL INTELLIGENCE SUITE</span>
       </div>
     </a>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="../terrestrial.cloud/index.html" class="nav-link">Main Website</a>
-        <a href="../terrestrial.cloud/platform/index.html" class="nav-link">Platform Suite</a>
-        <a href="#catalogues" class="nav-link">App Catalogues (20)</a>
-      </div>
-      <div class="nav-badge">SI Sales Hub</div>
+
+    <nav class="nav-menu">
+      <a href="#core-decks" class="nav-link">Core Presentations</a>
+      <a href="#catalogues" class="nav-link">App Specifications (20)</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="https://auth.innovativeengineers.co.in/realms/Terrestrial-Platform/protocol/openid-connect/auth?client_id=terra-si&redirect_uri=https%3A%2F%2Fchannelpartner.terrestrial.cloud%2Fauth%2Fcallback&response_type=code&scope=openid%20profile%20email&state=b53b52a426f3a7117205b81165dbddf6" target="_blank" class="btn-signin">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>Sign In</span>
+      </a>
+      <a href="https://channelpartner.terrestrial.cloud/apply" target="_blank" class="btn-apply-now">
+        <span>Apply Now</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="apply-arrow">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
     </div>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div>
-  <div class="wrap">
-    <div class="hero-eyebrow">System Integrator Partner Portal</div>
-    <h1 class="hero-h1">
+<!-- HERO SECTION with Light Pattern & Orbs -->
+<section class="hero-section">
+  <div class="bg-grid-pattern"></div>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <div class="wrap text-center">
+    <div class="hero-badge">
+      <span class="live-dot-wrap">
+        <span class="live-dot-ping"></span>
+        <span class="live-dot"></span>
+      </span>
+      <span>System Integrator Partner Portal</span>
+    </div>
+
+    <h1 class="hero-title">
       Your Complete<br/>
-      <span class="grad">Sales &amp; Application Toolkit</span>
+      <span class="hero-gradient-text">Sales &amp; Application Toolkit</span>
     </h1>
-    <p class="hero-sub">
+
+    <p class="hero-subtext">
       Everything you need to pitch, present &amp; close deals with confidence.
       Download tailored presentations for C-Suite executives, OT/IT engineers,
-      and drill down into 20 application-wise catalogues for every industrial domain.
+      and drill down into 20 application-wise specifications for every industrial domain.
     </p>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>2</strong><span>Core Presentations</span></div>
-      <div class="hero-stat"><strong>20</strong><span>Enterprise App Catalogues</span></div>
-      <div class="hero-stat"><strong>5</strong><span>Industrial Sectors</span></div>
+
+    <div class="hero-cta-wrap">
+      <a href="https://channelpartner.terrestrial.cloud/apply" target="_blank" class="hero-cta-btn">
+        <span>Apply as Channel Partner</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href="#catalogues" class="hero-secondary-btn">
+        <span>Explore Specifications</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- SECTION 1 — Core Presentations -->
-<section class="section">
+<section class="section" id="core-decks" style="background: #ffffff; border-top: 1px solid var(--gray-100);">
   <div class="wrap">
     <div class="section-header">
       <div class="section-tag">Step 1 — Choose Your Deck</div>
@@ -1303,89 +1887,93 @@ full_html = f'''<!DOCTYPE html>
 
     <div class="cards-grid" id="cardsGrid">
 
-      <!-- Executive -->
-      <div class="card" data-cat="exec">
-        <div class="card-accent gold"></div>
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-icon gold-bg">🎯</div>
-            <span class="card-badge exec">Executive</span>
+      <!-- Executive Card -->
+      <div class="deck-card deck-card-exec" data-cat="exec">
+        <div class="deck-card-top">
+          <div class="deck-icon-wrap exec-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
           </div>
-          <h3 class="card-title">Presentation for Executive Personnel</h3>
-          <p class="card-desc">
-            A high-impact, business-value-first narrative designed for CEOs, CFOs, VPs and Plant Heads.
-            Includes verbatim pitch speech script, boardroom speaker notes, EBITDA expansion equations,
-            and C-Suite objection handling battlecards.
-          </p>
-          <div class="card-tags">
-            <span class="card-tag">Speech Script Included</span>
-            <span class="card-tag">Boardroom Notes</span>
-            <span class="card-tag">EBITDA Focus</span>
-            <span class="card-tag">15–20 min pitch</span>
+          <div>
+            <div class="deck-sub-badge exec-sub">For C-Suite &amp; Board</div>
+            <div class="deck-cat-badge exec-badge">Executive</div>
           </div>
-          <div class="card-meta">
-            <div class="card-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Speech Deck &amp; Slides (.pptx)
-            </div>
-            <div class="card-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Updated Oct 2026
-            </div>
+        </div>
+        <h3 class="deck-title">Presentation for Executive Personnel</h3>
+        <p class="deck-desc">
+          A high-impact, business-value-first narrative designed for CEOs, CFOs, VPs and Plant Heads.
+          Includes verbatim pitch speech script, boardroom speaker notes, EBITDA expansion equations,
+          and C-Suite objection handling battlecards.
+        </p>
+        <div class="deck-tags">
+          <span class="deck-tag exec-tag">Speech Script Included</span>
+          <span class="deck-tag exec-tag">Boardroom Notes</span>
+          <span class="deck-tag exec-tag">EBITDA Focus</span>
+          <span class="deck-tag exec-tag">15–20 min pitch</span>
+        </div>
+        <div class="deck-meta">
+          <div class="deck-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>PowerPoint (.pptx) &amp; Speech Notes</span>
           </div>
-          <div class="card-actions">
-            <a href="../Executive_Speech_Deck.pptx" class="btn-download gold-btn" download onclick="showToast('Executive Speech Deck', 'Executive_Speech_Deck.pptx')">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-              Download Speech Deck
-            </a>
-            <a href="../The_Terrestrial_Metamorphosis-ver2.pptx" class="btn-download-sec gold-outline" download="The_Terrestrial_Metamorphosis-ver2.pptx" onclick="showToast('Executive Presentation', 'The_Terrestrial_Metamorphosis-ver2.pptx')">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PPTX
-            </a>
+          <div class="deck-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Updated Oct 2026</span>
           </div>
+        </div>
+        <div class="deck-actions">
+          <a href="../Executive_Speech_Deck.pptx" class="btn-deck-primary exec-btn" download onclick="showToast('Executive Speech Deck', 'Executive_Speech_Deck.pptx')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+            <span>Download Speech Deck</span>
+          </a>
+          <a href="../The_Terrestrial_Metamorphosis-ver2.pptx" class="btn-deck-secondary exec-outline" download="The_Terrestrial_Metamorphosis-ver2.pptx" onclick="showToast('Executive Presentation', 'The_Terrestrial_Metamorphosis-ver2.pptx')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PPTX</span>
+          </a>
         </div>
       </div>
 
-      <!-- Technical -->
-      <div class="card" data-cat="tech">
-        <div class="card-accent"></div>
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-icon">⚙️</div>
-            <span class="card-badge tech">Technical</span>
+      <!-- Technical Card -->
+      <div class="deck-card deck-card-tech" data-cat="tech">
+        <div class="deck-card-top">
+          <div class="deck-icon-wrap tech-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
           </div>
-          <h3 class="card-title">Presentation for Automation &amp; Engineering Personnel</h3>
-          <p class="card-desc">
-            A deep-dive technical deck for OT Engineers, Automation Leads, SCADA/DCS teams, and Plant Managers.
-            Includes verbatim technical pitch speech script, Purdue model air-gap compliance notes,
-            bumpless supervisory closed-loop explanations, and engineer Q&amp;A battlecards.
-          </p>
-          <div class="card-tags">
-            <span class="card-tag">Technical Speech Script</span>
-            <span class="card-tag">OT/IT Talking Points</span>
-            <span class="card-tag">Edge-to-Cloud</span>
-            <span class="card-tag">SCADA Replace</span>
+          <div>
+            <div class="deck-sub-badge tech-sub">For OT/IT &amp; Automation</div>
+            <div class="deck-cat-badge tech-badge">Technical</div>
           </div>
-          <div class="card-meta">
-            <div class="card-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Speech Deck &amp; Slides (.pptx)
-            </div>
-            <div class="card-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Updated Oct 2026
-            </div>
+        </div>
+        <h3 class="deck-title">Presentation for Automation &amp; Engineering Personnel</h3>
+        <p class="deck-desc">
+          A deep-dive technical deck for OT Engineers, Automation Leads, SCADA/DCS teams, and Plant Managers.
+          Includes verbatim technical pitch speech script, Purdue model air-gap compliance notes,
+          bumpless supervisory closed-loop explanations, and engineer Q&amp;A battlecards.
+        </p>
+        <div class="deck-tags">
+          <span class="deck-tag tech-tag">Technical Speech Script</span>
+          <span class="deck-tag tech-tag">OT/IT Talking Points</span>
+          <span class="deck-tag tech-tag">Edge-to-Cloud</span>
+          <span class="deck-tag tech-tag">SCADA Replace</span>
+        </div>
+        <div class="deck-meta">
+          <div class="deck-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>PowerPoint (.pptx) &amp; Technical Notes</span>
           </div>
-          <div class="card-actions">
-            <a href="../Engineering_Speech_Deck.pptx" class="btn-download" download onclick="showToast('Engineering Speech Deck', 'Engineering_Speech_Deck.pptx')">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-              Download Speech Deck
-            </a>
-            <a href="../CITA-TP-I2.pptx" class="btn-download-sec" download="CITA-TP-I2.pptx" onclick="showToast('Engineering Presentation', 'CITA-TP-I2.pptx')">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PPTX
-            </a>
+          <div class="deck-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Updated Oct 2026</span>
           </div>
+        </div>
+        <div class="deck-actions">
+          <a href="../Engineering_Speech_Deck.pptx" class="btn-deck-primary tech-btn" download onclick="showToast('Engineering Speech Deck', 'Engineering_Speech_Deck.pptx')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+            <span>Download Speech Deck</span>
+          </a>
+          <a href="../CITA-TP-I2.pptx" class="btn-deck-secondary tech-outline" download="CITA-TP-I2.pptx" onclick="showToast('Engineering Presentation', 'CITA-TP-I2.pptx')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PPTX</span>
+          </a>
         </div>
       </div>
 
@@ -1393,8 +1981,8 @@ full_html = f'''<!DOCTYPE html>
   </div>
 </section>
 
-<!-- SECTION 2 — Application Catalogues -->
-<section class="section" style="padding-top: 0;" id="catalogues">
+<!-- SECTION 2 — Application Specifications -->
+<section class="section" id="catalogues" style="background: var(--gray-50); border-top: 1px solid var(--gray-100);">
   <div class="wrap">
     <div class="section-header">
       <div class="section-tag">Step 2 — Drill Into Applications</div>
@@ -1402,6 +1990,7 @@ full_html = f'''<!DOCTYPE html>
       <p class="section-desc">Interactive product specifications for all 20 Terra application modules across 5 industrial sectors. Click any application below to explore its live platform architecture and technical capabilities.</p>
     </div>
 
+    <!-- Featured Purple Banner -->
     <div class="featured-banner">
       <div class="featured-banner-text">
         <h3>🧠 Terrestrial Platform — Nervous System for Industry</h3>
@@ -1418,13 +2007,12 @@ full_html = f'''<!DOCTYPE html>
     <div class="catalogue-controls">
       <div class="catalogue-search-bar">
         <svg class="catalogue-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
-        <input type="text" id="appSearchInput" class="catalogue-search-input" placeholder="Search 20 applications by name, category, protocol, or capability..." />
+        <input type="text" id="catalogueSearch" class="catalogue-search-input" placeholder="Search 20 applications by name, category, protocol, or capability..." />
       </div>
 
-      <div class="sub-filter-bar" id="subFilterBar">
+      <div class="sub-filter-bar">
         <button class="sub-filter-btn active" data-sub="all">All Applications (20)</button>
         <button class="sub-filter-btn" data-sub="ai-ops">Autonomous AI &amp; Swarms (5)</button>
         <button class="sub-filter-btn" data-sub="engineering">Plant Engineering &amp; Twins (6)</button>
@@ -1434,53 +2022,72 @@ full_html = f'''<!DOCTYPE html>
       </div>
     </div>
 
-    <!-- App catalogue cards (20 applications) -->
+    <!-- APP CARDS GRID -->
     <div class="app-grid" id="appGrid">
-
 {all_cards_block}
+    </div>
 
+  </div>
+</section>
+
+<!-- SECTION 3: HOW IT WORKS from LandingPage.tsx -->
+<section class="section how-it-works-section" id="how-it-works">
+  <div class="wrap text-center">
+    <div class="section-tag">Process</div>
+    <h2 class="section-h2">How It Works</h2>
+    <p class="section-desc">From partner preparation to closed industrial enterprise contracts in four simple steps.</p>
+
+    <div class="steps-grid" style="margin-top: 40px;">
+      <div class="step-card">
+        <div class="step-badge">STEP 01</div>
+        <div class="step-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3 class="step-title">Choose Your Narrative</h3>
+        <p class="step-desc">Select Executive Pitch for C-Suite boardrooms or Technical Deep-Dive for OT/IT engineering teams.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">STEP 02</div>
+        <div class="step-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        </div>
+        <h3 class="step-title">Study Speech Guide</h3>
+        <p class="step-desc">Review verbatim word-for-word scripts, stage cues, and EBITDA value propositions before the meeting.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">STEP 03</div>
+        <div class="step-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </div>
+        <h3 class="step-title">Drill Into App Specs</h3>
+        <p class="step-desc">Explore tailored live specifications for all 20 modules to address customer-specific operational needs.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">STEP 04</div>
+        <div class="step-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3 class="step-title">Deploy &amp; Earn ARR</h3>
+        <p class="step-desc">Initiate non-intrusive 48-hour shadow pilots with full co-selling and turnkey software subscription margins.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 3 — How to Use -->
-<section class="section" style="padding-top: 0;">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="section-tag">Quick Guide</div>
-      <h2 class="section-h2">How to Use This Portal</h2>
-      <p class="section-desc">Four simple steps to prepare and deliver a winning pitch.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Identify Your Audience</div>
-        <p class="step-desc">Are you meeting C-Suite decision makers, OT/Engineering teams, or channel partner executives? Choose your track accordingly.</p>
+<!-- FOOTER from LandingPage.tsx -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="footer-brand" href="index.html">
+      <img class="footer-logo" src="../TP8-F.png" alt="TP Platform Logo" />
+      <div class="nav-brand-text-block">
+        <span style="font-weight:800;font-size:12px;color:var(--gray-900);letter-spacing:0.04em;">TERRESTRIAL PLATFORM</span>
+        <span style="font-size:8px;font-weight:700;color:#0284c7;letter-spacing:0.05em;text-transform:uppercase;">ENTERPRISE INDUSTRIAL INTELLIGENCE SUITE</span>
       </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">Download the Right Deck</div>
-        <p class="step-desc">Use the Executive deck for ROI and strategic vision, or the Engineering deck for architecture and deep technical validation.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">Download App Catalogues (.pptx)</div>
-        <p class="step-desc">Supplement your core presentation with application-specific catalogue decks (TerraAI, TerraSCADA, TerraGridX, etc.) generated directly from engineering specs.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-title">Pitch, Demo &amp; Close</div>
-        <p class="step-desc">Lead with physical process bottlenecks, demonstrate live interactive specifications, and prove verified industrial ROI.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <p>© 2026 <strong>Terrestrial Platform™</strong> &nbsp;|&nbsp; SI Partner Portal &nbsp;|&nbsp; Confidential — For Authorised System Integrators Only</p>
-    <p style="margin-top:8px;">From Edge to Cloud &nbsp;·&nbsp; All materials are proprietary and not for redistribution.</p>
+    </a>
+    <span class="footer-copyright">© 2026 Innovation Intellect. All rights reserved.</span>
   </div>
 </footer>
 
@@ -1494,42 +2101,7 @@ full_html = f'''<!DOCTYPE html>
 </div>
 
 <script>
-(function(){{
-  const canvas = document.getElementById('c');
-  const ctx = canvas.getContext('2d');
-  let W, H, stars = [];
-
-  function resize(){{
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-    stars = Array.from({{length: 160}}, () => ({{
-      x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 1.4 + 0.3,
-      a: Math.random(),
-      da: (Math.random() - 0.5) * 0.006,
-      speed: Math.random() * 0.12 + 0.02,
-    }}));
-  }}
-  resize();
-  window.addEventListener('resize', resize);
-
-  function draw(){{
-    ctx.clearRect(0, 0, W, H);
-    stars.forEach(s => {{
-      s.a = Math.max(0.05, Math.min(1, s.a + s.da));
-      if (s.a <= 0.05 || s.a >= 1) s.da *= -1;
-      s.y += s.speed;
-      if (s.y > H) {{ s.y = 0; s.x = Math.random() * W; }}
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(160, 210, 255, ${{s.a}})`;
-      ctx.fill();
-    }});
-    requestAnimationFrame(draw);
-  }}
-  draw();
-}})();
-
+// Filter Core Decks
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {{
   btn.addEventListener('click', () => {{
@@ -1537,7 +2109,7 @@ filterBtns.forEach(btn => {{
     btn.classList.add('active');
     const f = btn.dataset.filter;
 
-    document.querySelectorAll('#cardsGrid .card').forEach(c => {{
+    document.querySelectorAll('#cardsGrid .deck-card').forEach(c => {{
       c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
     }});
 
@@ -1553,8 +2125,9 @@ filterBtns.forEach(btn => {{
   }});
 }});
 
+// Search & Sub-category Filter for 20 Applications
+const searchInput = document.getElementById('catalogueSearch');
 const subFilterBtns = document.querySelectorAll('.sub-filter-btn');
-const searchInput = document.getElementById('appSearchInput');
 const appCards = document.querySelectorAll('#appGrid .app-card');
 
 let currentSub = 'all';
@@ -1562,13 +2135,12 @@ let currentQuery = '';
 
 function filterApps() {{
   appCards.forEach(card => {{
-    const sub = card.dataset.subcat;
-    const searchData = (card.dataset.search || '').toLowerCase();
+    const sub = card.dataset.subcat || '';
+    const searchData = card.dataset.search || '';
+    const matchSub = (currentSub === 'all' || sub === currentSub);
+    const matchQuery = (!currentQuery || searchData.includes(currentQuery));
 
-    const matchesSub = (currentSub === 'all' || sub === currentSub);
-    const matchesSearch = !currentQuery || searchData.includes(currentQuery);
-
-    if (matchesSub && matchesSearch) {{
+    if (matchSub && matchQuery) {{
       card.style.display = '';
     }} else {{
       card.style.display = 'none';

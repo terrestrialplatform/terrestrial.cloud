@@ -68,7 +68,7 @@ for a in apps:
     deck_name = f"{clean_name}_Catalogue.pptx"
     deck_href = f"catalogues/{deck_name}"
     
-    spec_link = f"../terrestrial.cloud/platform/{a['file']}"
+    spec_link = f"../platform/{a['file']}"
     features_html = '\n'.join([f'          <li>{feat}</li>' for feat in a['features']])
     
     card_html = f'''      <!-- {a['name']} -->
@@ -693,8 +693,8 @@ html_content = f'''<!DOCTYPE html>
     </a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="../terrestrial.cloud/index.html" class="nav-link">Main Website</a>
-        <a href="../terrestrial.cloud/platform/index.html" class="nav-link">Platform Suite</a>
+        <a href="../index.html" class="nav-link">Main Website</a>
+        <a href="../platform/index.html" class="nav-link">Platform Suite</a>
         <a href="#catalogues" class="nav-link">App Catalogues (20)</a>
       </div>
       <div class="nav-badge">SI Sales Hub</div>
@@ -775,7 +775,7 @@ html_content = f'''<!DOCTYPE html>
             </div>
           </div>
           <div class="card-actions">
-            <a href="../The_Terrestrial_Metamorphosis-ver2.pptx" class="btn-download gold-btn" download onclick="showToast('Executive Deck', 'The_Terrestrial_Metamorphosis-ver2.pptx')">
+            <a href="../The_Terrestrial_Metamorphosis-ver4.pptx" class="btn-download gold-btn" download onclick="showToast('Executive Deck', 'The_Terrestrial_Metamorphosis-ver4.pptx')">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download Deck
             </a>
