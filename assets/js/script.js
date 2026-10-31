@@ -61,3 +61,24 @@ $(document).ready(function(){
         autoPlay:true
     });
 });
+
+function toggleAppMenu(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    var menu = document.getElementById('appMenu');
+    var btn = $('.dropdown-toggle');
+    if (menu) {
+        menu.classList.toggle('open');
+    }
+    if (btn.length) {
+        btn.toggleClass('active');
+    }
+}
+
+$(document).on('click', function(e) {
+    if (!$(e.target).closest('.dropdown-container').length) {
+        $('#appMenu').removeClass('open');
+        $('.dropdown-toggle').removeClass('active');
+    }
+});
