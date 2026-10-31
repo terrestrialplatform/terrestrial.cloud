@@ -1,63 +1,50 @@
 // ==========================================================================
-// Terrestrial Platform - Global Theme Manager (Dark / Light Theme)
-// Persists choice in localStorage across all pages with zero FOUC
+// Terrestrial Platform - Global Theme Manager (Enforced Light Theme)
 // ==========================================================================
 
 (function() {
-    // 1. Immediate theme initialization before DOM content renders to prevent flash
-    const THEME_KEY = 'terra_theme_pref';
-    const saved = localStorage.getItem(THEME_KEY);
-    
-    // Default to dark theme if no preference is saved
-    let initialTheme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', initialTheme);
+    // 1. Immediate theme initialization to light mode
+    document.documentElement.setAttribute('data-theme', 'light');
+    try {
+        localStorage.setItem('terra_theme_pref', 'light');
+    } catch (e) {
+        // Storage unavailable
+    }
 
-    // 2. Global toggle function exposed to window
+    // 2. Dummy toggle to maintain compatibility if called
     window.toggleTheme = function() {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        try {
-            localStorage.setItem(THEME_KEY, next);
-        } catch (e) {
-            console.warn('localStorage access denied for theme preference');
-        }
-        updateThemeToggleUI(next);
+        document.documentElement.setAttribute('data-theme', 'light');
     };
 
-    // 3. UI sync function for button labels, icons, and tooltips
-    function updateThemeToggleUI(theme) {
-        const buttons = document.querySelectorAll('.theme-toggle-btn');
-        buttons.forEach(btn => {
-            const label = btn.querySelector('.theme-label');
-            if (label) {
-                label.textContent = theme === 'dark' ? 'Dark' : 'Light';
-            }
-            btn.setAttribute('aria-label', `Current theme: ${theme}. Click to switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-            btn.setAttribute('title', `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Theme`);
-        });
-    }
-
-    // 4. Sync dropdown toggle button label with active product name
-    function syncDropdownAppName() {
-        const activeLink = document.querySelector('#appMenu .dropdown-link.active span:first-child');
-        const toggleSpan = document.querySelector('.dropdown-toggle span');
-        if (activeLink && toggleSpan) {
-            toggleSpan.textContent = activeLink.textContent.trim();
+    // 3. Dropdown toggle function
+    window.toggleAppMenu = function(event) {
+        if (event) {
+            event.stopPropagation();
         }
-    }
+        const m = document.getElementById('appMenu');
+        const b = document.querySelector('.dropdown-toggle');
+        if (m) {
+            m.classList.toggle('open');
+        }
+        if (b) {
+            b.classList.toggle('active');
+        }
+    };
 
-    // 5. Update UI once DOM is loaded
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            const current = document.documentElement.getAttribute('data-theme') || 'dark';
-            updateThemeToggleUI(current);
-            syncDropdownAppName();
-        });
-    } else {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        updateThemeToggleUI(current);
-        syncDropdownAppName();
-    }
+    // 4. Close dropdown on outside click
+    document.addEventListener('click', function(e) {
+        const m = document.getElementById('appMenu');
+        const b = document.querySelector('.dropdown-toggle');
+        if (m && !e.target.closest('.dropdown-container')) {
+            m.classList.remove('open');
+            if (b) {
+                b.classList.remove('active');
+            }
+        }
+    });
+
+    // 5. Global login opener
+    window.btnNT = function() {
+        window.open('https://platform.innovativeengineers.co.in/platform/', '_blank');
+    };
 })();
