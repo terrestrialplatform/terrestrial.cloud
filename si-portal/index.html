@@ -1372,7 +1372,7 @@
 <div class="section-header">
 <div class="section-tag">Step 2 — Drill Into Applications</div>
 <h2 class="section-h2">Application Specifications &amp; Platform Suite</h2>
-<p class="section-desc">Interactive product specifications for all 20 Terra application modules across 5 industrial sectors. Click any application below to explore its live platform architecture and technical capabilities.</p>
+<p class="section-desc">Interactive product specifications for all 21 Terra application modules across 5 industrial sectors. Click any application below to explore its live platform architecture and technical capabilities.</p>
 </div>
 <!-- Featured Purple Banner -->
 <div class="featured-banner">
@@ -1392,11 +1392,11 @@
 <svg class="catalogue-search-icon" fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18">
 <circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line>
 </svg>
-<input class="catalogue-search-input" id="catalogueSearch" placeholder="Search 20 applications by name, category, protocol, or capability..." type="text"/>
+<input class="catalogue-search-input" id="catalogueSearch" placeholder="Search 21 applications by name, category, protocol, or capability..." type="text"/>
 </div>
 <div class="sub-filter-bar">
-<button class="sub-filter-btn active" data-sub="all">All Applications (20)</button>
-<button class="sub-filter-btn" data-sub="ai-ops">Autonomous AI &amp; Swarms (5)</button>
+<button class="sub-filter-btn active" data-sub="all">All Applications (21)</button>
+<button class="sub-filter-btn" data-sub="ai-ops">Autonomous AI &amp; Swarms (6)</button>
 <button class="sub-filter-btn" data-sub="engineering">Plant Engineering &amp; Twins (6)</button>
 <button class="sub-filter-btn" data-sub="utilities">Grids &amp; Utilities (4)</button>
 <button class="sub-filter-btn" data-sub="vision-energy">Vision &amp; Clean Energy (3)</button>
@@ -1469,6 +1469,42 @@
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="15"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 </a>
 <a class="btn-app-download" download="TerraCognizance_Catalogue.pptx" href="catalogues/TerraCognizance_Catalogue.pptx" onclick="showToast('TerraCognizance', 'TerraCognizance_Catalogue.pptx')">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" x2="12" y1="15" y2="3"></line>
+</svg>
+<span>Download PPTX</span>
+</a></div>
+</div>
+<!-- TerraLC -->
+<div class="app-card" data-cat="catalogue" data-search="terralc autonomous ai &amp; swarms clm / legal cognizance legal cognizance for contracts, cases &amp; litigation clm contract lifecycle management matter tracking timeline evidence" data-subcat="ai-ops">
+<div class="app-card-top">
+<div class="app-logo"><span style="color:#111827;font-weight:800;">TERRA</span><span style="color:#f59e0b;font-weight:900;">LC</span></div>
+<span class="card-badge ai-ops">Autonomous AI &amp; Swarms</span>
+</div>
+<div class="app-protocol-badge">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+<span>CLM / Legal Cognizance</span>
+</div>
+<a href="../platform/terra-lc.html" style="text-decoration: none; color: inherit;" target="_blank">
+<h3 class="app-name">TerraLC</h3>
+</a>
+<p class="app-desc">
+          Legal Cognizance for Contracts, Cases &amp; Litigation (CLM &amp; Knowledge Vault)
+        </p>
+<ul class="app-features">
+<li>Contract Lifecycle Management &amp; Obligations</li>
+<li>Case Management, Matters &amp; Timeline Tracking</li>
+<li>Strategy Q&amp;A &amp; Court Hearing Mode</li>
+<li>Interactive Knowledge Graph &amp; Evidence Linking</li>
+</ul>
+<div class="app-card-actions">
+<a class="btn-explore" href="../platform/terra-lc.html" target="_blank">
+<span>Explore Specification</span>
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="15"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+<a class="btn-app-download" download="TerraLC_Catalogue.pptx" href="catalogues/TerraLC_Catalogue.pptx" onclick="showToast('TerraLC', 'TerraLC_Catalogue.pptx')">
 <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14">
 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
 <polyline points="7 10 12 15 17 10"></polyline>
@@ -2216,7 +2252,7 @@ filterBtns.forEach(btn => {
   });
 });
 
-// Search & Sub-category Filter for 20 Applications
+// Search & Sub-category Filter for 21 Applications
 const searchInput = document.getElementById('catalogueSearch');
 const subFilterBtns = document.querySelectorAll('.sub-filter-btn');
 const appCards = document.querySelectorAll('#appGrid .app-card');

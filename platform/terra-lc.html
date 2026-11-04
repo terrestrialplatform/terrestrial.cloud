@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TerraLC brings contract lifecycle management, case management, and litigation intelligence together in a connected legal workspace.">
+    <title>TerraLC | Legal Cognizance for Contracts, Cases & Litigation | Terrestrial Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20261027_simple_dark">
+    <script src="theme.js"></script>
+    <style>
+        @media (max-width: 700px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .corp-nav-links {
+                width: 100%;
+                justify-content: space-between;
+                gap: 8px;
+            }
+
+            .dropdown-list {
+                max-width: calc(100vw - 48px);
+            }
+
+            .capabilities-grid,
+            .usecase-deck {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="corp-header">
+        <div class="container">
+            <div class="nav-wrap">
+                <a href="index.html" class="corp-brand">
+                    <img src="assets/tp_emblem.png" alt="Terrestrial Platform Logo" class="corp-brand-logo">
+                    <div class="brand-info">
+                        <h2>TERRESTRIAL PLATFORM</h2>
+                        <span>Enterprise Industrial Intelligence Suite</span>
+                    </div>
+                </a>
+
+                <button class="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" onclick="toggleMobileNav(event)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="corp-nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraLC</span> ▾
+                        </button>
+                        <div class="dropdown-list" id="appMenu">
+                            <a href="terra-3rdeye.html" class="dropdown-link"><span>Terra3rdEye</span><span class="cat-tag">Vision</span></a>
+                            <a href="terra-ai.html" class="dropdown-link"><span>TerraAI</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-alarm.html" class="dropdown-link"><span>TerraAlarm</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-assets.html" class="dropdown-link"><span>TerraAssets</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-avatar.html" class="dropdown-link"><span>TerraAvatar</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-bms.html" class="dropdown-link"><span>TerraBMS</span><span class="cat-tag">Smart</span></a>
+                            <a href="terra-cc.html" class="dropdown-link"><span>TerraCC</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-cognizance.html" class="dropdown-link"><span>TerraCognizance</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-corroguard.html" class="dropdown-link"><span>TerraCorroGuard</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-embodiment.html" class="dropdown-link"><span>TerraEmbodiment</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-ems.html" class="dropdown-link"><span>TerraEMS</span><span class="cat-tag">Vision</span></a>
+                            <a href="terra-gridg.html" class="dropdown-link"><span>TerraGridG</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-gridw.html" class="dropdown-link"><span>TerraGridW</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-gridx.html" class="dropdown-link"><span>TerraGridX</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-hive.html" class="dropdown-link"><span>TerraHive</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-hvac.html" class="dropdown-link"><span>TerraHVAC</span><span class="cat-tag">Smart</span></a>
+                            <a href="terra-lc.html" class="dropdown-link active"><span>TerraLC</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-pfd.html" class="dropdown-link"><span>TerraPFD</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-scada.html" class="dropdown-link"><span>TerraSCADA</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-solar.html" class="dropdown-link"><span>TerraSolar</span><span class="cat-tag">Vision</span></a>
+                            <a href="tpim.html" class="dropdown-link"><span>TPIM</span><span class="cat-tag">Plant</span></a>
+                        </div>
+                    </div>
+
+                    <a href="https://channelpartner.terrestrial.cloud" target="_blank" class="nav-link">Channel Partner</a>
+                    <a href="https://www.innovationintellect.com/" target="_blank" class="nav-link">Company</a>
+                    <a href="contact_us.html" class="nav-link">Contact Us</a>
+                    <a href="https://platform.innovativeengineers.co.in/platform/" target="_blank" class="nav-link btn-login">Login / Sign Up</a>
+
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle dark or light theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="nav-breadcrumbs">
+            <ul class="breadcrumb-trail">
+                <li><a href="index.html">Home</a></li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-category">Autonomous AI & Swarms</li>
+                <li class="breadcrumb-sep">/</li>
+                <li class="breadcrumb-active">TerraLC</li>
+            </ul>
+        </div>
+
+        <section class="product-hero">
+            <div class="hero-banner-card">
+                <div class="hero-svg-backdrop" aria-hidden="true">
+                    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="lcGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M40 0H0V40" fill="none" stroke="#38bdf8" stroke-opacity=".12"/>
+                            </pattern>
+                            <radialGradient id="lcGlow">
+                                <stop offset="0" stop-color="#0b0f17" stop-opacity=".45"/>
+                                <stop offset="1" stop-color="#070a10" stop-opacity=".84"/>
+                            </radialGradient>
+                        </defs>
+                        <rect width="1200" height="500" fill="url(#lcGrid)"/>
+                        <g fill="none" stroke="#38bdf8" stroke-opacity=".5" stroke-width="2">
+                            <path d="M90 140 270 230 420 150 600 250 780 160 960 240 1110 130"/>
+                            <path d="M90 360 270 270 420 350 600 250 780 340 960 260 1110 370"/>
+                            <circle cx="90" cy="140" r="8"/><circle cx="90" cy="360" r="8"/>
+                            <circle cx="270" cy="230" r="9"/><circle cx="270" cy="270" r="9"/>
+                            <circle cx="420" cy="150" r="8"/><circle cx="420" cy="350" r="8"/>
+                            <circle cx="780" cy="160" r="8"/><circle cx="780" cy="340" r="8"/>
+                            <circle cx="960" cy="240" r="9"/><circle cx="960" cy="260" r="9"/>
+                            <circle cx="1110" cy="130" r="8"/><circle cx="1110" cy="370" r="8"/>
+                        </g>
+                        <circle cx="600" cy="250" r="105" fill="none" stroke="#f59e0b" stroke-opacity=".6" stroke-dasharray="6 10"/>
+                        <circle cx="600" cy="250" r="145" fill="none" stroke="#38bdf8" stroke-opacity=".32" stroke-dasharray="2 9"/>
+                        <circle cx="600" cy="250" r="14" fill="#f59e0b"/>
+                        <rect width="1200" height="500" fill="url(#lcGlow)"/>
+                        <g fill="#38bdf8" fill-opacity=".72" font-family="monospace" font-size="12">
+                        </g>
+                    </svg>
+                </div>
+                <div class="hero-card-content">
+                    <div class="hero-top-badge"><span class="pulse-dot"></span> LEGAL COGNIZANCE · CONTRACTS · CASES · LITIGATION</div>
+                    <h1 class="hero-full-title">
+                        <span class="hero-title-name">TerraLC</span>: <span class="hero-title-tagline">Legal Cognizance for Contracts, Cases &amp; Litigation</span>
+                    </h1>
+                    <div class="hero-pills-row">
+                        <div class="hero-metric-pill"><span class="pill-key">KNOWLEDGE:</span> <span class="pill-val">Markdown Knowledge Vault</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">RETRIEVAL:</span> <span class="pill-val">Hybrid Graph-of-Thought</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">EVIDENCE:</span> <span class="pill-val">Traceable Sources</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">DEPLOYMENT:</span> <span class="pill-val">Self-hosted</span></div>
+                    </div>
+                    <div class="hero-outcome-card">
+                        <div class="outcome-quote-text">“Manage agreements and legal matters in one connected workspace—from contract obligations and key dates to case timelines, evidence, and source-backed answers.”</div>
+                        <div class="outcome-quote-author">— TERRALC PLATFORM VISION</div>
+                    </div>
+                    <p class="hero-card-description">TerraLC combines contract lifecycle management and case management with litigation intelligence. Teams can organize agreements, track obligations and important dates, manage case records and timelines, and connect clauses, parties, events, and evidence for contextual review.</p>
+                    <div class="hero-card-actions">
+                        <a href="#operational-view" class="hero-cta-btn">Explore Product Interface ▾</a>
+                        <a href="#capabilities" class="hero-secondary-btn">Core Capabilities ↓</a>
+                        <a href="#usecases" class="hero-secondary-btn">Contract & Case Workflows ↓</a>
+                        <a href="#architecture" class="hero-secondary-btn">System Architecture ↓</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="operational-showcase-section" id="operational-view">
+            <div class="app-visual-showcase">
+                <div class="showcase-header">
+                    <div class="showcase-title"><span class="live-dot">●</span> TerraLC Contract & Case Management Workspace</div>
+                    <span class="showcase-tag">Product Dashboard</span>
+                </div>
+                <div class="showcase-img-wrap">
+                    <img src="assets/terralc-dashboard.svg" alt="Illustrative TerraLC workspace for contract records, case timelines, and linked legal evidence" class="showcase-img" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-section" id="capabilities">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Platform Capabilities</div>
+                <h2 class="corp-section-heading">Contract &amp; Case Management, Connected by Legal Intelligence</h2>
+                <p class="corp-section-subheading">Manage agreements across their lifecycle, coordinate case records and deadlines, and connect both to the evidence and context legal teams need.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card"><div class="capability-icon">▤</div><h4>Contract Lifecycle Management</h4><p>Keep agreements organized from intake and review through execution and ongoing management. Track key dates, obligations, renewals, and related documents.</p></div>
+                <div class="capability-card"><div class="capability-icon">◉</div><h4>Case Management</h4><p>Organize matters, parties, filings, events, tasks, and deadlines in a shared case workspace with a clear timeline and linked supporting records.</p></div>
+                <div class="capability-card"><div class="capability-icon">⚖</div><h4>Strategy Q&amp;A</h4><p>Explore legal theories, opposing pleadings, statutory defenses, and damages against the matter's documentary record.</p></div>
+                <div class="capability-card"><div class="capability-icon">◉</div><h4>Court Hearing Mode</h4><p>Use a focused hearing workflow to examine allegations, identify relevant exhibits, and retrieve page-and-paragraph evidence.</p></div>
+                <div class="capability-card"><div class="capability-icon">⌘</div><h4>Interactive Knowledge Graph</h4><p>Explore relationships among assertions, exhibits, entities, statutory doctrines, and prayers in an interactive graph.</p></div>
+                <div class="capability-card"><div class="capability-icon">▤</div><h4>Wiki Explorer &amp; Node Drawer</h4><p>Browse matter nodes, render Markdown, follow wikilinks, and inspect node metadata.</p></div>
+                <div class="capability-card"><div class="capability-icon">↗</div><h4>Thread-Scoped Context</h4><p>Attach case memos, affidavits, and draft orders to a conversation for focused analysis without adding them to the permanent vault.</p></div>
+                <div class="capability-card"><div class="capability-icon">文</div><h4>Bilingual &amp; Save to Cognizance</h4><p>Translate legal material for regional proceedings and save synthesized strategies or reconciliations as indexed vault nodes.</p></div>
+            </div>
+        </section>
+
+        <section class="corp-section" id="usecases">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Target Practice Areas</div>
+                <h2 class="corp-section-heading">For Contract Operations, Cases, Disputes &amp; Investigations</h2>
+                <p class="corp-section-subheading">Bring day-to-day agreement oversight and active legal matters into one connected workspace, alongside complex disputes and investigations.</p>
+            </div>
+            <div class="usecase-deck">
+                <div class="usecase-box"><span class="usecase-badge">Contract Operations</span><h4>Agreement Lifecycle &amp; Obligations</h4><p>Maintain a structured view of agreements, key terms, responsible parties, obligations, milestones, and renewal dates.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">Case Operations</span><h4>Matter Tracking &amp; Preparation</h4><p>Coordinate parties, case events, filings, deadlines, tasks, and evidence in a traceable matter timeline.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">Commercial Suits</span><h4>Contract & Shareholder Disputes</h4><p>Review breach-of-contract claims, unjust enrichment, and damages across agreements, correspondence, and board records.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">IP & Trade Secrets</span><h4>Infringement & Misappropriation</h4><p>Connect patent or copyright issues, design copying, technical disclosures, and evidence of trade-secret use.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">Arbitration & EPC</span><h4>Infrastructure Disputes</h4><p>Organize delay and quantum claims, engineering deviations, and FIDIC or custom agreement records.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">Regulatory Defense</span><h4>Compliance & Enforcement</h4><p>Trace compliance audits, statutory notices, and documentary records relevant to regulatory investigations.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">M&amp;A Due Diligence</span><h4>Contract & IP Review</h4><p>Structure contract audits and intellectual-property chain-of-title materials for matter-specific review.</p></div>
+                <div class="usecase-box"><span class="usecase-badge">White-Collar Defense</span><h4>Records & Audit Trails</h4><p>Explore email, contemporaneous records, and audit trails in support of defense preparation.</p></div>
+            </div>
+        </section>
+
+        <section class="corp-section" id="architecture">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">System Architecture</div>
+                <h2 class="corp-section-heading">From Matter Documents to Evidence-Linked Answers</h2>
+                <p class="corp-section-subheading">A product-level view of how contract records, case workspaces, legal reasoning, and connected evidence support one another.</p>
+            </div>
+            <div class="birdeye-diagram-card">
+                <figure aria-label="TerraLC system architecture diagram">
+                    <svg viewBox="0 0 1200 430" role="img" aria-labelledby="lcDiagramTitle lcDiagramDesc" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto">
+                        <title id="lcDiagramTitle">TerraLC system architecture</title>
+                        <desc id="lcDiagramDesc">The legal workspace connects contract and case records with legal reasoning, a knowledge vault, structured information, and supporting documents.</desc>
+                        <defs>
+                            <linearGradient id="lcNode" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#172437"/><stop offset="1" stop-color="#101722"/>
+                            </linearGradient>
+                            <marker id="lcArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#38bdf8"/></marker>
+                        </defs>
+                        <rect width="1200" height="430" rx="18" fill="#0b1220"/>
+                        <g fill="url(#lcNode)" stroke="#38bdf8" stroke-opacity=".65" stroke-width="2">
+                            <rect x="35" y="130" width="220" height="150" rx="14"/>
+                            <rect x="335" y="130" width="230" height="150" rx="14"/>
+                            <rect x="650" y="90" width="250" height="230" rx="14"/>
+                            <rect x="985" y="45" width="180" height="95" rx="12"/>
+                            <rect x="985" y="168" width="180" height="95" rx="12"/>
+                            <rect x="985" y="291" width="180" height="95" rx="12"/>
+                        </g>
+                        <g fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#lcArrow)">
+                            <path d="M255 205H325"/><path d="M565 205H640"/>
+                            <path d="M900 155 975 100"/><path d="M900 205H975"/><path d="M900 255 975 335"/>
+                        </g>
+                        <g fill="#f8fafc" text-anchor="middle" font-family="Plus Jakarta Sans,Arial,sans-serif">
+                            <text x="145" y="178" font-size="20" font-weight="700">CLIENT</text>
+                            <text x="145" y="210" font-size="15">Secure Web Application</text>
+                            <text x="145" y="238" font-size="13" fill="#94a3b8">Contracts · Cases · Evidence</text>
+                            <text x="450" y="178" font-size="20" font-weight="700">APPLICATION SERVICES</text>
+                            <text x="450" y="210" font-size="15">Secure Processing · Identity</text>
+                            <text x="450" y="238" font-size="13" fill="#94a3b8">Streaming · Role-based access</text>
+                            <text x="775" y="143" font-size="20" font-weight="700">LEGAL WORKFLOWS</text>
+                            <text x="775" y="180" font-size="15">Contract lifecycle · Case management</text>
+                            <text x="775" y="210" font-size="14">Terms · Obligations · Key dates</text>
+                            <text x="775" y="240" font-size="14">Parties · Events · Evidence</text>
+                            <text x="775" y="274" font-size="13" fill="#94a3b8">Connected legal context</text>
+                            <text x="1075" y="82" font-size="16" font-weight="700">KNOWLEDGE VAULT</text>
+                            <text x="1075" y="108" font-size="13">Markdown · wikilinks</text>
+                            <text x="1075" y="205" font-size="16" font-weight="700">STRUCTURED DATA</text>
+                            <text x="1075" y="231" font-size="13">Metadata · graph · search</text>
+                            <text x="1075" y="328" font-size="16" font-weight="700">OBJECT STORAGE</text>
+                            <text x="1075" y="354" font-size="13">Matter documents · uploads</text>
+                        </g>
+                    </svg>
+                    <figcaption style="padding: 12px 18px; color: var(--text-muted);">Contracts and case records connect to shared legal context, supporting documents, and evidence for review.</figcaption>
+                </figure>
+                <div class="diagram-flow-bar">
+                    <span class="flow-dot"></span>
+                    <span>LEGAL WORKFLOW: Agreements &amp; Case Records → Key Terms &amp; Events → Linked Evidence → Review &amp; Audit</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-section" id="retrieval">
+            <div class="corp-section-header">
+                <div class="corp-section-eyebrow">Knowledge &amp; Retrieval</div>
+                <h2 class="corp-section-heading">Connected Contracts, Cases &amp; Evidence</h2>
+                <p class="corp-section-subheading">Search agreement terms, case records, and supporting material together while keeping source context available for review.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card"><h4>Agreement &amp; Case Records</h4><p>Keep contract documents and matter records organized with the people, dates, terms, and events that give them context.</p></div>
+                <div class="capability-card"><h4>Obligation &amp; Deadline Tracking</h4><p>Surface important contract commitments, milestones, renewals, and case deadlines for timely follow-up.</p></div>
+                <div class="capability-card"><h4>Linked Legal Context</h4><p>Connect clauses, parties, claims, events, and evidence so related information can be reviewed across documents.</p></div>
+                <div class="capability-card"><h4>Source-Linked Review</h4><p>Explore relevant records and supporting passages together, keeping the original document context available to legal teams.</p></div>
+            </div>
+        </section>
+
+        <div class="product-pager">
+            <a href="terra-cognizance.html" class="pager-tile">
+                <span class="pager-meta">← Previous Product</span>
+                <span class="pager-name">TerraCognizance</span>
+            </a>
+            <a href="index.html" class="pager-tile" style="text-align: center;">
+                <span class="pager-meta">Navigation</span>
+                <span class="pager-name">Home</span>
+            </a>
+            <a href="terra-ai.html" class="pager-tile" style="text-align: right;">
+                <span class="pager-meta">Next Product →</span>
+                <span class="pager-name">TerraAI</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-summary"><h3>TERRESTRIAL PLATFORM</h3><p>Enterprise-grade software for mission-critical infrastructure, energy, manufacturing, and facilities.</p><p style="font-size:.78rem;color:var(--accent-cyan);font-family:var(--font-mono)">TerraLC Project Specification | Version 1.0.0</p></div>
+                <div class="footer-section"><h5>AI &amp; Autonomous Swarms</h5><ul><li><a href="terra-ai.html">TerraAI</a></li><li><a href="terra-cognizance.html">TerraCognizance</a></li><li><a href="terra-lc.html">TerraLC</a></li><li><a href="terra-embodiment.html">TerraEmbodiment</a></li><li><a href="terra-hive.html">TerraHive</a></li><li><a href="terra-cc.html">TerraCC</a></li></ul></div>
+                <div class="footer-section"><h5>Plant Engineering &amp; Twins</h5><ul><li><a href="terra-scada.html">TerraSCADA</a></li><li><a href="terra-avatar.html">TerraAvatar</a></li><li><a href="terra-assets.html">TerraAssets</a></li><li><a href="terra-pfd.html">TerraPFD</a></li><li><a href="terra-alarm.html">TerraAlarm</a></li><li><a href="tpim.html">TPIM</a></li></ul></div>
+                <div class="footer-section"><h5>Grids &amp; Utilities</h5><ul><li><a href="terra-gridx.html">TerraGridX</a></li><li><a href="terra-gridw.html">TerraGridW</a></li><li><a href="terra-gridg.html">TerraGridG</a></li><li><a href="terra-corroguard.html">TerraCorroGuard</a></li></ul></div>
+                <div class="footer-section"><h5>Energy &amp; Facilities</h5><ul><li><a href="terra-solar.html">TerraSolar</a></li><li><a href="terra-ems.html">TerraEMS</a></li><li><a href="terra-3rdeye.html">Terra3rdEye</a></li><li><a href="terra-bms.html">TerraBMS</a></li><li><a href="terra-hvac.html">TerraHVAC</a></li></ul></div>
+            </div>
+            <div class="footer-legal-bar"><div>© 2026 Terrestrial Platform Suite. Built for Enterprise Operations.</div><div>TerraLC | Legal Cognizance for Contracts, Cases &amp; Litigation</div></div>
+        </div>
+    </footer>
+    <script>
+        function toggleAppMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('appMenu');
+            if (menu) menu.classList.toggle('open');
+        }
+        document.addEventListener('click', function() {
+            const menu = document.getElementById('appMenu');
+            if (menu) menu.classList.remove('open');
+        });
+    </script>
+</body>
+</html>

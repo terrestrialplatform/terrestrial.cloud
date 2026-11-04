@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraCognizance | Enterprise Product Specification | Terrestrial Platform</title>
+    <meta name="description" content="TerraCognizance transforms unstructured documents into a connected, searchable knowledge graph for grounded, auditable answers.">
+    <title>TerraCognizance | Enterprise Knowledge Graph & Reasoning | Terrestrial Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=20261027_simple_dark">
     <script src="theme.js"></script>
+    <style>
+        @media (max-width: 700px) {
+            .nav-wrap {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .corp-nav-links {
+                width: 100%;
+                justify-content: space-between;
+                gap: 8px;
+            }
+
+            .dropdown-list {
+                max-width: calc(100vw - 48px);
+            }
+
+            .capabilities-grid,
+            .usecase-deck {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -24,101 +48,36 @@
                     </div>
                 </a>
 
-                <button class="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" onclick="toggleMobileNav(event)">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
                 <div class="corp-nav-links">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link">Home Page</a>
 
                     <!-- Quick App Switcher Dropdown -->
                     <div class="dropdown-container">
-                        <button class="dropdown-toggle" type="button" onclick="toggleAppMenu(event)">
-                            <span>Apps</span> &#9662;
+                        <button class="dropdown-toggle" onclick="toggleAppMenu(event)">
+                            <span>TerraCognizance</span> ▾
                         </button>
                         <div class="dropdown-list" id="appMenu">
-            <a href="terra-ai.html" class="dropdown-link">
-                <span>TerraAI</span>
-                <span class="cat-tag">Autonomous</span>
-            </a>
-            <a href="terra-cognizance.html" class="dropdown-link active">
-                <span>TerraCognizance</span>
-                <span class="cat-tag">Autonomous</span>
-            </a>
-            <a href="terra-solar.html" class="dropdown-link">
-                <span>TerraSolar</span>
-                <span class="cat-tag">Vision</span>
-            </a>
-            <a href="terra-ems.html" class="dropdown-link">
-                <span>TerraEMS</span>
-                <span class="cat-tag">Vision</span>
-            </a>
-            <a href="terra-3rdeye.html" class="dropdown-link">
-                <span>Terra3rdEye</span>
-                <span class="cat-tag">Vision</span>
-            </a>
-            <a href="terra-bms.html" class="dropdown-link">
-                <span>TerraBMS</span>
-                <span class="cat-tag">Smart</span>
-            </a>
-            <a href="terra-hvac.html" class="dropdown-link">
-                <span>TerraHVAC</span>
-                <span class="cat-tag">Smart</span>
-            </a>
-            <a href="terra-scada.html" class="dropdown-link">
-                <span>TerraSCADA</span>
-                <span class="cat-tag">Plant</span>
-            </a>
-            <a href="terra-avatar.html" class="dropdown-link">
-                <span>TerraAvatar</span>
-                <span class="cat-tag">Plant</span>
-            </a>
-            <a href="terra-assets.html" class="dropdown-link">
-                <span>TerraAssets</span>
-                <span class="cat-tag">Plant</span>
-            </a>
-            <a href="terra-pfd.html" class="dropdown-link">
-                <span>TerraPFD</span>
-                <span class="cat-tag">Plant</span>
-            </a>
-            <a href="terra-embodiment.html" class="dropdown-link">
-                <span>TerraEmbodiment</span>
-                <span class="cat-tag">Autonomous</span>
-            </a>
-            <a href="terra-gridx.html" class="dropdown-link">
-                <span>TerraGridX</span>
-                <span class="cat-tag">Grids</span>
-            </a>
-            <a href="terra-gridw.html" class="dropdown-link">
-                <span>TerraGridW</span>
-                <span class="cat-tag">Grids</span>
-            </a>
-            <a href="terra-gridg.html" class="dropdown-link">
-                <span>TerraGridG</span>
-                <span class="cat-tag">Grids</span>
-            </a>
-            <a href="terra-corroguard.html" class="dropdown-link">
-                <span>TerraCorroGuard</span>
-                <span class="cat-tag">Grids</span>
-            </a>
-            <a href="terra-hive.html" class="dropdown-link">
-                <span>TerraHive</span>
-                <span class="cat-tag">Autonomous</span>
-            </a>
-            <a href="terra-cc.html" class="dropdown-link">
-                <span>TerraCC</span>
-                <span class="cat-tag">Autonomous</span>
-            </a>
-            <a href="terra-alarm.html" class="dropdown-link">
-                <span>TerraAlarm</span>
-                <span class="cat-tag">Plant</span>
-            </a>
-            <a href="tpim.html" class="dropdown-link">
-                <span>TPIM</span>
-                <span class="cat-tag">Plant</span>
-            </a>
+                            <a href="terra-3rdeye.html" class="dropdown-link"><span>Terra3rdEye</span><span class="cat-tag">Vision</span></a>
+                            <a href="terra-ai.html" class="dropdown-link"><span>TerraAI</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-alarm.html" class="dropdown-link"><span>TerraAlarm</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-assets.html" class="dropdown-link"><span>TerraAssets</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-avatar.html" class="dropdown-link"><span>TerraAvatar</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-bms.html" class="dropdown-link"><span>TerraBMS</span><span class="cat-tag">Smart</span></a>
+                            <a href="terra-cc.html" class="dropdown-link"><span>TerraCC</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-cognizance.html" class="dropdown-link active"><span>TerraCognizance</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-corroguard.html" class="dropdown-link"><span>TerraCorroGuard</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-embodiment.html" class="dropdown-link"><span>TerraEmbodiment</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-ems.html" class="dropdown-link"><span>TerraEMS</span><span class="cat-tag">Vision</span></a>
+                            <a href="terra-gridg.html" class="dropdown-link"><span>TerraGridG</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-gridw.html" class="dropdown-link"><span>TerraGridW</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-gridx.html" class="dropdown-link"><span>TerraGridX</span><span class="cat-tag">Grids</span></a>
+                            <a href="terra-hive.html" class="dropdown-link"><span>TerraHive</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-hvac.html" class="dropdown-link"><span>TerraHVAC</span><span class="cat-tag">Smart</span></a>
+                            <a href="terra-lc.html" class="dropdown-link"><span>TerraLC</span><span class="cat-tag">Autonomous</span></a>
+                            <a href="terra-pfd.html" class="dropdown-link"><span>TerraPFD</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-scada.html" class="dropdown-link"><span>TerraSCADA</span><span class="cat-tag">Plant</span></a>
+                            <a href="terra-solar.html" class="dropdown-link"><span>TerraSolar</span><span class="cat-tag">Vision</span></a>
+                            <a href="tpim.html" class="dropdown-link"><span>TPIM</span><span class="cat-tag">Plant</span></a>
                         </div>
                     </div>
 
@@ -126,16 +85,41 @@
                     <a href="https://www.innovationintellect.com/" target="_blank" class="nav-link">Company</a>
                     <a href="contact_us.html" class="nav-link">Contact Us</a>
                     <a href="https://platform.innovativeengineers.co.in/platform/" target="_blank" class="nav-link btn-login">Login / Sign Up</a>
+
+                    <!-- Theme Mode Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark / Light Theme" title="Switch Theme">
+                        <span class="theme-icon theme-icon-dark" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon-light" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-label">Dark</span>
+                    </button>
                 </div>
-            </header>
+            </div>
+        </div>
+    </header>
 
     <div class="container">
         <!-- Breadcrumbs -->
         <div class="nav-breadcrumbs">
             <ul class="breadcrumb-trail">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home Page</a></li>
                 <li class="breadcrumb-sep">/</li>
-                <li class="breadcrumb-category">Autonomous AI & Swarms</li>
+                <li><a href="index.html">Autonomous AI & Swarms</a></li>
                 <li class="breadcrumb-sep">/</li>
                 <li class="breadcrumb-active">TerraCognizance</li>
             </ul>
@@ -149,13 +133,13 @@
                     <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <!-- Technical Blueprint Coordinate Grid -->
-                            <pattern id="techGridCognizance" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <pattern id="techGridLC" width="40" height="40" patternUnits="userSpaceOnUse">
                                 <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1"/>
                                 <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
                                 <circle cx="0" cy="0" r="1.5" fill="rgba(56, 189, 248, 0.25)"/>
                             </pattern>
                             <!-- Soft Vignette -->
-                            <radialGradient id="vignetteCognizance" cx="50%" cy="50%" r="65%">
+                            <radialGradient id="vignetteLC" cx="50%" cy="50%" r="65%">
                                 <stop offset="0%" stop-color="#0b0f17" stop-opacity="0.82" />
                                 <stop offset="60%" stop-color="#0b0f17" stop-opacity="0.55" />
                                 <stop offset="100%" stop-color="#070a10" stop-opacity="0.30" />
@@ -170,7 +154,7 @@
                             </filter>
                         </defs>
                         <!-- Background Grid Rect -->
-                        <rect width="100%" height="100%" fill="url(#techGridCognizance)" />
+                        <rect width="100%" height="100%" fill="url(#techGridLC)" />
 
                         <!-- Graph-of-Thought Relational Topology (Left Cluster: Document Vault & Claims) -->
                         <g stroke="#38bdf8" stroke-width="1.2" opacity="0.42" fill="none">
@@ -223,12 +207,12 @@
 
                         <!-- Telemetry Floating HUD Annotations -->
                         <g font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(56, 189, 248, 0.48)">
-                            <text x="130" y="95">[TOPOLOGY: GRAPH-OF-THOUGHT]</text>
-                            <text x="130" y="425">[PROVENANCE: 100% BELONGS_TO]</text>
-                            <text x="940" y="95">[HEARING_MODE: REBUTTAL CONSOLE]</text>
-                            <text x="940" y="425">[ZERO_HALLUCINATION: DETERMINISTIC]</text>
+                            <text x="130" y="95">[CORPUS: CONNECTED KNOWLEDGE]</text>
+                            <text x="130" y="425">[SOURCES: LINKED DOCUMENTS]</text>
+                            <text x="940" y="95">[WORKSPACE: KNOWLEDGE EXPLORATION]</text>
+                            <text x="940" y="425">[REVIEW: EXPERT-GOVERNED]</text>
                         </g>
-                        <rect width="100%" height="100%" fill="url(#vignetteCognizance)" />
+                        <rect width="100%" height="100%" fill="url(#vignetteLC)" />
 
                         <!-- Blueprint HUD Corner Brackets & Scale Marks -->
                         <g stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" fill="none">
@@ -238,10 +222,10 @@
                             <path d="M 1180 460 L 1180 480 L 1160 480" />
                         </g>
                         <g font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(56, 189, 248, 0.45)">
-                            <text x="50" y="32">TERRESTRIAL-SYS // COGNIZANCE-R00</text>
-                            <text x="1000" y="32">EVIDENTIARY VAULT: ACTIVE</text>
-                            <text x="50" y="475">CALIBRATION: DETERMINISTIC GoT</text>
-                            <text x="1020" y="475">SYNC: SUB-SECOND AUDIT</text>
+                            <text x="50" y="32">TERRACOGNIZANCE // KNOWLEDGE ENGINE</text>
+                            <text x="1000" y="32">KNOWLEDGE: CONNECTED</text>
+                            <text x="50" y="475">SOURCE LINKS: TRACEABLE</text>
+                            <text x="1020" y="475">REVIEW: EXPERT-GOVERNED</text>
                         </g>
                     </svg>
                 </div>
@@ -249,48 +233,48 @@
                 <div class="hero-card-content">
                     <!-- TOP BADGE PILL -->
                     <div class="hero-top-badge">
-                        <span class="pulse-dot"></span> PUBLICATION-READY DESIGN SPECIFICATION
+                        <span class="pulse-dot"></span> KNOWLEDGE GRAPH &amp; HYBRID REASONING PLATFORM
                     </div>
 
                     <!-- MAIN FULL TITLE -->
                     <h1 class="hero-full-title">
-                        <span class="hero-title-name">TerraCognizance</span>: <span class="hero-title-tagline">Enterprise Legal Cognizance & Litigation Intelligence Platform (Graph-of-Thought RAG)</span>
+                        <span class="hero-title-name">TerraCognizance</span>: <span class="hero-title-tagline">General-Purpose Enterprise Knowledge &amp; Reasoning Platform</span>
                     </h1>
 
                     <!-- ROW OF 4 TECHNICAL METRIC PILLS -->
                     <div class="hero-pills-row">
-                        <div class="hero-metric-pill"><span class="pill-key">KNOWLEDGE VAULT:</span> <span class="pill-val">Graph-of-Thought RAG</span></div>
-                        <div class="hero-metric-pill"><span class="pill-key">EVIDENTIARY AUDIT:</span> <span class="pill-val">100% Provenance Citations</span></div>
-                        <div class="hero-metric-pill"><span class="pill-key">REASONING SPEED:</span> <span class="pill-val">Sub-Second GoT Synthesis</span></div>
-                        <div class="hero-metric-pill"><span class="pill-key">HALLUCINATION RATE:</span> <span class="pill-val">Zero Heuristic Bias</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">KNOWLEDGE:</span> <span class="pill-val">Connected Entity &amp; Fact Graph</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">RETRIEVAL:</span> <span class="pill-val">Semantic + Graph Search</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">ANSWERS:</span> <span class="pill-val">Source-Linked Findings</span></div>
+                        <div class="hero-metric-pill"><span class="pill-key">GOVERNANCE:</span> <span class="pill-val">Expert Ontology Review</span></div>
                     </div>
 
                     <!-- THE REVOLUTION IN ONE LINE (OUTCOME-BASED) QUOTE CARD -->
                     <div class="hero-outcome-card">
                         <div class="outcome-quote-text">
-                            “Litigation is not won on generic search, but on interconnecting fragmented truth — transforming sprawling case records into an unshakeable knowledge vault where every assertion commands instant, clause-level proof.”
+                            “Turn unstructured documents into connected knowledge, explore cross-document relationships, and trace answers back to their sources.”
                         </div>
                         <div class="outcome-quote-author">
-                            — THE REVOLUTION IN ENTERPRISE LITIGATION
+                            — TERRACOGNIZANCE PLATFORM VISION
                         </div>
                     </div>
 
                     <!-- SUMMARY DESCRIPTION -->
-                    <p class="hero-card-description">TerraCognizance transforms high-stakes legal corpora, pleadings, contracts, and court exhibits into a structured, interconnected, verifiable Knowledge Vault governed by autonomous Graph-of-Thought architecture. Delivering deterministic retrieval with sub-second synthesis, it powers courtroom hearing simulations, cross-examination rebuttals, and clause-level provenance verification with zero hallucinations.</p>
+                    <p class="hero-card-description">TerraCognizance is a general-purpose, domain-pluggable knowledge platform. It transforms unstructured documents into a connected knowledge graph and conversational workspace, helping teams discover multi-hop relationships and review answers against their source passages. Legal research is one supported domain, not the platform's only purpose.</p>
 
                     <!-- HERO ACTION BUTTONS -->
                     <div class="hero-card-actions">
                         <a href="#operational-view" class="hero-cta-btn">
-                            Explore Operational Interface ▾
+                            Explore Engine Interface ▾
                         </a>
                         <a href="#details" class="hero-secondary-btn">
-                            What TerraCognizance Will Do ↓
+                            Platform Capabilities ↓
                         </a>
                         <a href="#usecases" class="hero-secondary-btn">
-                            Field Use Cases ↓
+                            Example Domains ↓
                         </a>
                         <a href="#architecture" class="hero-secondary-btn">
-                            BirdEye Architecture ↓
+                            System Architecture ↓
                         </a>
                     </div>
                 </div>
@@ -302,179 +286,199 @@
             <div class="app-visual-showcase">
                 <div class="showcase-header">
                     <div class="showcase-title">
-                        <span class="live-dot">●</span> TerraCognizance ANSI/ISA-101 Operational Interface & Real-Time System Representation
+                        <span class="live-dot">●</span> TerraCognizance Knowledge Workspace
                     </div>
-                    <span class="showcase-tag">ANSI/ISA-101 Verified HMI</span>
+                    <span class="showcase-tag">Illustrative Product Dashboard</span>
                 </div>
                 <div class="showcase-img-wrap">
-                    <img src="assets/terra_cognizance_isa101_showcase.jpg" alt="TerraCognizance Operational Interface" class="showcase-img">
+                    <img src="assets/terracognizance-dashboard.svg" alt="Illustrative TerraCognizance knowledge workspace with connected concepts, Chat Studio, and expert review queue" class="showcase-img" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- ROW 2 OF USER REQ: APP DETAILS (WHAT IT WILL DO) -->
+        <!-- Core platform capabilities -->
         <section class="corp-section" id="details">
             <div class="corp-section-header">
-                <div class="corp-section-eyebrow">Application Operational Details</div>
-                <h2 class="corp-section-heading">What TerraCognizance Will Do</h2>
-                <p class="corp-section-subheading">Specific litigation intelligence functions and knowledge graph reasoning capabilities directly sourced from technical documentation.</p>
+                <div class="corp-section-eyebrow">Connected Knowledge &amp; Grounded Answers</div>
+                <h2 class="corp-section-heading">TerraCognizance Platform Capabilities</h2>
+                <p class="corp-section-subheading">A domain-pluggable platform for extracting, connecting, searching, and governing knowledge from document collections.</p>
             </div>
             <div class="capabilities-grid">
                 <div class="capability-card">
-                    <div class="capability-icon">⚡</div>
-                    <h4>Strategy Q&A & Legal Theory Simulation</h4>
-                    <p>Conducts deep conversational analysis across complex legal corpora and multi-jurisdictional precedents; stress-tests statutory defenses, evaluates judicial admissibility patterns, and calculates damages quantum with instant clause-level references.</p>
+                    <div class="capability-icon">▤</div>
+                    <h4>Automated Knowledge Extraction</h4>
+                    <p>Transforms unstructured source documents into entities, facts, and relationships through a quality-gated preparation process.</p>
                 </div>
                 <div class="capability-card">
-                    <div class="capability-icon">⚡</div>
-                    <h4>Court Hearing Mode & Live Rebuttal Cockpit</h4>
-                    <p>Ultra-fast, high-density courtroom cockpit providing instant counter-arguments, identifying adverse witness contradictions, and generating exact exhibit, page, and paragraph citations during live cross-examinations and hearings.</p>
+                    <div class="capability-icon">◉</div>
+                    <h4>Hybrid Knowledge Retrieval</h4>
+                    <p>Combines semantic search with relationship traversal to find context across documents and connected concepts.</p>
                 </div>
                 <div class="capability-card">
-                    <div class="capability-icon">⚡</div>
-                    <h4>Graph-of-Thought Relational Knowledge Graph</h4>
-                    <p>Interconnects sprawling claims, evidence nodes, statutory doctrines, and prayers across 40,000+ matter filings into a unified relational topology, exposing hidden dependencies and corporate entity mappings with sub-50ms node traversal.</p>
+                    <div class="capability-icon">⌘</div>
+                    <h4>Multi-Hop Relationship Discovery</h4>
+                    <p>Follows links between entities and facts to uncover context that may be distributed across separate sources.</p>
                 </div>
                 <div class="capability-card">
-                    <div class="capability-icon">⚡</div>
-                    <h4>Verifiable Evidentiary Provenance & Audit Trail</h4>
-                    <p>Strict clause-level provenance verification ensures every assertion, summary, and rebuttal citation is directly anchored to verified court exhibits and statutory records, eliminating hallucinated references and ensuring 100% evidentiary defensibility.</p>
+                    <div class="capability-icon">▤</div>
+                    <h4>Provenance-Linked Answers</h4>
+                    <p>Connects findings to the passages they came from so users can inspect supporting evidence.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">↗</div>
+                    <h4>Human-Governed Ontology</h4>
+                    <p>Lets domain experts review proposed concepts and relationships before expanding the knowledge model.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">文</div>
+                    <h4>Domain-Pluggable Workspaces</h4>
+                    <p>Adapts its domain concepts and rules to different knowledge bases while keeping each workspace focused on its sources.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ROW 3 OF USER REQ: REAL-WORLD USE CASES -->
+        <!-- Domain examples described in the project specification -->
         <section class="corp-section" id="usecases">
             <div class="corp-section-header">
-                <div class="corp-section-eyebrow">Real-World Case Study Outcomes</div>
-                <h2 class="corp-section-heading">Operational Use Cases & Field Impact</h2>
-                <p class="corp-section-subheading">Actual documented legal use cases across Commercial Suits, IP Defense, EPC Arbitration, and Regulatory Compliance.</p>
+                <div class="corp-section-eyebrow">Domain-Pluggable Knowledge</div>
+                <h2 class="corp-section-heading">One Platform, Multiple Knowledge Domains</h2>
+                <p class="corp-section-subheading">The platform is designed for varied subject areas; the current project document uses a legal corpus as its test domain.</p>
             </div>
             <div class="usecase-deck">
                 <div class="usecase-box">
-                    <span class="usecase-badge">Commercial Litigation</span>
-                    <h4>High-Stakes Commercial & Shareholder Suits</h4>
-                    <p>Rapidly cross-references 40,000 pages of commercial agreements, emails, and board resolutions to expose shareholder agreement breaches, reconcile indemnity claims, and calculate damages quantum with zero evidentiary gaps.</p>
+                    <span class="usecase-badge">Legal</span>
+                    <h4>Cross-Document Research</h4>
+                    <p>Connect entities, claims, source passages, and supporting evidence across a legal document corpus.</p>
                 </div>
                 <div class="usecase-box">
-                    <span class="usecase-badge">Intellectual Property</span>
-                    <h4>IP Infringement & Trade Secret Misappropriation</h4>
-                    <p>Constructs precise forensic timelines of source code commits, non-disclosure agreements, and employee movements; maps patent claim charts directly to competitor product teardowns and deposition transcripts.</p>
+                    <span class="usecase-badge">Energy</span>
+                    <h4>Operational Knowledge</h4>
+                    <p>Relate assets, projects, events, and source records across energy and utility information.</p>
                 </div>
                 <div class="usecase-box">
-                    <span class="usecase-badge">Arbitration & Infrastructure</span>
-                    <h4>Arbitration & Multi-Tier EPC Construction Disputes</h4>
-                    <p>Ingests complex FIDIC engineering contracts, variation orders, and site inspection diaries; automatically quantifies critical path delay claims and contractor liquidated damages reconciliations.</p>
+                    <span class="usecase-badge">Manufacturing</span>
+                    <h4>Process &amp; Asset Context</h4>
+                    <p>Connect equipment, process concepts, and supporting documentation for broader knowledge discovery.</p>
                 </div>
                 <div class="usecase-box">
-                    <span class="usecase-badge">Regulatory Defense</span>
-                    <h4>Regulatory Enforcement Defense & White-Collar Audits</h4>
-                    <p>Audits statutory compliance notices and multi-year banking transaction trails; reconstructs anti-corruption defense filings and establishes unbroken chains of custody across cross-border regulatory inquiries.</p>
+                    <span class="usecase-badge">Medical</span>
+                    <h4>Research Information</h4>
+                    <p>Organize domain concepts and source material to support traceable exploration of medical knowledge.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Defense</span>
+                    <h4>Connected Source Review</h4>
+                    <p>Explore relationships across relevant records while retaining links to the source information.</p>
+                </div>
+                <div class="usecase-box">
+                    <span class="usecase-badge">Enterprise</span>
+                    <h4>Expert-Led Governance</h4>
+                    <p>Review unfamiliar concepts and relationships with domain experts before incorporating them into shared knowledge.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ROW 4 OF USER REQ: COMPARISON WITH TRADITIONAL SYSTEMS -->
+        <!-- Cognizance retrieval approach -->
         <section class="corp-section" id="comparison">
             <div class="corp-section-header">
-                <div class="corp-section-eyebrow">Architectural Contrast</div>
-                <h2 class="corp-section-heading">Comparison with Traditional Legal Search / Naive RAG</h2>
-                <p class="corp-section-subheading">Point-by-point contrast demonstrating the technological shift from legacy document search engines to Graph-of-Thought RAG.</p>
+                <div class="corp-section-eyebrow">Knowledge Graph + Hybrid RAG</div>
+                <h2 class="corp-section-heading">From Source Documents to Grounded Answers</h2>
+                <p class="corp-section-subheading">TerraCognizance connects document-derived knowledge with semantic retrieval, relationship discovery, and source-linked answer synthesis.</p>
             </div>
             <div class="matrix-container">
                 <table class="matrix-table">
                     <thead>
                         <tr>
-                            <th class="th-legacy">Traditional Legal Search & Naive RAG Systems</th>
-                            <th class="th-platform">TerraCognizance Terrestrial Platform Advantage</th>
+                            <th class="th-legacy">Traditional Retrieval Challenges</th>
+                            <th class="th-platform">TerraCognizance Approach</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="td-legacy">Vector chunking fractures sentences and multi-page contract clauses, resulting in lost contextual relationships and misleading snippet retrieval.</td>
-                            <td class="td-platform">Graph-of-Thought holistic node traversal preserves document hierarchies, cross-references, and structural relations across all matter filings.</td>
+                            <td class="td-legacy">Document collections contain related facts spread across sections and files.</td>
+                            <td class="td-platform">A quality-gated process extracts entities, facts, and relationships into a navigable knowledge model.</td>
                         </tr>
                         <tr>
-                            <td class="td-legacy">Unverified generative systems produce plausible-sounding hallucinated legal citations and phantom contract provisions.</td>
-                            <td class="td-platform">Strict 100% BELONGS_TO provenance audit: every synthesis bullet is bound to exact document, page number, and paragraph coordinates.</td>
+                            <td class="td-legacy">Name variations can split references to the same entity and make related information harder to find.</td>
+                            <td class="td-platform">Entity resolution brings matching references together before they are used for connected exploration.</td>
                         </tr>
                         <tr>
-                            <td class="td-legacy">Keyword and semantic vector searches fail when parties, corporate subsidiaries, or witnesses are referenced by acronyms or aliases.</td>
-                            <td class="td-platform">Deterministic 4-level entity resolution cascade collapses aliases, misspellings, and subsidiary names into unified canonical identities.</td>
+                            <td class="td-legacy">Similarity-only search may miss multi-hop relationships between facts in different source passages.</td>
+                            <td class="td-platform">Hybrid retrieval combines semantic matches with graph traversal to expand relevant context.</td>
                         </tr>
                         <tr>
-                            <td class="td-legacy">Static PDF viewing requires hours of manual cross-referencing and highlighter tagging during time-critical court hearings.</td>
-                            <td class="td-platform">Court Hearing Mode provides sub-second rebuttal synthesis and instant cross-examination cards triggered by live opposing arguments.</td>
+                            <td class="td-legacy">Unverified extracted information can introduce noise into a knowledge model.</td>
+                            <td class="td-platform">The Adjudicator stages proposed concepts and relationships for expert review before ontology expansion.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- ROW 5 OF USER REQ: BIRDEYE ARCHITECTURE (DIAGRAM) -->
+        <!-- System architecture and document flow -->
         <section class="corp-section" id="architecture">
             <div class="corp-section-header">
-                <div class="corp-section-eyebrow">BirdEye Operational Architecture</div>
-                <h2 class="corp-section-heading">End-to-End System Diagram & Data Pipeline</h2>
-                <p class="corp-section-subheading">Visual architecture diagram representing legal corpus ingestion, deterministic knowledge vault stream, Graph-of-Thought RAG reasoning, and courtroom cockpit execution.</p>
+                <div class="corp-section-eyebrow">TerraCognizance Knowledge Flow</div>
+                <h2 class="corp-section-heading">From Documents to Evidence-Linked Insights</h2>
+                <p class="corp-section-subheading">A product-level view of how TerraCognizance prepares source material, connects knowledge, and supports grounded exploration.</p>
             </div>
 
             <div class="birdeye-diagram-card">
                 <div class="birdeye-diagram-grid">
-                    <!-- Node 01: Multi-Modal Legal Ingestion -->
+                    <!-- Node 01: Document intake -->
                     <div class="diagram-node">
                         <div>
                             <div class="diagram-node-header">
                                 <span class="diagram-layer-tag">Layer 01</span>
                                 <span class="diagram-node-icon">📡</span>
                             </div>
-                            <div class="diagram-node-title">Multi-Modal Legal Ingestion</div>
-                            <div class="diagram-node-desc">Direct multi-format legal ingestion aggregating pleadings, contracts, court exhibits, depositions, and transcripts with automated OCR normalization.</div>
+                            <div class="diagram-node-title">Document Intake &amp; Extraction</div>
+                            <div class="diagram-node-desc">Prepare source documents and identify entities, facts, and relationships while retaining links to their source passages.</div>
                         </div>
                         <div class="diagram-node-protocols">
-                            <span class="diagram-proto-chip">Secure Ingestion API</span><span class="diagram-proto-chip">Encrypted Vault Storage</span><span class="diagram-proto-chip">PDF/OCR Stream</span>
+                            <span class="diagram-proto-chip">Source Documents</span><span class="diagram-proto-chip">Knowledge Extraction</span><span class="diagram-proto-chip">Source Passages</span>
                         </div>
                     </div>
-                    <!-- Node 02: Deterministic Vault Stream -->
+                    <!-- Node 02: Connected knowledge -->
                     <div class="diagram-node">
                         <div>
                             <div class="diagram-node-header">
                                 <span class="diagram-layer-tag">Layer 02</span>
                                 <span class="diagram-node-icon">⚡</span>
                             </div>
-                            <div class="diagram-node-title">Deterministic Vault Stream</div>
-                            <div class="diagram-node-desc">High-throughput canonical Markdown nodes, bidirectional link indexing, deterministic alias collapsing, and sub-50ms graph synchronization.</div>
+                            <div class="diagram-node-title">Connected Knowledge Graph</div>
+                            <div class="diagram-node-desc">Organize canonical entities, facts, and relationships into a navigable model that can be adapted to a domain.</div>
                         </div>
                         <div class="diagram-node-protocols">
-                            <span class="diagram-proto-chip">Knowledge Vault Bus</span><span class="diagram-proto-chip">Entity Resolution Bus</span><span class="diagram-proto-chip">Sub-50ms Graph Stream</span>
+                            <span class="diagram-proto-chip">Entities &amp; Facts</span><span class="diagram-proto-chip">Relationships</span><span class="diagram-proto-chip">Provenance Links</span>
                         </div>
                     </div>
-                    <!-- Node 03: Graph-of-Thought Reasoning Core -->
+                    <!-- Node 03: Hybrid retrieval -->
                     <div class="diagram-node">
                         <div>
                             <div class="diagram-node-header">
                                 <span class="diagram-layer-tag">Layer 03</span>
                                 <span class="diagram-node-icon">🧠</span>
                             </div>
-                            <div class="diagram-node-title">Graph-of-Thought Reasoning Core</div>
-                            <div class="diagram-node-desc">Hybrid Personalized PageRank (PPR), dense vector retrieval, reciprocal rank fusion, and multi-turn autonomous tool synthesis.</div>
+                            <div class="diagram-node-title">Hybrid Knowledge Retrieval</div>
+                            <div class="diagram-node-desc">Find relevant source passages by meaning and expand results through connected entities and facts.</div>
                         </div>
                         <div class="diagram-node-protocols">
-                            <span class="diagram-proto-chip">Graph-of-Thought AI</span><span class="diagram-proto-chip">Personalized PageRank</span><span class="diagram-proto-chip">Tri-Model RRF</span>
+                            <span class="diagram-proto-chip">Semantic Search</span><span class="diagram-proto-chip">Graph Traversal</span><span class="diagram-proto-chip">Context Assembly</span>
                         </div>
                     </div>
-                    <!-- Node 04: Courtroom Cockpit & Strategy Console -->
+                    <!-- Node 04: Workspace and governance -->
                     <div class="diagram-node">
                         <div>
                             <div class="diagram-node-header">
                                 <span class="diagram-layer-tag">Layer 04</span>
                                 <span class="diagram-node-icon">🎯</span>
                             </div>
-                            <div class="diagram-node-title">Courtroom Cockpit & Strategy Console</div>
-                            <div class="diagram-node-desc">Live hearing rebuttal cards, clause-level citation drawer, human-in-the-loop Adjudicator review, and ANSI/ISA-101 litigation intelligence displays.</div>
+                            <div class="diagram-node-title">Chat Studio &amp; Adjudicator</div>
+                            <div class="diagram-node-desc">Explore knowledge conversationally and let domain experts review proposed concepts and relationships.</div>
                         </div>
                         <div class="diagram-node-protocols">
-                            <span class="diagram-proto-chip">Court Hearing Mode</span><span class="diagram-proto-chip">Provenance Drawer</span><span class="diagram-proto-chip">ISA-101 Legal HMI</span>
+                            <span class="diagram-proto-chip">Grounded Answers</span><span class="diagram-proto-chip">Expert Review</span><span class="diagram-proto-chip">Domain Governance</span>
                         </div>
                     </div>
                 </div>
@@ -482,7 +486,7 @@
                 <!-- Connecting Flow Indicator -->
                 <div class="diagram-flow-bar">
                     <span class="flow-dot"></span>
-                    <span>DATA PIPELINE FLOW: Legal Corpus & Exhibit Ingestion ➔ Deterministic Knowledge Vault Stream ➔ Graph-of-Thought RAG Reasoning ➔ Closed-Loop Court Hearing & Strategy Actuation (< 50ms Latency)</span>
+                    <span>COGNIZANCE FLOW: Document Intake ➔ Knowledge Extraction ➔ Hybrid Retrieval ➔ Source-Linked Answers ➔ Expert Review</span>
                 </div>
             </div>
         </section>
@@ -497,9 +501,9 @@
                 <span class="pager-meta">Navigation</span>
                 <span class="pager-name">Home</span>
             </a>
-            <a href="terra-ai.html" class="pager-tile" style="text-align: right;">
+            <a href="terra-lc.html" class="pager-tile" style="text-align: right;">
                 <span class="pager-meta">Next Product →</span>
-                <span class="pager-name">TerraAI</span>
+                <span class="pager-name">TerraLC</span>
             </a>
         </div>
 
@@ -513,13 +517,14 @@
                     <h3>TERRESTRIAL PLATFORM</h3>
                     <p>Enterprise-grade edge-to-cloud software platform empowering mission-critical industrial infrastructure, energy grids, manufacturing, and facilities.</p>
                     <p style="font-size: 0.78rem; color: var(--accent-cyan); font-family: var(--font-mono);">
-                        Adani Enterprise Specification | Revision R00.</p>
+                        TerraCognizance | Project Document.</p>
                 </div>
                 <div class="footer-section">
                     <h5>AI & Autonomous Swarms</h5>
                     <ul>
                         <li><a href="terra-ai.html">TerraAI</a></li>
                         <li><a href="terra-cognizance.html">TerraCognizance</a></li>
+                        <li><a href="terra-lc.html">TerraLC</a></li>
                         <li><a href="terra-embodiment.html">TerraEmbodiment</a></li>
                         <li><a href="terra-hive.html">TerraHive</a></li>
                         <li><a href="terra-cc.html">TerraCC</a></li>

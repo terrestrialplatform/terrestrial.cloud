@@ -8,11 +8,11 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
 
 # Paths
-platform_dir = r'c:\Users\yashj\Downloads\website\terrestrial.cloud\platform'
+base_dir = os.path.dirname(os.path.abspath(__file__))
+platform_dir = os.path.join(base_dir, 'platform')
 out_dirs = [
-    r'c:\Users\yashj\Downloads\website\si-portal\catalogues',
-    r'c:\Users\yashj\Downloads\website\catalogues',
-    r'c:\Users\yashj\Downloads\Terrestrial_metamorphosis\si-portal\catalogues'
+    os.path.join(base_dir, 'si-portal', 'catalogues'),
+    os.path.join(base_dir, 'catalogues')
 ]
 
 for d in out_dirs:
@@ -46,6 +46,7 @@ for c in cards:
 app_files = [
     "terra-ai.html",
     "terra-cognizance.html",
+    "terra-lc.html",
     "terra-embodiment.html",
     "terra-hive.html",
     "terra-cc.html",

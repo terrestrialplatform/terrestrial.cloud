@@ -8,20 +8,18 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
 
 # Paths
-base_dir = r'c:\Users\yashj\Downloads\website'
-platform_dir = os.path.join(base_dir, r'terrestrial.cloud\platform')
+base_dir = os.path.dirname(os.path.abspath(__file__))
+platform_dir = os.path.join(base_dir, 'platform')
 si_portal_dir = os.path.join(base_dir, 'si-portal')
 catalogues_dir = os.path.join(si_portal_dir, 'catalogues')
-meta_portal_dir = r'c:\Users\yashj\Downloads\Terrestrial_metamorphosis\si-portal'
-meta_catalogues_dir = os.path.join(meta_portal_dir, 'catalogues')
 
 os.makedirs(catalogues_dir, exist_ok=True)
-os.makedirs(meta_catalogues_dir, exist_ok=True)
 
-# 20 Applications and metadata
+# 21 Applications and metadata
 app_meta_list = [
     ("terra-ai.html", "Autonomous AI & Swarms", "ai-ops", "OPC UA / TSN"),
     ("terra-cognizance.html", "Autonomous AI & Swarms", "ai-ops", "Graph-of-Thought / RAG"),
+    ("terra-lc.html", "Autonomous AI & Swarms", "ai-ops", "CLM / Legal Cognizance"),
     ("terra-embodiment.html", "Autonomous AI & Swarms", "ai-ops", "IEC 61850 GOOSE"),
     ("terra-hive.html", "Autonomous AI & Swarms", "ai-ops", "Agent Swarm Protocol"),
     ("terra-cc.html", "Autonomous AI & Swarms", "ai-ops", "WebSockets / WSS"),
