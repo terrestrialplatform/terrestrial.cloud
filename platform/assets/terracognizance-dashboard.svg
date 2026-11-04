@@ -1,230 +1,152 @@
-<svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
-    <defs>
-        <linearGradient id="tcBgGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#0b0f19" />
-            <stop offset="100%" stop-color="#05070d" />
-        </linearGradient>
-        <linearGradient id="tcHeaderGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#0f172a" />
-            <stop offset="100%" stop-color="#1e293b" />
-        </linearGradient>
-        <linearGradient id="tcCardGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#0f172a" stop-opacity="0.9" />
-            <stop offset="100%" stop-color="#0a0f1d" stop-opacity="0.95" />
-        </linearGradient>
-        <pattern id="tcGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.4" />
-        </pattern>
-        <filter id="tcGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-    </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 760" role="img" aria-labelledby="title description">
+  <title id="title">TerraCognizance knowledge graph workspace</title>
+  <desc id="description">A broad knowledge exploration canvas with clustered source, concept, and evidence networks, plus a contextual answer and governance rail.</desc>
+  <defs>
+    <linearGradient id="background" x2="0" y2="1">
+      <stop stop-color="#0d1728"/>
+      <stop offset="1" stop-color="#08111e"/>
+    </linearGradient>
+    <radialGradient id="graphGlow">
+      <stop stop-color="#153653" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#0b1422" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #dce8f7; }
+      .muted { fill: #8395ad; }
+      .panel { fill: #101c2c; stroke: #24364e; }
+      .nodeLabel { font-size: 10px; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1440" height="760" fill="url(#background)"/>
 
-    <!-- Base Canvas -->
-    <rect width="1200" height="640" fill="url(#tcBgGrad)" />
-    <rect width="1200" height="640" fill="url(#tcGrid)" />
+  <rect x="0" y="0" width="1440" height="58" fill="#0b1422" stroke="#24364e"/>
+  <circle cx="31" cy="29" r="13" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <circle cx="31" cy="29" r="4" fill="#38bdf8"/>
+  <text x="54" y="27" font-size="15" font-weight="700">TerraCognizance</text>
+  <text x="54" y="43" font-size="9" class="muted">KNOWLEDGE EXPLORER</text>
+  <text x="260" y="34" font-size="12" class="muted">Knowledge Bases</text>
+  <text x="381" y="34" font-size="12" fill="#f1f7ff">/</text>
+  <text x="398" y="34" font-size="12">Energy systems</text>
+  <rect x="1129" y="14" width="142" height="30" rx="15" fill="#13243a" stroke="#2b405b"/>
+  <circle cx="1148" cy="29" r="4" fill="#34d399"/>
+  <text x="1160" y="33" font-size="10">Workspace ready</text>
+  <circle cx="1309" cy="29" r="14" fill="#22364f"/>
+  <text x="1305" y="33" font-size="10">U</text>
 
-    <!-- Top Navigation Bar -->
-    <rect x="0" y="0" width="1200" height="52" fill="url(#tcHeaderGrad)" stroke="#1e293b" stroke-width="1" />
-    <circle cx="28" cy="26" r="10" fill="#7c3aed" />
-    <text x="24" y="30" fill="#ffffff" font-size="12" font-weight="900">🧠</text>
-    <text x="48" y="31" fill="#ffffff" font-size="15" font-weight="800" letter-spacing="0.5">TERRA<tspan fill="#a855f7">COGNIZANCE</tspan></text>
-    <text x="195" y="31" fill="#64748b" font-size="13" font-weight="500">| Enterprise Knowledge Graph &amp; Hybrid Reasoning</text>
+  <rect x="0" y="58" width="255" height="702" fill="#0b1422"/>
+  <path d="M255 58v702" stroke="#24364e"/>
+  <text x="22" y="91" font-size="10" class="muted" letter-spacing="1.4">KNOWLEDGE BASE</text>
+  <rect x="16" y="106" width="222" height="38" rx="7" fill="#12263c"/>
+  <circle cx="34" cy="125" r="5" fill="#38bdf8"/>
+  <text x="49" y="130" font-size="12">Energy systems</text>
+  <text x="22" y="178" font-size="10" class="muted" letter-spacing="1.4">SOURCE COLLECTIONS</text>
+  <text x="34" y="208" font-size="12">⌄  Project reports</text>
+  <text x="51" y="234" font-size="11" class="muted">Grid modernization</text>
+  <text x="51" y="258" font-size="11" class="muted">Storage research</text>
+  <text x="34" y="291" font-size="12">›  Equipment manuals</text>
+  <text x="34" y="323" font-size="12">›  Operations notes</text>
+  <path d="M20 347h214" stroke="#24364e"/>
+  <text x="22" y="375" font-size="10" class="muted" letter-spacing="1.4">DOMAIN CONCEPTS</text>
+  <rect x="22" y="393" width="7" height="7" rx="2" fill="#38bdf8"/>
+  <text x="39" y="401" font-size="11">Entities</text>
+  <rect x="22" y="420" width="7" height="7" rx="2" fill="#a78bfa"/>
+  <text x="39" y="428" font-size="11">Relationships</text>
+  <rect x="22" y="447" width="7" height="7" rx="2" fill="#fbbf24"/>
+  <text x="39" y="455" font-size="11">Facts</text>
+  <rect x="22" y="474" width="7" height="7" rx="2" fill="#34d399"/>
+  <text x="39" y="482" font-size="11">Source passages</text>
+  <rect x="15" y="690" width="223" height="48" rx="8" fill="#101c2c" stroke="#24364e"/>
+  <text x="29" y="711" font-size="10" class="muted">DOMAIN GOVERNANCE</text>
+  <text x="29" y="728" font-size="11">3 items need expert review</text>
 
-    <!-- Mode Tabs -->
-    <rect x="490" y="12" width="100" height="28" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1" />
-    <text x="540" y="30" fill="#c084fc" font-size="11.5" font-weight="700" text-anchor="middle">Chat Studio</text>
-    <rect x="598" y="12" width="105" height="28" rx="4" fill="#0f172a" />
-    <text x="650" y="30" fill="#94a3b8" font-size="11.5" font-weight="600" text-anchor="middle">Graph Explorer</text>
-    <rect x="711" y="12" width="100" height="28" rx="4" fill="#0f172a" />
-    <text x="761" y="30" fill="#94a3b8" font-size="11.5" font-weight="600" text-anchor="middle">Review Queue</text>
+  <text x="286" y="96" font-size="21" font-weight="700">Explore connected knowledge</text>
+  <text x="286" y="119" font-size="12" class="muted">Follow concepts across documents, facts, and source passages.</text>
+  <rect x="286" y="137" width="740" height="584" rx="12" fill="#0b1422" stroke="#263b54"/>
+  <rect x="286" y="137" width="740" height="584" rx="12" fill="url(#graphGlow)"/>
+  <text x="310" y="168" font-size="12" font-weight="600">Knowledge graph</text>
+  <text x="310" y="187" font-size="10" class="muted">Selected concept: Grid modernization</text>
+  <rect x="866" y="151" width="136" height="26" rx="6" fill="#14253a" stroke="#314761"/>
+  <text x="882" y="168" font-size="10" class="muted">Filter: all sources</text>
 
-    <!-- Status Badges -->
-    <g transform="translate(930, 16)">
-        <circle cx="10" cy="10" r="4" fill="#10b981" />
-        <text x="20" y="14" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">GRAPH RAG: ACTIVE</text>
-        <rect x="160" y="0" width="85" height="20" rx="3" fill="#1e293b" stroke="#a855f7" stroke-width="0.8" />
-        <text x="202" y="14" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">VERIFIED</text>
-    </g>
+  <g fill="none" stroke-width="1.5" opacity=".8">
+    <path d="M453 322Q493 268 559 295" stroke="#38bdf8"/>
+    <path d="M453 322Q480 400 555 421" stroke="#38bdf8"/>
+    <path d="M559 295Q623 267 676 327" stroke="#818cf8"/>
+    <path d="M555 421Q619 443 676 371" stroke="#818cf8"/>
+    <path d="M676 327Q741 272 804 291" stroke="#a78bfa"/>
+    <path d="M676 371Q750 420 809 416" stroke="#a78bfa"/>
+    <path d="M804 291Q867 312 911 351" stroke="#34d399"/>
+    <path d="M809 416Q863 400 911 351" stroke="#34d399"/>
+    <path d="M559 295Q567 358 555 421" stroke="#fbbf24" stroke-dasharray="4 5"/>
+    <path d="M676 327Q690 349 676 371" stroke="#fbbf24" stroke-dasharray="4 5"/>
+    <path d="M453 322Q403 359 416 439" stroke="#38bdf8"/>
+    <path d="M416 439Q481 481 555 421" stroke="#38bdf8"/>
+    <path d="M804 291Q846 241 895 239" stroke="#34d399"/>
+    <path d="M809 416Q846 473 899 478" stroke="#34d399"/>
+    <path d="M559 295Q596 233 636 225" stroke="#818cf8"/>
+    <path d="M676 371Q730 500 758 542" stroke="#a78bfa"/>
+  </g>
+  <g stroke-width="2">
+    <circle cx="453" cy="322" r="27" fill="#102a40" stroke="#38bdf8"/>
+    <circle cx="559" cy="295" r="20" fill="#182342" stroke="#818cf8"/>
+    <circle cx="555" cy="421" r="22" fill="#132b39" stroke="#38bdf8"/>
+    <circle cx="676" cy="327" r="32" fill="#17344a" stroke="#67e8f9"/>
+    <circle cx="676" cy="371" r="18" fill="#352b1b" stroke="#fbbf24"/>
+    <circle cx="804" cy="291" r="24" fill="#20203c" stroke="#a78bfa"/>
+    <circle cx="809" cy="416" r="21" fill="#20203c" stroke="#a78bfa"/>
+    <circle cx="911" cy="351" r="25" fill="#14382e" stroke="#34d399"/>
+    <circle cx="416" cy="439" r="14" fill="#102a40" stroke="#38bdf8"/>
+    <circle cx="636" cy="225" r="13" fill="#182342" stroke="#818cf8"/>
+    <circle cx="895" cy="239" r="14" fill="#14382e" stroke="#34d399"/>
+    <circle cx="899" cy="478" r="15" fill="#14382e" stroke="#34d399"/>
+    <circle cx="758" cy="542" r="13" fill="#20203c" stroke="#a78bfa"/>
+  </g>
+  <circle cx="676" cy="327" r="8" fill="#67e8f9"/>
+  <g class="nodeLabel">
+    <text x="453" y="363" class="muted">Organization</text>
+    <text x="559" y="267" class="muted">Project</text>
+    <text x="555" y="458" class="muted">Asset</text>
+    <text x="676" y="333">Grid</text>
+    <text x="676" y="408" class="muted">Fact</text>
+    <text x="804" y="261" class="muted">Evidence</text>
+    <text x="809" y="452" class="muted">Concept</text>
+    <text x="911" y="392" class="muted">Passage</text>
+    <text x="416" y="466" class="muted">Source</text>
+    <text x="636" y="204" class="muted">Topic</text>
+    <text x="895" y="216" class="muted">Report</text>
+    <text x="899" y="506" class="muted">Manual</text>
+    <text x="758" y="570" class="muted">Relationship</text>
+  </g>
+  <rect x="310" y="641" width="236" height="48" rx="8" fill="#101c2c" stroke="#24364e"/>
+  <circle cx="330" cy="665" r="5" fill="#38bdf8"/>
+  <text x="344" y="662" font-size="10">Entity / concept</text>
+  <circle cx="446" cy="665" r="5" fill="#34d399"/>
+  <text x="460" y="662" font-size="10">Source</text>
+  <path d="M330 678h22" stroke="#fbbf24" stroke-dasharray="4 4"/>
+  <text x="360" y="682" font-size="10" class="muted">Proposed relationship</text>
 
-    <!-- MAIN 3-COLUMN WORKSPACE -->
-    <!-- Column 1: Document Vault Collections -->
-    <g transform="translate(20, 68)">
-        <rect width="270" height="552" rx="8" fill="url(#tcCardGrad)" stroke="#1e293b" stroke-width="1" />
-        <text x="16" y="28" fill="#e2e8f0" font-size="13" font-weight="700">Knowledge Collections</text>
-        <rect x="175" y="14" width="79" height="20" rx="10" fill="#1e293b" />
-        <text x="214" y="28" fill="#a855f7" font-size="10" font-weight="700" text-anchor="middle">24 VAULTS</text>
+  <rect x="1045" y="137" width="365" height="364" rx="12" class="panel"/>
+  <text x="1067" y="171" font-size="15" font-weight="700">Chat Studio</text>
+  <text x="1067" y="191" font-size="11" class="muted">Ask across your connected knowledge</text>
+  <rect x="1067" y="211" width="321" height="58" rx="8" fill="#17283c"/>
+  <text x="1082" y="235" font-size="11">Which projects share a key component?</text>
+  <text x="1082" y="254" font-size="9" class="muted">Searching related facts and passages...</text>
+  <text x="1067" y="299" font-size="11" font-weight="600">Connected findings</text>
+  <text x="1067" y="323" font-size="10" class="muted">Two project records reference the same</text>
+  <text x="1067" y="340" font-size="10" class="muted">equipment concept across separate reports.</text>
+  <rect x="1067" y="358" width="321" height="48" rx="7" fill="#0d1928" stroke="#2b405b"/>
+  <text x="1081" y="379" font-size="10" fill="#67e8f9">3 supporting passages</text>
+  <text x="1081" y="396" font-size="9" class="muted">Open a source to inspect its context</text>
+  <rect x="1067" y="425" width="321" height="52" rx="8" fill="#13243a" stroke="#30455f"/>
+  <text x="1081" y="455" font-size="10" class="muted">Ask a question about this knowledge base...</text>
 
-        <!-- Search input -->
-        <rect x="16" y="46" width="238" height="28" rx="4" fill="#070a12" stroke="#1e293b" stroke-width="1" />
-        <text x="28" y="64" fill="#64748b" font-size="11">🔍 Search indexed corpora...</text>
-
-        <!-- Collection 1 (Active) -->
-        <rect x="16" y="88" width="238" height="74" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.2" />
-        <circle cx="32" cy="106" r="5" fill="#a855f7" />
-        <text x="44" y="109" fill="#ffffff" font-size="12" font-weight="700">Enterprise Engineering Specs</text>
-        <text x="44" y="126" fill="#94a3b8" font-size="10.5">342 Documents · 12,400 Nodes</text>
-        <rect x="44" y="134" width="78" height="16" rx="2" fill="#0f172a" />
-        <text x="83" y="146" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">IEC / ASME / ISO</text>
-
-        <!-- Collection 2 -->
-        <rect x="16" y="172" width="238" height="74" rx="6" fill="#0b0f19" stroke="#1e293b" stroke-width="1" />
-        <circle cx="32" cy="190" r="5" fill="#38bdf8" />
-        <text x="44" y="193" fill="#e2e8f0" font-size="12" font-weight="600">Regulatory &amp; Compliance</text>
-        <text x="44" y="210" fill="#94a3b8" font-size="10.5">Slater &amp; Gordon statutory rulings</text>
-        <rect x="44" y="218" width="85" height="16" rx="2" fill="#0f172a" />
-        <text x="86" y="230" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">GOVERNED LAW</text>
-
-        <!-- Collection 3 -->
-        <rect x="16" y="256" width="238" height="74" rx="6" fill="#0b0f19" stroke="#1e293b" stroke-width="1" />
-        <circle cx="32" cy="274" r="5" fill="#10b981" />
-        <text x="44" y="277" fill="#e2e8f0" font-size="12" font-weight="600">Asset Maintenance Manuals</text>
-        <text x="44" y="294" fill="#94a3b8" font-size="10.5">OEM turbine, pump &amp; switchgear</text>
-        <rect x="44" y="302" width="72" height="16" rx="2" fill="#0f172a" />
-        <text x="80" y="314" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">SOP / MANUAL</text>
-
-        <!-- Bottom Stats -->
-        <rect x="16" y="468" width="238" height="66" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="0.8" />
-        <text x="28" y="490" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9.5">GRAPH ENGINE STATS</text>
-        <text x="28" y="508" fill="#a855f7" font-size="14" font-weight="800">48,290</text>
-        <text x="84" y="508" fill="#94a3b8" font-size="11">Entities</text>
-        <text x="150" y="508" fill="#38bdf8" font-size="14" font-weight="800">142,800</text>
-        <text x="206" y="508" fill="#94a3b8" font-size="11">Edges</text>
-        <text x="28" y="524" fill="#10b981" font-size="10">● Sub-second Hybrid Graph Traversal</text>
-    </g>
-
-    <!-- Column 2: Chat Studio & Grounded Reasoning -->
-    <g transform="translate(306, 68)">
-        <rect width="570" height="552" rx="8" fill="url(#tcCardGrad)" stroke="#1e293b" stroke-width="1" />
-
-        <g transform="translate(20, 20)">
-            <text x="0" y="14" fill="#ffffff" font-size="15" font-weight="800">Chat Studio &amp; Graph-of-Thought Synthesis</text>
-            <text x="0" y="32" fill="#94a3b8" font-size="11.5">Domain-pluggable grounded answers backed by traceable evidentiary sources</text>
-        </g>
-
-        <!-- User Query Box -->
-        <g transform="translate(20, 68)">
-            <rect width="530" height="60" rx="6" fill="#070a12" stroke="#1e293b" stroke-width="1" />
-            <circle cx="24" cy="30" r="12" fill="#1e293b" />
-            <text x="24" y="34" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">Q</text>
-            <text x="46" y="26" fill="#e2e8f0" font-size="11.5" font-weight="600">What are the ASME V&amp;V 50 criteria for digital twin validation in thermal plants?</text>
-            <text x="46" y="44" fill="#64748b" font-size="10.5">Context: Engineering Specs + Turbomachinery Verification Dossiers</text>
-        </g>
-
-        <!-- Graph Reasoning Steps -->
-        <g transform="translate(20, 140)">
-            <rect width="530" height="74" rx="6" fill="#0c1222" stroke="#334155" stroke-width="0.8" />
-            <text x="14" y="20" fill="#a855f7" font-size="11" font-weight="700">⚡ Graph-of-Thought Traversal Path (18ms):</text>
-
-            <g transform="translate(14, 30)">
-                <rect x="0" y="6" width="115" height="22" rx="3" fill="#1e293b" />
-                <text x="57" y="21" fill="#38bdf8" font-size="10" font-weight="600" text-anchor="middle">1. ASME V&amp;V 50 §3</text>
-
-                <text x="122" y="22" fill="#64748b" font-size="12">→</text>
-
-                <rect x="135" y="6" width="130" height="22" rx="3" fill="#1e293b" />
-                <text x="200" y="21" fill="#f59e0b" font-size="10" font-weight="600" text-anchor="middle">2. Uncertainty Envelope</text>
-
-                <text x="272" y="22" fill="#64748b" font-size="12">→</text>
-
-                <rect x="285" y="6" width="120" height="22" rx="3" fill="#1e293b" />
-                <text x="345" y="21" fill="#10b981" font-size="10" font-weight="600" text-anchor="middle">3. Thermal Model #4</text>
-            </g>
-        </g>
-
-        <!-- Synthesized Grounded Response Box -->
-        <g transform="translate(20, 226)">
-            <rect width="530" height="190" rx="6" fill="#070a12" stroke="#10b981" stroke-width="1" />
-            <rect x="0" y="0" width="530" height="28" rx="6" fill="#0f172a" />
-            <circle cx="16" cy="14" r="5" fill="#10b981" />
-            <text x="28" y="18" fill="#10b981" font-size="11" font-weight="700">Verified Answer · Zero Hallucinations · Provenance Guaranteed</text>
-
-            <text x="16" y="50" fill="#e2e8f0" font-size="11.5">
-                Under ASME V&amp;V 50-2021 (Standards for Verification and Validation in Computational Modeling),
-            </text>
-            <text x="16" y="70" fill="#e2e8f0" font-size="11.5">
-                computational digital twins for thermodynamic cycles require three primary verification tiers:
-            </text>
-            <text x="24" y="94" fill="#cbd5e1" font-size="11">
-                1. <tspan fill="#38bdf8" font-weight="700">Code Verification:</tspan> Convergence benchmark against exact analytical Steam Table solutions.
-            </text>
-            <text x="24" y="114" fill="#cbd5e1" font-size="11">
-                2. <tspan fill="#f59e0b" font-weight="700">Solution Verification:</tspan> Grid-convergence index (GCI) and discretization error &lt; 0.5%.
-            </text>
-            <text x="24" y="134" fill="#cbd5e1" font-size="11">
-                3. <tspan fill="#a855f7" font-weight="700">Model Validation:</tspan> Comparison of model uncertainty envelope vs field sensor tolerances.
-            </text>
-
-            <line x1="16" y1="150" x2="514" y2="150" stroke="#1e293b" stroke-width="1" />
-            <text x="16" y="172" fill="#64748b" font-size="10.5">Primary Source: <tspan fill="#38bdf8">ASME_VV_50_Thermal.pdf</tspan> (Section 4.2.1, Table 3)</text>
-            <text x="440" y="172" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">CONF: 99.8%</text>
-        </g>
-
-        <!-- Query Input Bar -->
-        <g transform="translate(20, 430)">
-            <rect width="530" height="100" rx="6" fill="#070a12" stroke="#1e293b" stroke-width="1" />
-            <text x="16" y="24" fill="#64748b" font-size="11">Ask about connected contracts, technical standards, or operating manuals...</text>
-            <rect x="420" y="58" width="94" height="28" rx="4" fill="#7c3aed" />
-            <text x="467" y="76" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Synthesize ➔</text>
-        </g>
-    </g>
-
-    <!-- Column 3: Graph Entity View -->
-    <g transform="translate(894, 68)">
-        <rect width="286" height="552" rx="8" fill="url(#tcCardGrad)" stroke="#1e293b" stroke-width="1" />
-        <text x="16" y="28" fill="#e2e8f0" font-size="13" font-weight="700">Entity &amp; Node Drawer</text>
-        <circle cx="260" cy="24" r="5" fill="#a855f7" />
-
-        <!-- Graph Preview Box -->
-        <g transform="translate(16, 44)">
-            <rect width="254" height="210" rx="6" fill="#070a12" stroke="#1e293b" stroke-width="1" />
-
-            <circle cx="127" cy="105" r="26" fill="#0f172a" stroke="#a855f7" stroke-width="2.5" />
-            <text x="127" y="103" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">ASME V&amp;V</text>
-            <text x="127" y="115" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="7.5" text-anchor="middle">#STANDARD</text>
-
-            <line x1="60" y1="50" x2="127" y2="105" stroke="#38bdf8" stroke-width="1.5" />
-            <line x1="194" y1="50" x2="127" y2="105" stroke="#f59e0b" stroke-width="1.5" />
-            <line x1="60" y1="160" x2="127" y2="105" stroke="#10b981" stroke-width="1.5" />
-            <line x1="194" y1="160" x2="127" y2="105" stroke="#a855f7" stroke-width="1.5" />
-
-            <circle cx="60" cy="50" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
-            <text x="60" y="53" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Tier 1</text>
-            <circle cx="194" cy="50" r="16" fill="#0f172a" stroke="#f59e0b" stroke-width="2" />
-            <text x="194" y="53" fill="#f59e0b" font-size="8" font-weight="700" text-anchor="middle">Tier 2</text>
-            <circle cx="60" cy="160" r="16" fill="#0f172a" stroke="#10b981" stroke-width="2" />
-            <text x="60" y="163" fill="#10b981" font-size="8" font-weight="700" text-anchor="middle">Tier 3</text>
-            <circle cx="194" cy="160" r="16" fill="#0f172a" stroke="#a855f7" stroke-width="2" />
-            <text x="194" y="163" fill="#a855f7" font-size="8" font-weight="700" text-anchor="middle">SteamTab</text>
-        </g>
-
-        <!-- Metadata Attributes -->
-        <g transform="translate(16, 268)">
-            <text x="0" y="0" fill="#e2e8f0" font-size="12" font-weight="700">Node Properties</text>
-
-            <rect x="0" y="12" width="254" height="240" rx="5" fill="#070a12" stroke="#1e293b" stroke-width="1" />
-            <g transform="translate(12, 28)">
-                <text x="0" y="0" fill="#64748b" font-size="10">NODE ID</text>
-                <text x="0" y="16" fill="#a855f7" font-family="'JetBrains Mono', monospace" font-size="11">NODE-ASME-VV50-019</text>
-
-                <text x="0" y="44" fill="#64748b" font-size="10">TYPE</text>
-                <text x="0" y="60" fill="#e2e8f0" font-size="11">Engineering Technical Standard</text>
-
-                <text x="0" y="88" fill="#64748b" font-size="10">IN-DEGREE / OUT-DEGREE</text>
-                <text x="0" y="104" fill="#38bdf8" font-size="11">24 Inbound / 18 Outbound</text>
-
-                <text x="0" y="132" fill="#64748b" font-size="10">VERIFICATION ENGINE</text>
-                <text x="0" y="148" fill="#10b981" font-size="11">Deterministic Graph-of-Thought</text>
-
-                <rect x="0" y="170" width="230" height="30" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="0.8" />
-                <text x="115" y="189" fill="#c084fc" font-size="10.5" font-weight="700" text-anchor="middle">🔍 Open Wiki Node Drawer</text>
-            </g>
-        </g>
-    </g>
-
-    <!-- Bottom Status Bar -->
-    <rect x="0" y="624" width="1200" height="16" fill="#070a12" />
-    <text x="20" y="635" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">TERRACOGNIZANCE ENTERPRISE · AIR-GAPPED ON-PREMISES DEPLOYMENT · ZERO VENDOR LOCK-IN · EXCLUSIVELY LICENSED</text>
-    <text x="1050" y="635" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">PLATFORM STATUS: ONLINE</text>
+  <rect x="1045" y="518" width="365" height="203" rx="12" class="panel"/>
+  <text x="1067" y="552" font-size="15" font-weight="700">Adjudicator</text>
+  <text x="1067" y="572" font-size="11" class="muted">Expert review before expanding the domain</text>
+  <rect x="1067" y="592" width="321" height="79" rx="8" fill="#171d2d" stroke="#3b3658"/>
+  <circle cx="1085" cy="613" r="5" fill="#a78bfa"/>
+  <text x="1100" y="617" font-size="10">Suggested concept</text>
+  <text x="1081" y="640" font-size="10" class="muted">Review the source evidence and domain fit.</text>
+  <text x="1081" y="657" font-size="10" fill="#c4b5fd">View proposal →</text>
+  <text x="1067" y="697" font-size="10" class="muted">3 pending items · 1 type conflict</text>
 </svg>
